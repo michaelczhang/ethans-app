@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Eureka!",
+  title: "Quiz Arena",
   description:
-    "A cheerful word game — follow the clues, leave a trail, and shout Eureka when you find the secret word.",
+    "Test your StarCraft, Pokémon, Minecraft, and Fortnite knowledge in a fun quiz game.",
 };
 
 export default function RootLayout({
