@@ -13,9 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quiz Arena",
-  description:
-    "Test your StarCraft, Pokémon, Minecraft, and Fortnite knowledge in a fun quiz game.",
+  title: "Quizzy",
+  description: "Test your knowledge with fun quizzes across games, geography, and more.",
 };
 
 export default function RootLayout({

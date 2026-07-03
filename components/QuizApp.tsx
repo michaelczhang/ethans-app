@@ -7,8 +7,11 @@ import QuizGame from "@/components/QuizGame";
 import QuizHome from "@/components/QuizHome";
 import { QUIZ_MODES, type QuizCategory, type QuizMode } from "@/lib/quiz-data";
 import {
+  loadAnswerMode,
   loadDifficulty,
+  saveAnswerMode,
   saveDifficulty,
+  type AnswerMode,
   type QuizDifficulty,
 } from "@/lib/quiz-difficulty";
 
@@ -52,14 +55,21 @@ function backgroundsForView(view: View): string[] {
 export default function QuizApp() {
   const [view, setView] = useState<View>({ name: "categories" });
   const [difficulty, setDifficulty] = useState<QuizDifficulty>("medium");
+  const [answerMode, setAnswerMode] = useState<AnswerMode>("multiple-choice");
 
   useEffect(() => {
     setDifficulty(loadDifficulty());
+    setAnswerMode(loadAnswerMode());
   }, []);
 
   const handleDifficultyChange = (next: QuizDifficulty) => {
     setDifficulty(next);
     saveDifficulty(next);
+  };
+
+  const handleAnswerModeChange = (next: AnswerMode) => {
+    setAnswerMode(next);
+    saveAnswerMode(next);
   };
 
   return (
@@ -68,7 +78,9 @@ export default function QuizApp() {
       {view.name === "categories" && (
         <CategoryHome
           difficulty={difficulty}
+          answerMode={answerMode}
           onDifficultyChange={handleDifficultyChange}
+          onAnswerModeChange={handleAnswerModeChange}
           onSelectCategory={(category) =>
             setView({ name: "quizzes-list", category })
           }
@@ -78,6 +90,7 @@ export default function QuizApp() {
         <QuizHome
           category={view.category}
           difficulty={difficulty}
+          answerMode={answerMode}
           onSelectMode={(mode) =>
             setView({ name: "quiz", mode, category: view.category })
           }
@@ -88,6 +101,7 @@ export default function QuizApp() {
         <QuizGame
           mode={view.mode}
           difficulty={difficulty}
+          answerMode={answerMode}
           onBackToHome={() =>
             setView({ name: "quizzes-list", category: view.category })
           }

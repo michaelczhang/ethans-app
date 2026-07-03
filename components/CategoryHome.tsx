@@ -7,22 +7,32 @@ import {
   getQuizCountForCategory,
   type QuizCategory,
 } from "@/lib/quiz-data";
-import { DIFFICULTIES, type QuizDifficulty } from "@/lib/quiz-difficulty";
+import {
+  ANSWER_MODES,
+  DIFFICULTIES,
+  type AnswerMode,
+  type QuizDifficulty,
+} from "@/lib/quiz-difficulty";
 
 interface CategoryHomeProps {
   difficulty: QuizDifficulty;
+  answerMode: AnswerMode;
   onDifficultyChange: (difficulty: QuizDifficulty) => void;
+  onAnswerModeChange: (mode: AnswerMode) => void;
   onSelectCategory: (id: QuizCategory) => void;
 }
 
 export default function CategoryHome({
   difficulty,
+  answerMode,
   onDifficultyChange,
+  onAnswerModeChange,
   onSelectCategory,
 }: CategoryHomeProps) {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const categoryIds = Object.keys(CATEGORIES) as QuizCategory[];
   const difficultyInfo = DIFFICULTIES[difficulty];
+  const answerModeInfo = ANSWER_MODES[answerMode];
 
   return (
     <div className="quiz-shell relative mx-auto flex min-h-full w-full max-w-3xl flex-col px-4 py-10 sm:px-6">
@@ -38,14 +48,16 @@ export default function CategoryHome({
       {settingsOpen && (
         <SettingsPanel
           difficulty={difficulty}
+          answerMode={answerMode}
           onDifficultyChange={onDifficultyChange}
+          onAnswerModeChange={onAnswerModeChange}
           onClose={() => setSettingsOpen(false)}
         />
       )}
 
       <header className="mb-10 text-center">
         <p className="home-label text-sm font-semibold uppercase tracking-widest">
-          Quiz Arena
+          Quizzy
         </p>
         <h1 className="home-title mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
           Pick a Category
@@ -54,7 +66,8 @@ export default function CategoryHome({
           Choose a group to browse quizzes inside it.
         </p>
         <p className="mt-3 text-sm text-indigo-200">
-          Difficulty: {difficultyInfo.emoji} {difficultyInfo.label}
+          Difficulty: {difficultyInfo.emoji} {difficultyInfo.label} · Mode:{" "}
+          {answerModeInfo.emoji} {answerModeInfo.label}
         </p>
       </header>
 

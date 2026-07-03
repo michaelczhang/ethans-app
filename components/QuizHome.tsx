@@ -8,7 +8,7 @@ import {
   type QuizCategory,
   type QuizMode,
 } from "@/lib/quiz-data";
-import { DIFFICULTIES, type QuizDifficulty } from "@/lib/quiz-difficulty";
+import { ANSWER_MODES, DIFFICULTIES, type AnswerMode, type QuizDifficulty } from "@/lib/quiz-difficulty";
 
 const MODE_IMAGES: Record<QuizMode, string> = {
   starcraft: "/backgrounds/starcraft-bg.png",
@@ -24,6 +24,7 @@ const MODE_IMAGES: Record<QuizMode, string> = {
 interface QuizHomeProps {
   category: QuizCategory;
   difficulty: QuizDifficulty;
+  answerMode: AnswerMode;
   onSelectMode: (mode: QuizMode) => void;
   onBack: () => void;
 }
@@ -31,12 +32,14 @@ interface QuizHomeProps {
 export default function QuizHome({
   category,
   difficulty,
+  answerMode,
   onSelectMode,
   onBack,
 }: QuizHomeProps) {
   const modes = getModesForCategory(category);
   const categoryInfo = CATEGORIES[category];
   const difficultyInfo = DIFFICULTIES[difficulty];
+  const answerModeInfo = ANSWER_MODES[answerMode];
 
   return (
     <div className="quiz-shell mx-auto flex min-h-full w-full max-w-3xl flex-col px-4 py-10 sm:px-6">
@@ -55,7 +58,8 @@ export default function QuizHome({
           Pick a Quiz
         </h1>
         <p className="home-subtitle mt-3 text-sm">
-          Difficulty: {difficultyInfo.emoji} {difficultyInfo.label}
+          {difficultyInfo.emoji} {difficultyInfo.label} · {answerModeInfo.emoji}{" "}
+          {answerModeInfo.label}
         </p>
       </header>
 

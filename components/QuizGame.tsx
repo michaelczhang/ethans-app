@@ -8,31 +8,42 @@ import {
   type QuizQuestion,
 } from "@/lib/quiz-data";
 import {
+  ANSWER_MODES,
+  checkTypedAnswer,
   DIFFICULTIES,
+  getCorrectAnswer,
   prepareQuestionsForDifficulty,
+  type AnswerMode,
   type QuizDifficulty,
 } from "@/lib/quiz-difficulty";
 
 interface QuizGameProps {
   mode: QuizMode;
   difficulty: QuizDifficulty;
+  answerMode: AnswerMode;
   onBackToHome: () => void;
 }
 
-function shuffleQuestions(
-  questions: QuizQuestion[],
+function buildQuestionSet(
+  mode: QuizMode,
   difficulty: QuizDifficulty,
 ): QuizQuestion[] {
-  return prepareQuestionsForDifficulty(questions, difficulty);
+  return prepareQuestionsForDifficulty(getQuestionsForMode(mode), difficulty, mode);
 }
 
-export default function QuizGame({ mode, difficulty, onBackToHome }: QuizGameProps) {
+export default function QuizGame({
+  mode,
+  difficulty,
+  answerMode,
+  onBackToHome,
+}: QuizGameProps) {
   const [questions, setQuestions] = useState<QuizQuestion[]>(() =>
-    shuffleQuestions(getQuestionsForMode(mode), difficulty),
+    buildQuestionSet(mode, difficulty),
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [typedAnswer, setTypedAnswer] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
 
@@ -40,8 +51,25 @@ export default function QuizGame({ mode, difficulty, onBackToHome }: QuizGamePro
   const totalQuestions = questions.length;
   const modeInfo = QUIZ_MODES[mode];
   const difficultyInfo = DIFFICULTIES[difficulty];
-  const isCorrect =
-    hasSubmitted && selectedIndex === currentQuestion?.correctIndex;
+  const answerModeInfo = ANSWER_MODES[answerMode];
+  const correctAnswer = currentQuestion
+    ? getCorrectAnswer(currentQuestion)
+    : "";
+
+  const isCorrect = useMemo(() => {
+    if (!hasSubmitted || !currentQuestion) return false;
+    if (answerMode === "typed") {
+      return checkTypedAnswer(typedAnswer, currentQuestion, difficulty);
+    }
+    return selectedIndex === currentQuestion.correctIndex;
+  }, [
+    hasSubmitted,
+    currentQuestion,
+    answerMode,
+    typedAnswer,
+    difficulty,
+    selectedIndex,
+  ]);
 
   const progressPercent = useMemo(() => {
     if (isFinished) return 100;
@@ -49,24 +77,37 @@ export default function QuizGame({ mode, difficulty, onBackToHome }: QuizGamePro
   }, [currentIndex, totalQuestions, isFinished]);
 
   const resetQuiz = useCallback(() => {
-    setQuestions(shuffleQuestions(getQuestionsForMode(mode), difficulty));
+    setQuestions(buildQuestionSet(mode, difficulty));
     setCurrentIndex(0);
     setScore(0);
     setSelectedIndex(null);
+    setTypedAnswer("");
     setHasSubmitted(false);
     setIsFinished(false);
   }, [mode, difficulty]);
 
   const handleSelectAnswer = (index: number) => {
-    if (hasSubmitted || isFinished) return;
+    if (hasSubmitted || isFinished || answerMode === "typed") return;
     setSelectedIndex(index);
   };
 
   const handleSubmit = () => {
-    if (selectedIndex === null || hasSubmitted || isFinished) return;
+    if (hasSubmitted || isFinished || !currentQuestion) return;
+
+    if (answerMode === "typed") {
+      if (!typedAnswer.trim()) return;
+    } else if (selectedIndex === null) {
+      return;
+    }
 
     setHasSubmitted(true);
-    if (selectedIndex === currentQuestion.correctIndex) {
+
+    const correct =
+      answerMode === "typed"
+        ? checkTypedAnswer(typedAnswer, currentQuestion, difficulty)
+        : selectedIndex === currentQuestion.correctIndex;
+
+    if (correct) {
       setScore((prev) => prev + 1);
     }
   };
@@ -78,6 +119,7 @@ export default function QuizGame({ mode, difficulty, onBackToHome }: QuizGamePro
     }
     setCurrentIndex((prev) => prev + 1);
     setSelectedIndex(null);
+    setTypedAnswer("");
     setHasSubmitted(false);
   };
 
@@ -89,6 +131,11 @@ export default function QuizGame({ mode, difficulty, onBackToHome }: QuizGamePro
     if (ratio >= 0.4) return "Not bad! Review and try again.";
     return "Tough round — play again to improve!";
   }, [score, totalQuestions]);
+
+  const canSubmit =
+    answerMode === "typed"
+      ? typedAnswer.trim().length > 0
+      : selectedIndex !== null;
 
   return (
     <div className="quiz-shell relative mx-auto flex min-h-full w-full max-w-2xl flex-col px-4 py-8 sm:px-6">
@@ -118,6 +165,9 @@ export default function QuizGame({ mode, difficulty, onBackToHome }: QuizGamePro
               <span className="quiz-badge">
                 {difficultyInfo.emoji} {difficultyInfo.label}
               </span>
+              <span className="quiz-badge">
+                {answerModeInfo.emoji} {answerModeInfo.label}
+              </span>
             </div>
           </div>
 
@@ -143,44 +193,71 @@ export default function QuizGame({ mode, difficulty, onBackToHome }: QuizGamePro
               {currentQuestion.question}
             </h2>
 
-            <ul className="mt-6 space-y-3">
-              {currentQuestion.options.map((option, index) => {
-                let optionClass =
-                  "border-zinc-200 bg-zinc-50 text-zinc-800 hover:border-indigo-300 hover:bg-indigo-50";
+            {answerMode === "typed" ? (
+              <div className="mt-6">
+                <label
+                  htmlFor="typed-answer"
+                  className="mb-2 block text-sm font-medium text-zinc-600"
+                >
+                  Type your answer
+                </label>
+                <input
+                  id="typed-answer"
+                  type="text"
+                  value={typedAnswer}
+                  disabled={hasSubmitted}
+                  onChange={(event) => setTypedAnswer(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter" && canSubmit && !hasSubmitted) {
+                      handleSubmit();
+                    }
+                  }}
+                  placeholder="Enter your answer..."
+                  className="w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-indigo-400 focus:bg-white focus:ring-2 focus:ring-indigo-200 disabled:opacity-70"
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+              </div>
+            ) : (
+              <ul className="mt-6 space-y-3">
+                {currentQuestion.options.map((option, index) => {
+                  let optionClass =
+                    "border-zinc-200 bg-zinc-50 text-zinc-800 hover:border-indigo-300 hover:bg-indigo-50";
 
-                if (hasSubmitted) {
-                  if (index === currentQuestion.correctIndex) {
-                    optionClass =
-                      "border-emerald-400 bg-emerald-50 text-emerald-900 ring-1 ring-emerald-300";
+                  if (hasSubmitted) {
+                    if (index === currentQuestion.correctIndex) {
+                      optionClass =
+                        "border-emerald-400 bg-emerald-50 text-emerald-900 ring-1 ring-emerald-300";
+                    } else if (index === selectedIndex) {
+                      optionClass =
+                        "border-rose-400 bg-rose-50 text-rose-900 ring-1 ring-rose-300";
+                    } else {
+                      optionClass =
+                        "border-zinc-200 bg-zinc-50 text-zinc-400 opacity-70";
+                    }
                   } else if (index === selectedIndex) {
                     optionClass =
-                      "border-rose-400 bg-rose-50 text-rose-900 ring-1 ring-rose-300";
-                  } else {
-                    optionClass =
-                      "border-zinc-200 bg-zinc-50 text-zinc-400 opacity-70";
+                      "border-indigo-400 bg-indigo-50 text-indigo-900 ring-1 ring-indigo-300";
                   }
-                } else if (index === selectedIndex) {
-                  optionClass =
-                    "border-indigo-400 bg-indigo-50 text-indigo-900 ring-1 ring-indigo-300";
-                }
 
-                return (
-                  <li key={option}>
-                    <button
-                      type="button"
-                      disabled={hasSubmitted}
-                      onClick={() => handleSelectAnswer(index)}
-                      className={`w-full rounded-xl border px-4 py-3 text-left text-sm font-medium transition sm:text-base ${optionClass} disabled:cursor-default`}
-                    >
-                      <span className="mr-2 text-zinc-400">
-                        {String.fromCharCode(65 + index)}.
-                      </span>
-                      {option}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
+                  return (
+                    <li key={option}>
+                      <button
+                        type="button"
+                        disabled={hasSubmitted}
+                        onClick={() => handleSelectAnswer(index)}
+                        className={`w-full rounded-xl border px-4 py-3 text-left text-sm font-medium transition sm:text-base ${optionClass} disabled:cursor-default`}
+                      >
+                        <span className="mr-2 text-zinc-400">
+                          {String.fromCharCode(65 + index)}.
+                        </span>
+                        {option}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
 
             {hasSubmitted && (
               <div
@@ -194,11 +271,7 @@ export default function QuizGame({ mode, difficulty, onBackToHome }: QuizGamePro
                   <span>Correct! Nice one.</span>
                 ) : (
                   <span>
-                    Not quite — the answer is{" "}
-                    <strong>
-                      {currentQuestion.options[currentQuestion.correctIndex]}
-                    </strong>
-                    .
+                    Not quite — the answer is <strong>{correctAnswer}</strong>.
                   </span>
                 )}
               </div>
@@ -209,7 +282,7 @@ export default function QuizGame({ mode, difficulty, onBackToHome }: QuizGamePro
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  disabled={selectedIndex === null}
+                  disabled={!canSubmit}
                   className="w-full rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-zinc-300 disabled:text-zinc-500 sm:text-base"
                 >
                   Submit

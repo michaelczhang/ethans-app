@@ -1,22 +1,29 @@
 "use client";
 
 import {
+  ANSWER_MODES,
   DIFFICULTIES,
+  type AnswerMode,
   type QuizDifficulty,
 } from "@/lib/quiz-difficulty";
 
 interface SettingsPanelProps {
   difficulty: QuizDifficulty;
+  answerMode: AnswerMode;
   onDifficultyChange: (difficulty: QuizDifficulty) => void;
+  onAnswerModeChange: (mode: AnswerMode) => void;
   onClose: () => void;
 }
 
 export default function SettingsPanel({
   difficulty,
+  answerMode,
   onDifficultyChange,
+  onAnswerModeChange,
   onClose,
 }: SettingsPanelProps) {
-  const options = Object.keys(DIFFICULTIES) as QuizDifficulty[];
+  const difficultyOptions = Object.keys(DIFFICULTIES) as QuizDifficulty[];
+  const answerModeOptions = Object.keys(ANSWER_MODES) as AnswerMode[];
 
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center p-4 pt-20 sm:justify-start sm:pl-6 sm:pt-24">
@@ -27,7 +34,7 @@ export default function SettingsPanel({
         onClick={onClose}
       />
       <div
-        className="quiz-card relative w-full max-w-sm rounded-2xl border border-white/20 p-6 shadow-xl"
+        className="quiz-card relative max-h-[85vh] w-full max-w-sm overflow-y-auto rounded-2xl border border-white/20 p-6 shadow-xl"
         role="dialog"
         aria-labelledby="settings-title"
       >
@@ -48,7 +55,7 @@ export default function SettingsPanel({
           Difficulty
         </p>
         <ul className="space-y-2">
-          {options.map((key) => {
+          {difficultyOptions.map((key) => {
             const info = DIFFICULTIES[key];
             const isSelected = difficulty === key;
 
@@ -57,6 +64,38 @@ export default function SettingsPanel({
                 <button
                   type="button"
                   onClick={() => onDifficultyChange(key)}
+                  className={`w-full rounded-xl border px-4 py-3 text-left transition ${
+                    isSelected
+                      ? "border-indigo-400 bg-indigo-50 ring-1 ring-indigo-300"
+                      : "border-zinc-200 bg-zinc-50 hover:border-indigo-200 hover:bg-indigo-50/50"
+                  }`}
+                >
+                  <span className="flex items-center gap-2">
+                    <span aria-hidden="true">{info.emoji}</span>
+                    <span className="font-semibold text-zinc-900">{info.label}</span>
+                  </span>
+                  <span className="mt-1 block text-sm text-zinc-600">
+                    {info.description}
+                  </span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+
+        <p className="mb-3 mt-6 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+          Answer Mode
+        </p>
+        <ul className="space-y-2">
+          {answerModeOptions.map((key) => {
+            const info = ANSWER_MODES[key];
+            const isSelected = answerMode === key;
+
+            return (
+              <li key={key}>
+                <button
+                  type="button"
+                  onClick={() => onAnswerModeChange(key)}
                   className={`w-full rounded-xl border px-4 py-3 text-left transition ${
                     isSelected
                       ? "border-indigo-400 bg-indigo-50 ring-1 ring-indigo-300"
