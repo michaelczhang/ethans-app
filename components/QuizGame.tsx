@@ -7,24 +7,28 @@ import {
   type QuizMode,
   type QuizQuestion,
 } from "@/lib/quiz-data";
+import {
+  DIFFICULTIES,
+  prepareQuestionsForDifficulty,
+  type QuizDifficulty,
+} from "@/lib/quiz-difficulty";
 
 interface QuizGameProps {
   mode: QuizMode;
+  difficulty: QuizDifficulty;
   onBackToHome: () => void;
 }
 
-function shuffleQuestions(questions: QuizQuestion[]): QuizQuestion[] {
-  const copy = [...questions];
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
+function shuffleQuestions(
+  questions: QuizQuestion[],
+  difficulty: QuizDifficulty,
+): QuizQuestion[] {
+  return prepareQuestionsForDifficulty(questions, difficulty);
 }
 
-export default function QuizGame({ mode, onBackToHome }: QuizGameProps) {
+export default function QuizGame({ mode, difficulty, onBackToHome }: QuizGameProps) {
   const [questions, setQuestions] = useState<QuizQuestion[]>(() =>
-    shuffleQuestions(getQuestionsForMode(mode)),
+    shuffleQuestions(getQuestionsForMode(mode), difficulty),
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -35,6 +39,7 @@ export default function QuizGame({ mode, onBackToHome }: QuizGameProps) {
   const currentQuestion = questions[currentIndex];
   const totalQuestions = questions.length;
   const modeInfo = QUIZ_MODES[mode];
+  const difficultyInfo = DIFFICULTIES[difficulty];
   const isCorrect =
     hasSubmitted && selectedIndex === currentQuestion?.correctIndex;
 
@@ -44,13 +49,13 @@ export default function QuizGame({ mode, onBackToHome }: QuizGameProps) {
   }, [currentIndex, totalQuestions, isFinished]);
 
   const resetQuiz = useCallback(() => {
-    setQuestions(shuffleQuestions(getQuestionsForMode(mode)));
+    setQuestions(shuffleQuestions(getQuestionsForMode(mode), difficulty));
     setCurrentIndex(0);
     setScore(0);
     setSelectedIndex(null);
     setHasSubmitted(false);
     setIsFinished(false);
-  }, [mode]);
+  }, [mode, difficulty]);
 
   const handleSelectAnswer = (index: number) => {
     if (hasSubmitted || isFinished) return;
@@ -110,6 +115,9 @@ export default function QuizGame({ mode, onBackToHome }: QuizGameProps) {
               <span className="quiz-badge">
                 Question {currentIndex + 1} / {totalQuestions}
               </span>
+              <span className="quiz-badge">
+                {difficultyInfo.emoji} {difficultyInfo.label}
+              </span>
             </div>
           </div>
 
@@ -121,6 +129,16 @@ export default function QuizGame({ mode, onBackToHome }: QuizGameProps) {
           </div>
 
           <div className="quiz-card flex flex-1 flex-col rounded-2xl border border-white/20 p-6 shadow-lg sm:p-8">
+            {currentQuestion.image && (
+              <div className="mb-5 flex justify-center">
+                <img
+                  key={currentQuestion.id}
+                  src={currentQuestion.image}
+                  alt={currentQuestion.imageAlt ?? ""}
+                  className="quiz-question-image h-40 w-auto rounded-lg border border-zinc-200 bg-white object-contain shadow-sm sm:h-48"
+                />
+              </div>
+            )}
             <h2 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
               {currentQuestion.question}
             </h2>

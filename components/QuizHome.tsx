@@ -1,37 +1,61 @@
 "use client";
 
 import {
+  CATEGORIES,
   QUIZ_MODES,
+  getModesForCategory,
   getQuestionCount,
+  type QuizCategory,
   type QuizMode,
 } from "@/lib/quiz-data";
+import { DIFFICULTIES, type QuizDifficulty } from "@/lib/quiz-difficulty";
 
 const MODE_IMAGES: Record<QuizMode, string> = {
   starcraft: "/backgrounds/starcraft-bg.png",
   pokemon: "/backgrounds/pokemon-bg.png",
   minecraft: "/backgrounds/minecraft-bg.png",
   fortnite: "/backgrounds/fortnite-bg.png",
+  "states-capitals": "/backgrounds/states-bg.png",
+  countries: "/backgrounds/countries-bg.png",
+  "sea-animals": "/backgrounds/sea-animals-bg.png",
+  ocean: "/backgrounds/ocean-bg.png",
 };
 
 interface QuizHomeProps {
+  category: QuizCategory;
+  difficulty: QuizDifficulty;
   onSelectMode: (mode: QuizMode) => void;
+  onBack: () => void;
 }
 
-export default function QuizHome({ onSelectMode }: QuizHomeProps) {
-  const modes = Object.keys(QUIZ_MODES) as QuizMode[];
+export default function QuizHome({
+  category,
+  difficulty,
+  onSelectMode,
+  onBack,
+}: QuizHomeProps) {
+  const modes = getModesForCategory(category);
+  const categoryInfo = CATEGORIES[category];
+  const difficultyInfo = DIFFICULTIES[difficulty];
 
   return (
     <div className="quiz-shell mx-auto flex min-h-full w-full max-w-3xl flex-col px-4 py-10 sm:px-6">
       <header className="mb-10 text-center">
+        <button
+          type="button"
+          onClick={onBack}
+          className="mb-4 text-sm font-medium text-indigo-300 transition hover:text-white"
+        >
+          ← Back to Categories
+        </button>
         <p className="home-label text-sm font-semibold uppercase tracking-widest">
-          Quiz Arena
+          {categoryInfo.label}
         </p>
         <h1 className="home-title mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
           Pick a Quiz
         </h1>
-        <p className="home-subtitle mx-auto mt-3 max-w-lg text-base">
-          Choose a topic below, answer 25 questions, and see how high you can
-          score.
+        <p className="home-subtitle mt-3 text-sm">
+          Difficulty: {difficultyInfo.emoji} {difficultyInfo.label}
         </p>
       </header>
 

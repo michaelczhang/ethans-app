@@ -1,19 +1,32 @@
-const BACKGROUNDS = [
-  { src: "/backgrounds/pokemon-bg.png", alt: "Pokémon themed background" },
-  { src: "/backgrounds/fortnite-bg.png", alt: "Fortnite themed background" },
-  { src: "/backgrounds/starcraft-bg.png", alt: "StarCraft themed background" },
-  { src: "/backgrounds/minecraft-bg.png", alt: "Minecraft themed background" },
-] as const;
+interface QuizBackgroundProps {
+  images: readonly string[];
+}
 
-export default function QuizBackground() {
+const DEFAULT_TILE_COUNT = 4;
+
+function padTiles(images: readonly string[]): string[] {
+  if (images.length === 0) return [];
+  const tiles: string[] = [];
+  for (let i = 0; i < DEFAULT_TILE_COUNT; i++) {
+    tiles.push(images[i % images.length]);
+  }
+  return tiles;
+}
+
+export default function QuizBackground({ images }: QuizBackgroundProps) {
+  const tiles = padTiles(images);
+
   return (
-    <div className="quiz-background fixed inset-0 -z-10 overflow-hidden" aria-hidden>
+    <div
+      className="quiz-background fixed inset-0 -z-10 overflow-hidden"
+      aria-hidden
+    >
       <div className="grid h-full w-full grid-cols-2 grid-rows-2">
-        {BACKGROUNDS.map((bg) => (
+        {tiles.map((src, index) => (
           <div
-            key={bg.src}
+            key={`${src}-${index}`}
             className="quiz-bg-tile bg-cover bg-center"
-            style={{ backgroundImage: `url(${bg.src})` }}
+            style={{ backgroundImage: `url(${src})` }}
           />
         ))}
       </div>
