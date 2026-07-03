@@ -1,4 +1,6 @@
-export type QuizCategory = "games" | "geography" | "aqua";
+import { MUSIC_QUESTIONS } from "@/lib/music-quiz-data";
+
+export type QuizCategory = "games" | "geography" | "aqua" | "music";
 
 export type QuizMode =
   | "starcraft"
@@ -8,7 +10,9 @@ export type QuizMode =
   | "states-capitals"
   | "countries"
   | "sea-animals"
-  | "ocean";
+  | "ocean"
+  | "name-that-tune"
+  | "perfect-pitch";
 
 export interface QuizQuestion {
   id: string;
@@ -18,6 +22,15 @@ export interface QuizQuestion {
   image?: string;
   imageAlt?: string;
   tier?: "easy" | "medium" | "hard";
+}
+
+export interface MusicQuizQuestion extends QuizQuestion {
+  audio: string;
+  artist: string;
+  songTitle: string;
+  genre: import("@/lib/music-genre").MusicGenre;
+  songAliases?: string[];
+  artistAliases?: string[];
 }
 
 export const CATEGORIES: Record<
@@ -41,6 +54,12 @@ export const CATEGORIES: Record<
     emoji: "🌊",
     description: "Sea creatures, coral reefs, and ocean science",
     image: "/backgrounds/aqua-bg.png",
+  },
+  music: {
+    label: "Music",
+    emoji: "🎵",
+    description: "Listen to a clip and name the song — bonus for the artist",
+    image: "/backgrounds/music-bg.svg",
   },
 };
 
@@ -100,6 +119,18 @@ export const QUIZ_MODES: Record<
     emoji: "🌊",
     description: "Tides, trenches, currents, and ocean facts.",
     category: "aqua",
+  },
+  "name-that-tune": {
+    label: "Name That Tune",
+    emoji: "🎧",
+    description: "Real hit songs — hear the opening and name the track (+ artist bonus).",
+    category: "music",
+  },
+  "perfect-pitch": {
+    label: "Perfect Pitch",
+    emoji: "🎼",
+    description: "Hear a single note and identify it — test your ear.",
+    category: "music",
   },
 };
 
@@ -1401,10 +1432,15 @@ export function getQuestionsForMode(mode: QuizMode): QuizQuestion[] {
       return SEA_ANIMALS_QUESTIONS;
     case "ocean":
       return OCEAN_QUESTIONS;
+    case "name-that-tune":
+      return MUSIC_QUESTIONS;
+    case "perfect-pitch":
+      return [];
   }
 }
 
 export function getQuestionCount(mode: QuizMode): number {
+  if (mode === "perfect-pitch") return 24;
   return getQuestionsForMode(mode).length;
 }
 

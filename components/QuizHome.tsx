@@ -8,6 +8,17 @@ import {
   type QuizCategory,
   type QuizMode,
 } from "@/lib/quiz-data";
+import {
+  INSTRUMENTS,
+  INSTRUMENT_KEYS,
+  type MusicInstrument,
+} from "@/lib/music-instrument";
+import {
+  MUSIC_GENRE_FILTER_KEYS,
+  MUSIC_GENRE_FILTERS,
+  type MusicGenreFilter,
+} from "@/lib/music-genre";
+import { getMusicTrackCount } from "@/lib/music-quiz-data";
 import { ANSWER_MODES, DIFFICULTIES, type AnswerMode, type QuizDifficulty } from "@/lib/quiz-difficulty";
 
 const MODE_IMAGES: Record<QuizMode, string> = {
@@ -19,12 +30,18 @@ const MODE_IMAGES: Record<QuizMode, string> = {
   countries: "/backgrounds/countries-bg.png",
   "sea-animals": "/backgrounds/sea-animals-bg.png",
   ocean: "/backgrounds/ocean-bg.png",
+  "name-that-tune": "/backgrounds/music-bg.svg",
+  "perfect-pitch": "/backgrounds/music-bg.svg",
 };
 
 interface QuizHomeProps {
   category: QuizCategory;
   difficulty: QuizDifficulty;
   answerMode: AnswerMode;
+  instrument: MusicInstrument;
+  genre: MusicGenreFilter;
+  onInstrumentChange: (instrument: MusicInstrument) => void;
+  onGenreChange: (genre: MusicGenreFilter) => void;
   onSelectMode: (mode: QuizMode) => void;
   onBack: () => void;
 }
@@ -33,6 +50,10 @@ export default function QuizHome({
   category,
   difficulty,
   answerMode,
+  instrument,
+  genre,
+  onInstrumentChange,
+  onGenreChange,
   onSelectMode,
   onBack,
 }: QuizHomeProps) {
@@ -63,10 +84,95 @@ export default function QuizHome({
         </p>
       </header>
 
+      {category === "music" && (
+        <div className="mb-8 space-y-4">
+          <section className="rounded-2xl border border-white/20 bg-white/90 p-4 shadow-lg backdrop-blur sm:p-5">
+            <p className="text-center text-xs font-semibold uppercase tracking-widest text-indigo-600">
+              Genre
+            </p>
+            <p className="mt-1 text-center text-sm text-zinc-500">
+              Used for Name That Tune — pick which style of music to quiz
+            </p>
+            <div
+              className="mt-4 flex flex-wrap justify-center gap-2"
+              role="tablist"
+              aria-label="Music genre"
+            >
+              {MUSIC_GENRE_FILTER_KEYS.map((key) => {
+                const info = MUSIC_GENRE_FILTERS[key];
+                const isActive = genre === key;
+                const count = getMusicTrackCount(key);
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => onGenreChange(key)}
+                    className={`rounded-xl border px-3 py-2 text-sm font-semibold transition sm:px-4 ${
+                      isActive
+                        ? "border-violet-500 bg-violet-600 text-white shadow-md"
+                        : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-violet-300 hover:bg-violet-50"
+                    }`}
+                  >
+                    <span className="mr-1.5" aria-hidden="true">
+                      {info.emoji}
+                    </span>
+                    {info.label}
+                    <span className="ml-1.5 text-xs opacity-80">({count})</span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+
+          <section className="rounded-2xl border border-white/20 bg-white/90 p-4 shadow-lg backdrop-blur sm:p-5">
+            <p className="text-center text-xs font-semibold uppercase tracking-widest text-indigo-600">
+              Instrument
+            </p>
+            <p className="mt-1 text-center text-sm text-zinc-500">
+              Used for Perfect Pitch — pick the sound you want to hear
+            </p>
+            <div
+              className="mt-4 flex flex-wrap justify-center gap-2"
+              role="tablist"
+              aria-label="Instrument"
+            >
+              {INSTRUMENT_KEYS.map((key) => {
+                const info = INSTRUMENTS[key];
+                const isActive = instrument === key;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => onInstrumentChange(key)}
+                    className={`rounded-xl border px-3 py-2 text-sm font-semibold transition sm:px-4 ${
+                      isActive
+                        ? "border-indigo-500 bg-indigo-600 text-white shadow-md"
+                        : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-indigo-300 hover:bg-indigo-50"
+                    }`}
+                  >
+                    <span className="mr-1.5" aria-hidden="true">
+                      {info.emoji}
+                    </span>
+                    {info.label}
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        </div>
+      )}
+
       <div className="grid gap-4 sm:grid-cols-2">
         {modes.map((key) => {
           const info = QUIZ_MODES[key];
-          const count = getQuestionCount(key);
+          const count =
+            key === "name-that-tune"
+              ? getMusicTrackCount(genre)
+              : getQuestionCount(key);
 
           return (
             <button
@@ -89,8 +195,24 @@ export default function QuizHome({
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600">
                   {info.description}
                 </p>
+                {key === "name-that-tune" && (
+                  <p className="mt-2 text-xs font-medium text-violet-600">
+                    {MUSIC_GENRE_FILTERS[genre].emoji}{" "}
+                    {MUSIC_GENRE_FILTERS[genre].label}
+                  </p>
+                )}
+                {key === "perfect-pitch" && (
+                  <p className="mt-2 text-xs font-medium text-violet-600">
+                    {INSTRUMENTS[instrument].emoji} {INSTRUMENTS[instrument].label}
+                  </p>
+                )}
                 <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-indigo-600">
-                  {count} questions →
+                  {key === "perfect-pitch"
+                    ? `Up to ${count} notes`
+                    : key === "name-that-tune"
+                      ? `${count} songs`
+                      : `${count} questions`}{" "}
+                  →
                 </p>
               </div>
             </button>

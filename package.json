@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate-music": "node scripts/generate-music-clips.mjs",
+    "fetch-itunes": "node scripts/fetch-itunes-previews.mjs",
+    "music-data": "node scripts/generate-music-quiz-data.mjs"
   },
   "dependencies": {
     "next": "16.2.10",

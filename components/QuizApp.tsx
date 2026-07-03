@@ -2,10 +2,22 @@
 
 import { useEffect, useState } from "react";
 import CategoryHome from "@/components/CategoryHome";
+import MusicQuizGame from "@/components/MusicQuizGame";
+import PerfectPitchQuizGame from "@/components/PerfectPitchQuizGame";
 import QuizBackground from "@/components/QuizBackground";
 import QuizGame from "@/components/QuizGame";
 import QuizHome from "@/components/QuizHome";
 import { QUIZ_MODES, type QuizCategory, type QuizMode } from "@/lib/quiz-data";
+import {
+  loadInstrument,
+  saveInstrument,
+  type MusicInstrument,
+} from "@/lib/music-instrument";
+import {
+  loadMusicGenre,
+  saveMusicGenre,
+  type MusicGenreFilter,
+} from "@/lib/music-genre";
 import {
   loadAnswerMode,
   loadDifficulty,
@@ -37,12 +49,14 @@ const CATEGORY_BACKGROUNDS: Record<QuizCategory, string[]> = {
     "/backgrounds/sea-animals-bg.png",
     "/backgrounds/ocean-bg.png",
   ],
+  music: ["/backgrounds/music-bg.svg"],
 };
 
 const CATEGORIES_VIEW_BACKGROUNDS: string[] = [
   "/backgrounds/starcraft-bg.png",
   "/backgrounds/geography-bg.png",
   "/backgrounds/aqua-bg.png",
+  "/backgrounds/music-bg.svg",
   "/backgrounds/sea-animals-bg.png",
 ];
 
@@ -52,14 +66,22 @@ function backgroundsForView(view: View): string[] {
   return CATEGORY_BACKGROUNDS[QUIZ_MODES[view.mode].category];
 }
 
+function isSpecialMusicQuiz(mode: QuizMode): boolean {
+  return mode === "name-that-tune" || mode === "perfect-pitch";
+}
+
 export default function QuizApp() {
   const [view, setView] = useState<View>({ name: "categories" });
   const [difficulty, setDifficulty] = useState<QuizDifficulty>("medium");
   const [answerMode, setAnswerMode] = useState<AnswerMode>("multiple-choice");
+  const [instrument, setInstrument] = useState<MusicInstrument>("piano");
+  const [genre, setGenre] = useState<MusicGenreFilter>("all");
 
   useEffect(() => {
     setDifficulty(loadDifficulty());
     setAnswerMode(loadAnswerMode());
+    setInstrument(loadInstrument());
+    setGenre(loadMusicGenre());
   }, []);
 
   const handleDifficultyChange = (next: QuizDifficulty) => {
@@ -70,6 +92,16 @@ export default function QuizApp() {
   const handleAnswerModeChange = (next: AnswerMode) => {
     setAnswerMode(next);
     saveAnswerMode(next);
+  };
+
+  const handleInstrumentChange = (next: MusicInstrument) => {
+    setInstrument(next);
+    saveInstrument(next);
+  };
+
+  const handleGenreChange = (next: MusicGenreFilter) => {
+    setGenre(next);
+    saveMusicGenre(next);
   };
 
   return (
@@ -91,13 +123,37 @@ export default function QuizApp() {
           category={view.category}
           difficulty={difficulty}
           answerMode={answerMode}
+          instrument={instrument}
+          genre={genre}
+          onInstrumentChange={handleInstrumentChange}
+          onGenreChange={handleGenreChange}
           onSelectMode={(mode) =>
             setView({ name: "quiz", mode, category: view.category })
           }
           onBack={() => setView({ name: "categories" })}
         />
       )}
-      {view.name === "quiz" && (
+      {view.name === "quiz" && view.mode === "name-that-tune" && (
+        <MusicQuizGame
+          difficulty={difficulty}
+          answerMode={answerMode}
+          genre={genre}
+          onBackToHome={() =>
+            setView({ name: "quizzes-list", category: view.category })
+          }
+        />
+      )}
+      {view.name === "quiz" && view.mode === "perfect-pitch" && (
+        <PerfectPitchQuizGame
+          difficulty={difficulty}
+          answerMode={answerMode}
+          instrument={instrument}
+          onBackToHome={() =>
+            setView({ name: "quizzes-list", category: view.category })
+          }
+        />
+      )}
+      {view.name === "quiz" && !isSpecialMusicQuiz(view.mode) && (
         <QuizGame
           mode={view.mode}
           difficulty={difficulty}
