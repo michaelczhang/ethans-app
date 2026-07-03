@@ -11,7 +11,10 @@ import {
   getArtistName,
   getSongTitle,
 } from "@/lib/music-quiz";
-import { MUSIC_CLIP_SECONDS, getMusicQuestionsForGenre } from "@/lib/music-quiz-data";
+import { MUSIC_CLIP_SECONDS, getMusicQuestionsForFilters } from "@/lib/music-quiz-data";
+import type { MusicFilters } from "@/lib/music-quiz-data";
+import type { MusicArtistFilter } from "@/lib/music-artist";
+import { MUSIC_ARTIST_FILTERS } from "@/lib/music-artist";
 import type { MusicGenreFilter } from "@/lib/music-genre";
 import { MUSIC_GENRE_FILTERS } from "@/lib/music-genre";
 import {
@@ -26,15 +29,16 @@ interface MusicQuizGameProps {
   difficulty: QuizDifficulty;
   answerMode: AnswerMode;
   genre: MusicGenreFilter;
+  artist: MusicArtistFilter;
   onBackToHome: () => void;
 }
 
 function buildQuestionSet(
   difficulty: QuizDifficulty,
-  genre: MusicGenreFilter,
+  filters: MusicFilters,
 ): MusicQuizQuestion[] {
   return prepareQuestionsForDifficulty(
-    getMusicQuestionsForGenre(genre),
+    getMusicQuestionsForFilters(filters),
     difficulty,
     "name-that-tune",
   ) as MusicQuizQuestion[];
@@ -44,11 +48,12 @@ export default function MusicQuizGame({
   difficulty,
   answerMode,
   genre,
+  artist,
   onBackToHome,
 }: MusicQuizGameProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [questions, setQuestions] = useState<MusicQuizQuestion[]>(() =>
-    buildQuestionSet(difficulty, genre),
+    buildQuestionSet(difficulty, { genre, artist }),
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [songScore, setSongScore] = useState(0);
@@ -64,9 +69,11 @@ export default function MusicQuizGame({
   const totalQuestions = questions.length;
   const modeInfo = QUIZ_MODES["name-that-tune"];
   const genreInfo = MUSIC_GENRE_FILTERS[genre];
+  const artistInfo = MUSIC_ARTIST_FILTERS[artist];
   const difficultyInfo = DIFFICULTIES[difficulty];
   const answerModeInfo = ANSWER_MODES[answerMode];
-  const maxScore = totalQuestions * 2;
+  const artistBonusEnabled = artist === "all";
+  const maxScore = artistBonusEnabled ? totalQuestions * 2 : totalQuestions;
   const totalScore = songScore + artistBonus;
 
   const songCorrect = useMemo(() => {
@@ -95,7 +102,7 @@ export default function MusicQuizGame({
   }, [currentIndex, totalQuestions, isFinished]);
 
   const resetQuiz = useCallback(() => {
-    setQuestions(buildQuestionSet(difficulty, genre));
+    setQuestions(buildQuestionSet(difficulty, { genre, artist }));
     setCurrentIndex(0);
     setSongScore(0);
     setArtistBonus(0);
@@ -105,7 +112,7 @@ export default function MusicQuizGame({
     setHasSubmitted(false);
     setIsFinished(false);
     setIsPlaying(false);
-  }, [difficulty, genre]);
+  }, [difficulty, genre, artist]);
 
   const playClip = useCallback(async () => {
     const audio = audioRef.current;
@@ -177,13 +184,14 @@ export default function MusicQuizGame({
         : selectedIndex === currentQuestion.correctIndex;
 
     const artistIsCorrect =
+      artistBonusEnabled &&
       typedArtist.trim().length > 0 &&
       checkArtistAnswer(typedArtist, currentQuestion, difficulty);
 
     if (songIsCorrect) {
       setSongScore((prev) => prev + 1);
     }
-    if (songIsCorrect && artistIsCorrect) {
+    if (artistBonusEnabled && songIsCorrect && artistIsCorrect) {
       setArtistBonus((prev) => prev + 1);
     }
   };
@@ -202,12 +210,16 @@ export default function MusicQuizGame({
 
   const scoreMessage = useMemo(() => {
     const ratio = totalScore / maxScore;
-    if (ratio === 1) return "Perfect ears! Song and artist master.";
+    if (ratio === 1) {
+      return artistBonusEnabled
+        ? "Perfect ears! Song and artist master."
+        : "Perfect run! Every song nailed.";
+    }
     if (ratio >= 0.75) return "Amazing! You really know your music.";
     if (ratio >= 0.5) return "Solid round — keep listening!";
     if (ratio >= 0.3) return "Good start — replay clips and try again.";
     return "Tough set — give it another spin!";
-  }, [totalScore, maxScore]);
+  }, [totalScore, maxScore, artistBonusEnabled]);
 
   const canSubmit =
     answerMode === "typed"
@@ -232,6 +244,12 @@ export default function MusicQuizGame({
           </h1>
           <p className="mt-1 text-sm text-indigo-200">
             {genreInfo.emoji} {genreInfo.label}
+            {artist !== "all" && (
+              <>
+                {" "}
+                · {artistInfo.emoji} {artistInfo.label}
+              </>
+            )}
           </p>
         </div>
       </header>
@@ -255,6 +273,11 @@ export default function MusicQuizGame({
               <span className="quiz-badge">
                 {genreInfo.emoji} {genreInfo.label}
               </span>
+              {artist !== "all" && (
+                <span className="quiz-badge">
+                  {artistInfo.emoji} {artistInfo.label}
+                </span>
+              )}
             </div>
           </div>
 
@@ -269,7 +292,10 @@ export default function MusicQuizGame({
             <div className="mb-6 rounded-2xl border border-indigo-100 bg-gradient-to-br from-indigo-50 to-violet-50 p-5">
               <p className="text-sm font-medium text-indigo-700">
                 Listen to the first {MUSIC_CLIP_SECONDS} seconds, then name the
-                song. Type the artist for a bonus point!
+                song
+                {artistBonusEnabled
+                  ? ". Type the artist for a bonus point!"
+                  : `. All songs are by ${artistInfo.label}.`}
               </p>
               <audio
                 ref={audioRef}
@@ -367,25 +393,27 @@ export default function MusicQuizGame({
               </ul>
             )}
 
-            <div className="mt-6">
-              <label
-                htmlFor="typed-artist"
-                className="mb-2 block text-sm font-medium text-zinc-600"
-              >
-                Artist <span className="text-indigo-500">(+1 bonus if correct)</span>
-              </label>
-              <input
-                id="typed-artist"
-                type="text"
-                value={typedArtist}
-                disabled={hasSubmitted}
-                onChange={(event) => setTypedArtist(event.target.value)}
-                placeholder="Who performs this song?"
-                className="w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-indigo-400 focus:bg-white focus:ring-2 focus:ring-indigo-200 disabled:opacity-70"
-                autoComplete="off"
-                spellCheck={false}
-              />
-            </div>
+            {artistBonusEnabled && (
+              <div className="mt-6">
+                <label
+                  htmlFor="typed-artist"
+                  className="mb-2 block text-sm font-medium text-zinc-600"
+                >
+                  Artist <span className="text-indigo-500">(+1 bonus if correct)</span>
+                </label>
+                <input
+                  id="typed-artist"
+                  type="text"
+                  value={typedArtist}
+                  disabled={hasSubmitted}
+                  onChange={(event) => setTypedArtist(event.target.value)}
+                  placeholder="Who performs this song?"
+                  className="w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-indigo-400 focus:bg-white focus:ring-2 focus:ring-indigo-200 disabled:opacity-70"
+                  autoComplete="off"
+                  spellCheck={false}
+                />
+              </div>
+            )}
 
             {hasSubmitted && (
               <div
@@ -403,7 +431,7 @@ export default function MusicQuizGame({
                     <strong>{getSongTitle(currentQuestion)}</strong>.
                   </p>
                 )}
-                {typedArtist.trim() && (
+                {artistBonusEnabled && typedArtist.trim() && (
                   <p className={artistCorrect ? "text-emerald-700" : "text-rose-700"}>
                     {artistCorrect ? (
                       songCorrect ? (
@@ -458,7 +486,9 @@ export default function MusicQuizGame({
               {totalScore} / {maxScore}
             </p>
             <p className="mt-2 text-sm text-indigo-600">
-              {songScore} songs · {artistBonus} artist bonuses
+              {artistBonusEnabled
+                ? `${songScore} songs · ${artistBonus} artist bonuses`
+                : `${songScore} songs correct`}
             </p>
             <p className="mt-2 text-sm text-indigo-600">{scoreMessage}</p>
           </div>

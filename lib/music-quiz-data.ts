@@ -1,10 +1,14 @@
 import type { MusicQuizQuestion } from "@/lib/quiz-data";
+import {
+  trackMatchesArtist,
+  type MusicArtistFilter,
+} from "@/lib/music-artist";
 import type { MusicGenre, MusicGenreFilter } from "@/lib/music-genre";
 
 /** Seconds of each preview clip to play (iTunes previews are ~30s; we trim to the opening). */
 export const MUSIC_CLIP_SECONDS = 15;
 
-type TrackSeed = {
+export type TrackSeed = {
   id: string;
   songTitle: string;
   artist: string;
@@ -15,7 +19,12 @@ type TrackSeed = {
   tier?: "easy" | "medium" | "hard";
 };
 
-const TRACKS: TrackSeed[] = [
+export type MusicFilters = {
+  genre: MusicGenreFilter;
+  artist: MusicArtistFilter;
+};
+
+export const TRACKS: TrackSeed[] = [
   {
     id: "music-1",
     songTitle: "Billie Jean",
@@ -740,6 +749,410 @@ const TRACKS: TrackSeed[] = [
     artistAliases: ["Coldplay x BTS", "BTS"],
     tier: "medium",
   },
+  {
+    id: "music-80",
+    songTitle: "Apologize",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d7/a5/ac/d7a5ac54-0dbf-5bea-df14-c9965ac2e682/mzaf_2048711194344336393.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-81",
+    songTitle: "Secrets",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/6f/89/7c6f896d-e83a-87d5-bb8a-8601da470403/mzaf_13387475480559212540.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-82",
+    songTitle: "Good Life (iTunes Session)",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/4c/bb/e9/4cbbe94d-75ac-5edd-7afe-ed357a081fb9/mzaf_8378367554654084515.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "easy",
+  },
+  {
+    id: "music-83",
+    songTitle: "Stop and Stare",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/df/0b/6b/df0b6bb1-b5a5-c071-4bfe-995e4862d327/mzaf_2065875964758493665.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-84",
+    songTitle: "If I Lose Myself",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3c/9f/22/3c9f2284-01be-2d40-cb7e-ecbdf9b6cdd1/mzaf_10773611713967523163.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-85",
+    songTitle: "Love Runs Out",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a4/6a/60/a46a6071-1306-d32f-9cb9-006ada95b353/mzaf_8276479845023814826.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-86",
+    songTitle: "All The Right Moves",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/86/a8/1f/86a81fa4-95d7-b3fb-87f7-8403ec24783e/mzaf_1148162306280550559.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-87",
+    songTitle: "Feel Again",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2c/62/f3/2c62f3bc-a4b7-af70-5e0b-2050cb7dcc78/mzaf_2694003188951343399.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "easy",
+  },
+  {
+    id: "music-88",
+    songTitle: "I Ain't Worried",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1e/a1/3d/1ea13da1-8ac6-e603-ec6f-3f6d5b89f8f3/mzaf_8445589109258687921.plus.aac.p.m4a",
+    genre: "pop",
+    songAliases: ["I Aint Worried"],
+    tier: "easy",
+  },
+  {
+    id: "music-89",
+    songTitle: "Wanted",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/06/22/6d/06226dcf-59b9-8e84-6ce3-fd678d592826/mzaf_8241401672335071943.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-90",
+    songTitle: "Rescue Me",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/32/31/d7/3231d7f5-7a94-6f33-5be7-043bd33a80ba/mzaf_8160567856128636185.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-91",
+    songTitle: "Heaven",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0d/7b/01/0d7b01a9-64cc-5f49-b01b-3abd01f97a4a/mzaf_9995448488109519655.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-92",
+    songTitle: "Someday",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8a/b8/5a/8ab85aab-7aa6-8ec4-49d2-04713db0c243/mzaf_17439399566899788116.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-93",
+    songTitle: "Connection",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/64/22/82/6422821f-44c5-2fd0-3caf-aee01dbcc7ca/mzaf_4208706188746189409.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-94",
+    songTitle: "Nobody (from Kaiju No. 8)",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b5/9b/14/b59b1431-4908-3b7a-fd4d-bb86d193ca6a/mzaf_1746474897586183065.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "hard",
+  },
+  {
+    id: "music-95",
+    songTitle: "Preacher",
+    artist: "OneRepublic",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/de/31/1b/de311b23-aa26-976f-2458-4f20078769f0/mzaf_11505353645811099889.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "hard",
+  },
+  {
+    id: "music-96",
+    songTitle: "Love Story",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8b/4c/b3/8b4cb3a5-b1d1-c82c-e6ab-48cc3969d4ff/mzaf_858711921713575608.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "easy",
+  },
+  {
+    id: "music-97",
+    songTitle: "You Belong With Me",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ec/84/f2/ec84f262-1498-583f-dd5b-cd1a78587bce/mzaf_8651470950553551918.plus.aac.p.m4a",
+    genre: "pop",
+    songAliases: ["You Belong with Me"],
+    tier: "easy",
+  },
+  {
+    id: "music-98",
+    songTitle: "Blank Space",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f1/dd/3a/f1dd3add-0fc5-2e35-3460-923fb707f21e/mzaf_7924539200493199372.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-99",
+    songTitle: "Style",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/5d/72/bd5d726f-f082-732a-bfac-102ab3739ec7/mzaf_13805328136345741566.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-100",
+    songTitle: "Wildest Dreams",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/45/26/a4/4526a416-a6ee-44a1-92a5-bde8369d898c/mzaf_7980441848261718723.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-101",
+    songTitle: "Anti-Hero",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1d/56/2a/1d562a07-dc5f-a9c0-1f36-2051a8c14eb7/mzaf_7214829135431340590.plus.aac.p.m4a",
+    genre: "pop",
+    songAliases: ["Anti Hero"],
+    tier: "medium",
+  },
+  {
+    id: "music-102",
+    songTitle: "Cruel Summer",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/af/81/44af8168-9609-1b85-5048-ada08dceacf3/mzaf_1341699644335558812.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-103",
+    songTitle: "We Are Never Ever Getting Back Together",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/bc/71/fa/bc71fa68-e311-5aa5-20bc-0f52cace4fcf/mzaf_9597223352300847194.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "easy",
+  },
+  {
+    id: "music-104",
+    songTitle: "I Knew You Were Trouble",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/54/8f/a3/548fa33c-74cc-65ae-5f50-2a6858753397/mzaf_4018994675652787372.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-105",
+    songTitle: "Look What You Made Me Do",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3b/26/64/3b26645a-2c49-f0c7-fa6d-be6ad83b0ae9/mzaf_4194244291813253017.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-106",
+    songTitle: "cardigan",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/00/b3/f2/00b3f2a0-3228-b65f-7189-91eb26f5adf6/mzaf_3535055549125623460.plus.aac.p.m4a",
+    genre: "pop",
+    songAliases: ["Cardigan"],
+    tier: "medium",
+  },
+  {
+    id: "music-107",
+    songTitle: "Lover",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e0/db/47/e0db47b0-7f70-0631-0414-cd4777d2fb3e/mzaf_6362891154838442638.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "easy",
+  },
+  {
+    id: "music-108",
+    songTitle: "You Need To Calm Down",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e8/80/4f/e8804fa1-6118-74fd-4602-b96969ebef41/mzaf_5457103975229379192.plus.aac.p.m4a",
+    genre: "pop",
+    songAliases: ["You Need to Calm Down"],
+    tier: "easy",
+  },
+  {
+    id: "music-109",
+    songTitle: "ME! (feat. Brendon Urie of Panic! At The Disco)",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c5/6f/e3/c56fe3a6-2f25-b545-6135-aaba0a838569/mzaf_1819099962104489735.plus.aac.p.m4a",
+    genre: "pop",
+    songAliases: ["Me"],
+    tier: "easy",
+  },
+  {
+    id: "music-110",
+    songTitle: "Delicate",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a7/24/e8/a724e804-d5df-f7a7-24cc-09df9df57a79/mzaf_4087189896444308455.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-111",
+    songTitle: "Gorgeous",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b5/c7/76/b5c77613-f75e-1895-f9ed-a39a0907dec0/mzaf_8863959442271111939.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-112",
+    songTitle: "Enchanted",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ff/f2/da/fff2daa7-e089-c08b-9b34-d2ba8d8ee37c/mzaf_13585740172543756019.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "hard",
+  },
+  {
+    id: "music-113",
+    songTitle: "All Too Well",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/98/45/5e/98455e46-746d-c879-c610-48322068929b/mzaf_12082529185475484305.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "hard",
+  },
+  {
+    id: "music-114",
+    songTitle: "22",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/55/86/02/55860256-c850-4a30-a97c-3083210f1325/mzaf_427967193683630924.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "easy",
+  },
+  {
+    id: "music-115",
+    songTitle: "Our Song",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/49/22/e5/4922e538-7172-1f13-7b98-673915553bdd/mzaf_16010520491370125418.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "easy",
+  },
+  {
+    id: "music-116",
+    songTitle: "Teardrops On My Guitar",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/87/8e/b8/878eb86a-bd25-fa85-414b-82403d8629ea/mzaf_4527437505274510479.plus.aac.p.m4a",
+    genre: "pop",
+    songAliases: ["Teardrops on My Guitar"],
+    tier: "easy",
+  },
+  {
+    id: "music-117",
+    songTitle: "Lavender Haze",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e8/3d/a6/e83da665-dc67-5d12-1bcb-92b2cbff0eb2/mzaf_8022777830254348609.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-118",
+    songTitle: "Karma",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e4/11/80/e41180a4-df9e-2347-c956-a12eb3259102/mzaf_16028347522538508645.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-119",
+    songTitle: "Bad Blood",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/48/ac/ea/48acea0d-8faf-34e1-b6a6-76ae2944d478/mzaf_4651792087173004763.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-120",
+    songTitle: "Fortnight (feat. Post Malone)",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/90/67/b5/9067b561-f437-d4ce-1f2f-ac3913339d72/mzaf_9669199482319820236.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "hard",
+  },
+  {
+    id: "music-121",
+    songTitle: "The Man",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3b/b7/c6/3bb7c6f7-d06f-f91c-7801-0ed0a6257e1c/mzaf_12747815097409700369.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
+  {
+    id: "music-122",
+    songTitle: "Back To December",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7f/41/6c/7f416cce-44f0-52ff-79c7-031943d61848/mzaf_13058990753845209936.plus.aac.p.m4a",
+    genre: "pop",
+    songAliases: ["Back to December"],
+    tier: "medium",
+  },
+  {
+    id: "music-123",
+    songTitle: "Mine",
+    artist: "Taylor Swift",
+    audio:
+      "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/64/78/6f/64786fbc-3294-4561-d02f-87adda756293/mzaf_12118142068342740523.plus.aac.p.m4a",
+    genre: "pop",
+    tier: "medium",
+  },
 ];
 
 function pickDistractors(titles: string[], correct: string, seed: number): string[] {
@@ -753,7 +1166,9 @@ function pickDistractors(titles: string[], correct: string, seed: number): strin
   return picked;
 }
 
-function buildMusicQuestionsFromTracks(seedTracks: TrackSeed[]): MusicQuizQuestion[] {
+export function buildMusicQuestionsFromTracks(
+  seedTracks: TrackSeed[],
+): MusicQuizQuestion[] {
   const titles = seedTracks.map((track) => track.songTitle);
 
   return seedTracks.map((track, index) => {
@@ -778,20 +1193,37 @@ function buildMusicQuestionsFromTracks(seedTracks: TrackSeed[]): MusicQuizQuesti
   });
 }
 
+export function filterMusicTracks(filters: MusicFilters): TrackSeed[] {
+  return TRACKS.filter((track) => {
+    if (filters.genre !== "all" && track.genre !== filters.genre) return false;
+    if (filters.artist !== "all" && !trackMatchesArtist(track, filters.artist)) {
+      return false;
+    }
+    return true;
+  });
+}
+
 export function buildMusicQuestions(): MusicQuizQuestion[] {
   return buildMusicQuestionsFromTracks(TRACKS);
+}
+
+export function getMusicQuestionsForFilters(
+  filters: MusicFilters,
+): MusicQuizQuestion[] {
+  return buildMusicQuestionsFromTracks(filterMusicTracks(filters));
+}
+
+export function getMusicTrackCount(filters: Partial<MusicFilters> = {}): number {
+  return filterMusicTracks({
+    genre: filters.genre ?? "all",
+    artist: filters.artist ?? "all",
+  }).length;
 }
 
 export function getMusicQuestionsForGenre(
   genre: MusicGenreFilter,
 ): MusicQuizQuestion[] {
-  if (genre === "all") return buildMusicQuestions();
-  return buildMusicQuestionsFromTracks(TRACKS.filter((track) => track.genre === genre));
-}
-
-export function getMusicTrackCount(genre: MusicGenreFilter = "all"): number {
-  if (genre === "all") return TRACKS.length;
-  return TRACKS.filter((track) => track.genre === genre).length;
+  return getMusicQuestionsForFilters({ genre, artist: "all" });
 }
 
 export const MUSIC_QUESTIONS: MusicQuizQuestion[] = buildMusicQuestions();

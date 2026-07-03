@@ -19,6 +19,12 @@ import {
   type MusicGenreFilter,
 } from "@/lib/music-genre";
 import {
+  loadMusicArtist,
+  saveMusicArtist,
+  type MusicArtistFilter,
+} from "@/lib/music-artist";
+import { getMusicTrackCount } from "@/lib/music-quiz-data";
+import {
   loadAnswerMode,
   loadDifficulty,
   saveAnswerMode,
@@ -76,13 +82,25 @@ export default function QuizApp() {
   const [answerMode, setAnswerMode] = useState<AnswerMode>("multiple-choice");
   const [instrument, setInstrument] = useState<MusicInstrument>("piano");
   const [genre, setGenre] = useState<MusicGenreFilter>("all");
+  const [artist, setArtist] = useState<MusicArtistFilter>("all");
 
   useEffect(() => {
     setDifficulty(loadDifficulty());
     setAnswerMode(loadAnswerMode());
     setInstrument(loadInstrument());
     setGenre(loadMusicGenre());
+    setArtist(loadMusicArtist());
   }, []);
+
+  useEffect(() => {
+    if (
+      artist !== "all" &&
+      getMusicTrackCount({ genre, artist }) === 0
+    ) {
+      setArtist("all");
+      saveMusicArtist("all");
+    }
+  }, [genre, artist]);
 
   const handleDifficultyChange = (next: QuizDifficulty) => {
     setDifficulty(next);
@@ -102,6 +120,11 @@ export default function QuizApp() {
   const handleGenreChange = (next: MusicGenreFilter) => {
     setGenre(next);
     saveMusicGenre(next);
+  };
+
+  const handleArtistChange = (next: MusicArtistFilter) => {
+    setArtist(next);
+    saveMusicArtist(next);
   };
 
   return (
@@ -125,8 +148,10 @@ export default function QuizApp() {
           answerMode={answerMode}
           instrument={instrument}
           genre={genre}
+          artist={artist}
           onInstrumentChange={handleInstrumentChange}
           onGenreChange={handleGenreChange}
+          onArtistChange={handleArtistChange}
           onSelectMode={(mode) =>
             setView({ name: "quiz", mode, category: view.category })
           }
@@ -138,6 +163,7 @@ export default function QuizApp() {
           difficulty={difficulty}
           answerMode={answerMode}
           genre={genre}
+          artist={artist}
           onBackToHome={() =>
             setView({ name: "quizzes-list", category: view.category })
           }

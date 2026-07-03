@@ -18,6 +18,11 @@ import {
   MUSIC_GENRE_FILTERS,
   type MusicGenreFilter,
 } from "@/lib/music-genre";
+import {
+  MUSIC_ARTIST_FILTERS,
+  getAvailableArtistIds,
+  type MusicArtistFilter,
+} from "@/lib/music-artist";
 import { getMusicTrackCount } from "@/lib/music-quiz-data";
 import { ANSWER_MODES, DIFFICULTIES, type AnswerMode, type QuizDifficulty } from "@/lib/quiz-difficulty";
 
@@ -40,8 +45,10 @@ interface QuizHomeProps {
   answerMode: AnswerMode;
   instrument: MusicInstrument;
   genre: MusicGenreFilter;
+  artist: MusicArtistFilter;
   onInstrumentChange: (instrument: MusicInstrument) => void;
   onGenreChange: (genre: MusicGenreFilter) => void;
+  onArtistChange: (artist: MusicArtistFilter) => void;
   onSelectMode: (mode: QuizMode) => void;
   onBack: () => void;
 }
@@ -52,8 +59,10 @@ export default function QuizHome({
   answerMode,
   instrument,
   genre,
+  artist,
   onInstrumentChange,
   onGenreChange,
+  onArtistChange,
   onSelectMode,
   onBack,
 }: QuizHomeProps) {
@@ -61,6 +70,10 @@ export default function QuizHome({
   const categoryInfo = CATEGORIES[category];
   const difficultyInfo = DIFFICULTIES[difficulty];
   const answerModeInfo = ANSWER_MODES[answerMode];
+  const availableArtists = getAvailableArtistIds((artistId) =>
+    getMusicTrackCount({ genre, artist: artistId }),
+  );
+  const nameThatTuneCount = getMusicTrackCount({ genre, artist });
 
   return (
     <div className="quiz-shell mx-auto flex min-h-full w-full max-w-3xl flex-col px-4 py-10 sm:px-6">
@@ -101,7 +114,7 @@ export default function QuizHome({
               {MUSIC_GENRE_FILTER_KEYS.map((key) => {
                 const info = MUSIC_GENRE_FILTERS[key];
                 const isActive = genre === key;
-                const count = getMusicTrackCount(key);
+                const count = getMusicTrackCount({ genre: key, artist });
                 return (
                   <button
                     key={key}
@@ -113,6 +126,65 @@ export default function QuizHome({
                       isActive
                         ? "border-violet-500 bg-violet-600 text-white shadow-md"
                         : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-violet-300 hover:bg-violet-50"
+                    }`}
+                  >
+                    <span className="mr-1.5" aria-hidden="true">
+                      {info.emoji}
+                    </span>
+                    {info.label}
+                    <span className="ml-1.5 text-xs opacity-80">({count})</span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+
+          <section className="rounded-2xl border border-white/20 bg-white/90 p-4 shadow-lg backdrop-blur sm:p-5">
+            <p className="text-center text-xs font-semibold uppercase tracking-widest text-indigo-600">
+              Artist
+            </p>
+            <p className="mt-1 text-center text-sm text-zinc-500">
+              Used for Name That Tune — quiz songs from a specific artist
+            </p>
+            <div
+              className="mt-4 flex max-h-44 flex-wrap justify-center gap-2 overflow-y-auto pr-1"
+              role="tablist"
+              aria-label="Music artist"
+            >
+              <button
+                type="button"
+                role="tab"
+                aria-selected={artist === "all"}
+                onClick={() => onArtistChange("all")}
+                className={`rounded-xl border px-3 py-2 text-sm font-semibold transition sm:px-4 ${
+                  artist === "all"
+                    ? "border-pink-500 bg-pink-600 text-white shadow-md"
+                    : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-pink-300 hover:bg-pink-50"
+                }`}
+              >
+                <span className="mr-1.5" aria-hidden="true">
+                  {MUSIC_ARTIST_FILTERS.all.emoji}
+                </span>
+                {MUSIC_ARTIST_FILTERS.all.label}
+                <span className="ml-1.5 text-xs opacity-80">
+                  ({getMusicTrackCount({ genre, artist: "all" })})
+                </span>
+              </button>
+              {availableArtists.map((key) => {
+                const info = MUSIC_ARTIST_FILTERS[key];
+                const isActive = artist === key;
+                const count = getMusicTrackCount({ genre, artist: key });
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => onArtistChange(key)}
+                    className={`rounded-xl border px-3 py-2 text-sm font-semibold transition sm:px-4 ${
+                      isActive
+                        ? "border-pink-500 bg-pink-600 text-white shadow-md"
+                        : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-pink-300 hover:bg-pink-50"
                     }`}
                   >
                     <span className="mr-1.5" aria-hidden="true">
@@ -171,7 +243,7 @@ export default function QuizHome({
           const info = QUIZ_MODES[key];
           const count =
             key === "name-that-tune"
-              ? getMusicTrackCount(genre)
+              ? nameThatTuneCount
               : getQuestionCount(key);
 
           return (
@@ -199,6 +271,13 @@ export default function QuizHome({
                   <p className="mt-2 text-xs font-medium text-violet-600">
                     {MUSIC_GENRE_FILTERS[genre].emoji}{" "}
                     {MUSIC_GENRE_FILTERS[genre].label}
+                    {artist !== "all" && (
+                      <>
+                        {" · "}
+                        {MUSIC_ARTIST_FILTERS[artist].emoji}{" "}
+                        {MUSIC_ARTIST_FILTERS[artist].label}
+                      </>
+                    )}
                   </p>
                 )}
                 {key === "perfect-pitch" && (

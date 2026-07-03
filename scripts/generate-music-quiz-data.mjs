@@ -36,12 +36,16 @@ function formatTrack(track) {
 }
 
 const body = `import type { MusicQuizQuestion } from "@/lib/quiz-data";
+import {
+  trackMatchesArtist,
+  type MusicArtistFilter,
+} from "@/lib/music-artist";
 import type { MusicGenre, MusicGenreFilter } from "@/lib/music-genre";
 
 /** Seconds of each preview clip to play (iTunes previews are ~30s; we trim to the opening). */
 export const MUSIC_CLIP_SECONDS = 15;
 
-type TrackSeed = {
+export type TrackSeed = {
   id: string;
   songTitle: string;
   artist: string;
@@ -52,7 +56,12 @@ type TrackSeed = {
   tier?: "easy" | "medium" | "hard";
 };
 
-const TRACKS: TrackSeed[] = [
+export type MusicFilters = {
+  genre: MusicGenreFilter;
+  artist: MusicArtistFilter;
+};
+
+export const TRACKS: TrackSeed[] = [
 ${tracks.map(formatTrack).join("\n")}
 ];
 
@@ -67,7 +76,9 @@ function pickDistractors(titles: string[], correct: string, seed: number): strin
   return picked;
 }
 
-function buildMusicQuestionsFromTracks(seedTracks: TrackSeed[]): MusicQuizQuestion[] {
+export function buildMusicQuestionsFromTracks(
+  seedTracks: TrackSeed[],
+): MusicQuizQuestion[] {
   const titles = seedTracks.map((track) => track.songTitle);
 
   return seedTracks.map((track, index) => {
@@ -92,20 +103,37 @@ function buildMusicQuestionsFromTracks(seedTracks: TrackSeed[]): MusicQuizQuesti
   });
 }
 
+export function filterMusicTracks(filters: MusicFilters): TrackSeed[] {
+  return TRACKS.filter((track) => {
+    if (filters.genre !== "all" && track.genre !== filters.genre) return false;
+    if (filters.artist !== "all" && !trackMatchesArtist(track, filters.artist)) {
+      return false;
+    }
+    return true;
+  });
+}
+
 export function buildMusicQuestions(): MusicQuizQuestion[] {
   return buildMusicQuestionsFromTracks(TRACKS);
+}
+
+export function getMusicQuestionsForFilters(
+  filters: MusicFilters,
+): MusicQuizQuestion[] {
+  return buildMusicQuestionsFromTracks(filterMusicTracks(filters));
+}
+
+export function getMusicTrackCount(filters: Partial<MusicFilters> = {}): number {
+  return filterMusicTracks({
+    genre: filters.genre ?? "all",
+    artist: filters.artist ?? "all",
+  }).length;
 }
 
 export function getMusicQuestionsForGenre(
   genre: MusicGenreFilter,
 ): MusicQuizQuestion[] {
-  if (genre === "all") return buildMusicQuestions();
-  return buildMusicQuestionsFromTracks(TRACKS.filter((track) => track.genre === genre));
-}
-
-export function getMusicTrackCount(genre: MusicGenreFilter = "all"): number {
-  if (genre === "all") return TRACKS.length;
-  return TRACKS.filter((track) => track.genre === genre).length;
+  return getMusicQuestionsForFilters({ genre, artist: "all" });
 }
 
 export const MUSIC_QUESTIONS: MusicQuizQuestion[] = buildMusicQuestions();
