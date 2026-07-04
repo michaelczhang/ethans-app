@@ -47,7 +47,8 @@ async function search(songTitle) {
       (r) =>
         r.previewUrl &&
         normalize(r.artistName).includes("onerepublic") &&
-        (r.trackExplicitness === "notExplicit" || !r.trackExplicitness),
+        (r.trackExplicitness === "notExplicit" ||
+          r.trackExplicitness === "cleaned"),
     );
     if (!results.length) return null;
 
@@ -55,8 +56,13 @@ async function search(songTitle) {
     results.sort((a, b) => {
       const ta = normalize(cleanTitle(a.trackName));
       const tb = normalize(cleanTitle(b.trackName));
-      const score = (t) => (t === want ? 3 : t.includes(want) || want.includes(t) ? 2 : 0);
-      return score(tb) - score(ta);
+      const score = (t, raw) => {
+        let s = t === want ? 3 : t.includes(want) || want.includes(t) ? 2 : 0;
+        if (raw.trackExplicitness === "notExplicit") s += 2;
+        else if (raw.trackExplicitness === "cleaned") s += 1;
+        return s;
+      };
+      return score(tb, b) - score(ta, a);
     });
     return results[0];
   } catch {
@@ -99,6 +105,7 @@ async function main() {
       genre: "pop",
       tier: track.tier,
       itunesTrackId: result.trackId,
+      explicitness: result.trackExplicitness,
     };
     if (track.songAliases) entry.songAliases = track.songAliases;
 

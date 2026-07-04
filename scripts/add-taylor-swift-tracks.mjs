@@ -62,8 +62,8 @@ async function search(songTitle) {
       (r) =>
         r.previewUrl &&
         normalize(r.artistName).includes("taylor swift") &&
-        r.trackExplicitness === "notExplicit" ||
-        r.trackExplicitness === "cleaned",
+        (r.trackExplicitness === "notExplicit" ||
+          r.trackExplicitness === "cleaned"),
     );
     if (!results.length) return null;
 
@@ -76,6 +76,8 @@ async function search(songTitle) {
         if (t === want) s += 4;
         else if (t.includes(want) || want.includes(t)) s += 3;
         if (raw.trackName?.includes("Taylor's Version")) s += 1;
+        if (raw.trackExplicitness === "notExplicit") s += 2;
+        else if (raw.trackExplicitness === "cleaned") s += 1;
         return s;
       };
       return score(tb, b) - score(ta, a);
@@ -121,6 +123,7 @@ async function main() {
       genre: "pop",
       tier: track.tier,
       itunesTrackId: result.trackId,
+      explicitness: result.trackExplicitness,
     };
     if (track.songAliases) entry.songAliases = track.songAliases;
 

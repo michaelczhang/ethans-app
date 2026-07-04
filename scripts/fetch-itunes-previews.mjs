@@ -125,10 +125,17 @@ function scoreResult(track, result) {
   if (artist === wantArtist) score += 10;
   else if (artist.includes(wantArtist) || wantArtist.includes(artist)) score += 6;
 
-  if (result.trackExplicitness === "notExplicit") score += 2;
+  if (result.trackExplicitness === "notExplicit") score += 4;
+  else if (result.trackExplicitness === "cleaned") score += 2;
+  else score -= 20;
+
   if (result.previewUrl) score += 1;
 
   return score;
+}
+
+function isAllowedExplicitness(value) {
+  return value === "notExplicit" || value === "cleaned";
 }
 
 async function searchItunes(track) {
@@ -138,7 +145,9 @@ async function searchItunes(track) {
     const response = await fetch(url);
     if (!response.ok) return null;
     const data = await response.json();
-    const results = (data.results ?? []).filter((r) => r.previewUrl);
+    const results = (data.results ?? []).filter(
+      (r) => r.previewUrl && isAllowedExplicitness(r.trackExplicitness),
+    );
 
     if (results.length === 0) return null;
 
@@ -172,6 +181,7 @@ async function main() {
       artistAliases: track.artistAliases,
       tier: track.tier,
       itunesTrackId: result.trackId,
+      explicitness: result.trackExplicitness,
     });
 
     console.log(`✓ ${track.songTitle} → ${displayTitle} (${result.artistName})`);

@@ -165,6 +165,7 @@ async function main() {
       genre: "pop",
       tier: tierForTitle(songTitle),
       itunesTrackId: track.trackId,
+      explicitness: track.trackExplicitness,
     };
 
     const aliases = buildAliases(songTitle);

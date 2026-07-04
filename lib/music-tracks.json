@@ -6,7 +6,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/dc/bc/8a/dcbc8a3e-4ce1-c00d-cc02-eda2212053c7/mzaf_8347559338388601510.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 269573364,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-2",
@@ -15,7 +16,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/58/8c/cb/588ccb9a-ab79-4a38-43b5-d4c24ea42859/mzaf_2083607504726567992.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 269573303,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-3",
@@ -24,7 +26,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/88/cd/46/88cd46bd-dba7-1dc2-a63b-e8c111ac4fc3/mzaf_4042555053237612653.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 269573341,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-4",
@@ -33,7 +36,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3a/d6/9a/3ad69a5b-1fdc-c0ca-069b-541cef78e9d6/mzaf_12029354858253493617.plus.aac.p.m4a",
     "tier": "easy",
     "itunesTrackId": 1559885421,
-    "genre": "classic"
+    "genre": "classic",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-5",
@@ -42,7 +46,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f2/03/4f/f2034f41-707f-7111-bc63-e5d3cf7f2240/mzaf_17215043934336702540.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 380907765,
-    "genre": "classic"
+    "genre": "classic",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-6",
@@ -54,7 +59,8 @@
     ],
     "tier": "medium",
     "itunesTrackId": 160024096,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-7",
@@ -63,7 +69,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ad/4f/a3/ad4fa361-9ee5-0799-1ca7-6900ffecc216/mzaf_11795694173831798173.plus.aac.p.m4a",
     "tier": "easy",
     "itunesTrackId": 1422721989,
-    "genre": "classic"
+    "genre": "classic",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-8",
@@ -76,7 +83,8 @@
     ],
     "tier": "medium",
     "itunesTrackId": 1422955211,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-9",
@@ -85,7 +93,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fe/fa/9e/fefa9edd-c023-4d1c-1012-08bfb0ec69e6/mzaf_4651653238471209843.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 254685026,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-10",
@@ -94,7 +103,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e9/37/42/e9374231-9cef-ad56-365c-a7ba09e4fa55/mzaf_10566507321838390251.plus.aac.p.m4a",
     "tier": "easy",
     "itunesTrackId": 1440651216,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-11",
@@ -103,7 +113,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8f/11/52/8f1152a9-fd5f-0021-f546-b97579c22ec3/mzaf_3962258993076347789.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1440650711,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-12",
@@ -112,7 +123,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/47/61/3c/47613c3e-de3e-b2a0-8d36-d05a6619f1d3/mzaf_16109120005998758960.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1440650719,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-13",
@@ -124,7 +136,8 @@
     ],
     "tier": "hard",
     "itunesTrackId": 185717604,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-14",
@@ -133,7 +146,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ab/16/93/ab16933c-6203-3db9-9da9-513ff1c8496d/mzaf_16993612140334549994.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1517447333,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-15",
@@ -145,7 +159,8 @@
     ],
     "tier": "hard",
     "itunesTrackId": 1440891171,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-16",
@@ -154,11 +169,12 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/11/d5/6d/11d56d4a-ce23-e793-8681-70dc4d35d931/mzaf_5886436202259848624.plus.aac.p.m4a",
     "tier": "easy",
     "itunesTrackId": 1440933651,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-17",
-    "songTitle": "Happy",
+    "songTitle": "Happy (From \"Despicable Me 2\")",
     "artist": "Pharrell Williams",
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4c/ba/89/4cba89f1-1a8a-3f33-b3ac-d88bcad8b996/mzaf_17135561476274403451.plus.aac.p.m4a",
     "songAliases": [
@@ -166,7 +182,8 @@
     ],
     "tier": "medium",
     "itunesTrackId": 863835363,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-18",
@@ -178,7 +195,8 @@
     ],
     "tier": "medium",
     "itunesTrackId": 1154239184,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-19",
@@ -190,7 +208,8 @@
     ],
     "tier": "medium",
     "itunesTrackId": 1488408568,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-20",
@@ -199,7 +218,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/c7/4f/44c74f0d-72dc-6143-d4d0-ba14d661ca0d/mzaf_9566898362556366703.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1193701392,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-21",
@@ -208,7 +228,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9f/07/1d/9f071dc7-791c-c869-dfa2-06b25936a287/mzaf_11077490630806345321.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1544491233,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-22",
@@ -224,7 +245,8 @@
     ],
     "tier": "medium",
     "itunesTrackId": 943946671,
-    "genre": "hip-hop"
+    "genre": "hip-hop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-23",
@@ -236,7 +258,8 @@
     ],
     "tier": "hard",
     "itunesTrackId": 1122773680,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-24",
@@ -245,7 +268,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b0/db/7f/b0db7fbe-f8ff-1f67-fe72-ca8185ffbca2/mzaf_15298650366584767800.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1471704175,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-25",
@@ -254,7 +278,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c3/87/1f/c3871f7e-3260-d615-1c66-5fdca2c3a48f/mzaf_10721331211699880949.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1450695739,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-26",
@@ -263,7 +288,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/59/dc/4d/59dc4dda-93ff-8f1c-c536-f005f6ea6af5/mzaf_3066686759813252385.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1538003843,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-27",
@@ -272,11 +298,12 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/16/86/f5/1686f50d-8b77-7e32-85f7-5f0e804d68fe/mzaf_14195633304344507287.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1485802967,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-28",
-    "songTitle": "bad guy",
+    "songTitle": "As It Was",
     "artist": "Harry Styles",
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/67/10/16/67101606-3869-ca44-6c03-e13d6322cb51/mzaf_1135399237022217274.plus.aac.p.m4a",
     "tier": "medium",
@@ -284,7 +311,8 @@
     "songAliases": [
       "Bad Guy"
     ],
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-29",
@@ -293,11 +321,12 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9b/1f/b9/9b1fb99c-9111-91da-9296-5ab8d82028ee/mzaf_11237315064991720435.plus.aac.p.m4a",
     "tier": "easy",
     "itunesTrackId": 1468166468,
-    "genre": "hip-hop"
+    "genre": "hip-hop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-30",
-    "songTitle": "Sunflower",
+    "songTitle": "Sunflower (Spider-Man: Into the Spider-Verse)",
     "artist": "Post Malone & Swae Lee",
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/98/f0/d6/98f0d67e-f8bf-762d-cac7-1c6b3b6b35dd/mzaf_4543283896248560946.plus.aac.p.m4a",
     "songAliases": [
@@ -309,7 +338,8 @@
       "Post Malone",
       "Swae Lee"
     ],
-    "genre": "hip-hop"
+    "genre": "hip-hop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-31",
@@ -318,7 +348,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c0/3f/36/c03f367a-b66b-fd0a-a54c-30f8250c4410/mzaf_12768434238801682952.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1411628233,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-32",
@@ -327,7 +358,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/77/70/88/777088e9-60a1-c459-bfa5-6e66f2fd2695/mzaf_7685408661765681881.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1440873126,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-33",
@@ -336,7 +368,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a6/53/1e/a6531efa-397c-eb73-ecab-9b2790c1471e/mzaf_16440344883389407474.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1440783625,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-34",
@@ -348,7 +381,8 @@
     ],
     "tier": "hard",
     "itunesTrackId": 1377813701,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-35",
@@ -357,7 +391,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/a7/1b/f0/a71bf07d-f498-05c9-2c8a-d12af7d019d8/mzaf_11402952498213508559.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 635770202,
-    "genre": "classic"
+    "genre": "classic",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-36",
@@ -366,7 +401,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/0f/f7/e1/0ff7e145-6be6-4341-4fa1-32999d20707f/mzaf_15493778815944217662.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1441164738,
-    "genre": "classic"
+    "genre": "classic",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-37",
@@ -375,7 +411,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3d/08/f5/3d08f5d7-1e0a-99d9-1085-d50ecc972bb9/mzaf_1689604474306790314.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1441133277,
-    "genre": "classic"
+    "genre": "classic",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-38",
@@ -384,7 +421,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/66/f3/1a/66f31a76-a6ed-cb4c-f353-23310a7ae9a8/mzaf_10593596652344378873.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1122782283,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-39",
@@ -393,7 +431,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/61/54/97/61549744-a83b-1c4d-58cf-e56b36beb4a7/mzaf_1246579179619940831.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1533513537,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-40",
@@ -402,7 +441,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/06/b8/ac/06b8acb3-7f5e-3302-0781-952eb834e27a/mzaf_17151548762072495969.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1577631231,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-41",
@@ -411,11 +451,12 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/1b/54/f0/1b54f0b7-db6a-1a40-6af8-4ae4650d8d6d/mzaf_2782647211171496826.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1476095084,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-42",
-    "songTitle": "Crazy in Love",
+    "songTitle": "Crazy in Love (feat. JAŸ-Z)",
     "artist": "Beyoncé",
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/b5/2a/4f/b52a4fcd-0628-cb38-c8ab-a697c11a9175/mzaf_1541321636664021445.plus.aac.p.m4a",
     "artistAliases": [
@@ -428,7 +469,8 @@
       "Crazy In Love",
       "Crazy in Love feat Jay-Z"
     ],
-    "genre": "hip-hop"
+    "genre": "hip-hop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-43",
@@ -437,7 +479,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ae/c4/7f/aec47f56-842d-49b4-558b-7a7523fd6728/mzaf_6693111381462300599.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 251948354,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-44",
@@ -449,7 +492,8 @@
     ],
     "tier": "easy",
     "itunesTrackId": 273143820,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-45",
@@ -458,7 +502,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/32/62/aa/3262aa6b-498c-6178-c4c6-0cd9b54f4a5e/mzaf_8580252104309473753.plus.aac.p.m4a",
     "tier": "easy",
     "itunesTrackId": 1637507328,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-46",
@@ -467,7 +512,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3d/65/ae/3d65ae0a-7b2c-f14d-5680-cdafaa8cfb2d/mzaf_11206445915046452880.plus.aac.p.m4a",
     "tier": "easy",
     "itunesTrackId": 1445144527,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-47",
@@ -476,11 +522,12 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/40/5b/e7/405be722-3ec9-ba27-7469-002182d57b39/mzaf_14120258742032474456.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1447401620,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-48",
-    "songTitle": "Closer",
+    "songTitle": "Closer (feat. Halsey)",
     "artist": "The Chainsmokers",
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/bd/f9/b9/bdf9b9b2-eaa4-4461-6079-aaacc6df7316/mzaf_17327312786932455493.plus.aac.p.m4a",
     "tier": "medium",
@@ -488,7 +535,8 @@
     "songAliases": [
       "Closer feat Halsey"
     ],
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-49",
@@ -500,7 +548,8 @@
     ],
     "tier": "medium",
     "itunesTrackId": 1468910018,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-50",
@@ -509,7 +558,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c7/ba/bc/c7babc66-f598-aaa6-bcf6-307281795817/mzaf_16337361235117168274.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1193701400,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-51",
@@ -518,7 +568,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ef/18/7b/ef187b7d-f487-e935-4ca1-af5748313710/mzaf_8455263230305249048.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1544491998,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-52",
@@ -527,7 +578,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/21/a8/76/21a87607-1fe3-2bd2-753c-0b4b73c22b90/mzaf_9666996724668759977.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1440818897,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-53",
@@ -536,7 +588,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ab/27/3b/ab273b22-1eb1-dd49-5332-5ef70c35683b/mzaf_4912325324633099647.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 716192625,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-54",
@@ -545,7 +598,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/f4/37/44/f4374481-e6e8-54d1-32ad-893ec2f4d495/mzaf_3915415747653767603.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 573962551,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-55",
@@ -554,7 +608,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/0c/9d/26/0c9d266f-632d-dbda-770d-55cdded795f8/mzaf_18078867637438469059.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 576655095,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-56",
@@ -566,7 +621,8 @@
     ],
     "tier": "easy",
     "itunesTrackId": 1445007713,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-57",
@@ -575,7 +631,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4c/50/2e/4c502ee4-d63e-3f7c-11cc-61b2e0c92656/mzaf_4849324024240261165.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1594982922,
-    "genre": "pop"
+    "genre": "pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-58",
@@ -584,7 +641,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/dd/a9/80/dda980a0-3b62-f7b7-9588-11b929a30b3c/mzaf_4007504837203131685.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 435761212,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-60",
@@ -596,7 +654,8 @@
     ],
     "tier": "hard",
     "itunesTrackId": 1109658204,
-    "genre": "rock"
+    "genre": "rock",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-61",
@@ -605,7 +664,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/3b/f2/5c/3bf25cc9-a395-6858-1ef8-5c29956afaf6/mzaf_6007556042949037280.plus.aac.p.m4a",
     "tier": "easy",
     "itunesTrackId": 1597024424,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-62",
@@ -614,11 +674,12 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/f4/80/70/f48070d2-3802-520b-c724-c367125ef2a5/mzaf_16052369757637658622.plus.aac.p.m4a",
     "tier": "easy",
     "itunesTrackId": 1598660389,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-64",
-    "songTitle": "Boy With Luv",
+    "songTitle": "Boy With Luv (feat. Halsey)",
     "artist": "BTS",
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0b/8d/84/0b8d84e5-5273-ae21-0c6e-591af6097294/mzaf_16252906211188582302.plus.aac.p.m4a",
     "songAliases": [
@@ -629,7 +690,8 @@
     "artistAliases": [
       "BTS feat Halsey"
     ],
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-65",
@@ -638,7 +700,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d4/09/d0/d409d0b1-b411-4f5e-838f-f83e886a0931/mzaf_4091230585279402671.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1598730623,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-66",
@@ -650,7 +713,8 @@
     ],
     "tier": "medium",
     "itunesTrackId": 1598731059,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-67",
@@ -659,7 +723,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/7f/63/1c/7f631c84-92f2-0805-22cf-8b15ddae12ce/mzaf_7122502015402982287.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1596532189,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-68",
@@ -668,7 +733,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/18/d7/18/18d718e6-efb8-2241-47b8-44f8951b7afb/mzaf_9900867605041120176.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1596529381,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-69",
@@ -680,7 +746,8 @@
     ],
     "tier": "hard",
     "itunesTrackId": 1598730630,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-70",
@@ -692,7 +759,8 @@
       "Blood Sweat and Tears"
     ],
     "itunesTrackId": 1596532481,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-71",
@@ -704,7 +772,8 @@
     ],
     "tier": "medium",
     "itunesTrackId": 1598730980,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-72",
@@ -713,7 +782,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/30/7f/21/307f210e-a502-fa4a-8822-a0587f97c5f3/mzaf_12491938612066207306.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1599362870,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-73",
@@ -722,7 +792,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/12/a9/3d/12a93d0b-036b-170b-09fa-379d785e63b7/mzaf_17633343337902112849.plus.aac.p.m4a",
     "tier": "medium",
     "itunesTrackId": 1627575774,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-74",
@@ -734,11 +805,12 @@
     ],
     "tier": "hard",
     "itunesTrackId": 1598662137,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-75",
-    "songTitle": "Fire",
+    "songTitle": "Burning Up (FIRE)",
     "artist": "BTS",
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8c/bf/2b/8cbf2b63-d297-00e1-6151-e38e8035ba39/mzaf_16676068374597282362.plus.aac.p.m4a",
     "tier": "medium",
@@ -748,7 +820,8 @@
       "Burning Up FIRE",
       "FIRE"
     ],
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-76",
@@ -757,7 +830,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d4/a7/31/d4a73105-0fcf-f07a-08ed-b731f7099b06/mzaf_10558830626272194757.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1598662124,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-77",
@@ -766,7 +840,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e7/fc/5a/e7fc5af6-0501-3ca8-dd6e-6903b9e583aa/mzaf_5882509071602676554.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1599172219,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-78",
@@ -775,7 +850,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/bd/fb/e5/bdfbe5db-dc69-b162-1391-9ca54cbeab67/mzaf_16962188115154166520.plus.aac.p.m4a",
     "tier": "hard",
     "itunesTrackId": 1597017443,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-79",
@@ -791,7 +867,8 @@
     ],
     "tier": "medium",
     "itunesTrackId": 1576350174,
-    "genre": "k-pop"
+    "genre": "k-pop",
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-80",
@@ -800,7 +877,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/d7/a5/ac/d7a5ac54-0dbf-5bea-df14-c9965ac2e682/mzaf_2048711194344336393.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1445845403
+    "itunesTrackId": 1445845403,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-81",
@@ -809,7 +887,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7c/6f/89/7c6f896d-e83a-87d5-bb8a-8601da470403/mzaf_13387475480559212540.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440734639
+    "itunesTrackId": 1440734639,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-82",
@@ -818,7 +897,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/4c/bb/e9/4cbbe94d-75ac-5edd-7afe-ed357a081fb9/mzaf_8378367554654084515.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1445017151
+    "itunesTrackId": 1445017151,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-83",
@@ -827,7 +907,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/df/0b/6b/df0b6bb1-b5a5-c071-4bfe-995e4862d327/mzaf_2065875964758493665.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1445845401
+    "itunesTrackId": 1445845401,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-84",
@@ -836,7 +917,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3c/9f/22/3c9f2284-01be-2d40-cb7e-ecbdf9b6cdd1/mzaf_10773611713967523163.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440854624
+    "itunesTrackId": 1440854624,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-85",
@@ -845,7 +927,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a4/6a/60/a46a6071-1306-d32f-9cb9-006ada95b353/mzaf_8276479845023814826.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440854622
+    "itunesTrackId": 1440854622,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-86",
@@ -854,7 +937,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/86/a8/1f/86a81fa4-95d7-b3fb-87f7-8403ec24783e/mzaf_1148162306280550559.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1700804522
+    "itunesTrackId": 1700804522,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-87",
@@ -863,7 +947,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/2c/62/f3/2c62f3bc-a4b7-af70-5e0b-2050cb7dcc78/mzaf_2694003188951343399.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1471704327
+    "itunesTrackId": 1471704327,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-88",
@@ -875,7 +960,8 @@
     "itunesTrackId": 1621817894,
     "songAliases": [
       "I Aint Worried"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-89",
@@ -884,7 +970,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/06/22/6d/06226dcf-59b9-8e84-6ce3-fd678d592826/mzaf_8241401672335071943.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1478231272
+    "itunesTrackId": 1478231272,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-90",
@@ -893,7 +980,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/32/31/d7/3231d7f5-7a94-6f33-5be7-043bd33a80ba/mzaf_8160567856128636185.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1502298681
+    "itunesTrackId": 1502298681,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-91",
@@ -902,7 +990,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/0d/7b/01/0d7b01a9-64cc-5f49-b01b-3abd01f97a4a/mzaf_9995448488109519655.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440867267
+    "itunesTrackId": 1440867267,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-92",
@@ -911,7 +1000,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8a/b8/5a/8ab85aab-7aa6-8ec4-49d2-04713db0c243/mzaf_17439399566899788116.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1502298679
+    "itunesTrackId": 1502298679,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-93",
@@ -920,7 +1010,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/64/22/82/6422821f-44c5-2fd0-3caf-aee01dbcc7ca/mzaf_4208706188746189409.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1401489355
+    "itunesTrackId": 1401489355,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-94",
@@ -929,7 +1020,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b5/9b/14/b59b1431-4908-3b7a-fd4d-bb86d193ca6a/mzaf_1746474897586183065.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1735989011
+    "itunesTrackId": 1735989011,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-95",
@@ -938,7 +1030,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/de/31/1b/de311b23-aa26-976f-2458-4f20078769f0/mzaf_11505353645811099889.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1440854647
+    "itunesTrackId": 1440854647,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-96",
@@ -947,7 +1040,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/8b/4c/b3/8b4cb3a5-b1d1-c82c-e6ab-48cc3969d4ff/mzaf_858711921713575608.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1552791427
+    "itunesTrackId": 1552791427,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-97",
@@ -959,7 +1053,8 @@
     "itunesTrackId": 1552791558,
     "songAliases": [
       "You Belong with Me"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-98",
@@ -968,7 +1063,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f1/dd/3a/f1dd3add-0fc5-2e35-3460-923fb707f21e/mzaf_7924539200493199372.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1708308993
+    "itunesTrackId": 1708308993,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-99",
@@ -977,7 +1073,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bd/5d/72/bd5d726f-f082-732a-bfac-102ab3739ec7/mzaf_13805328136345741566.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1708308996
+    "itunesTrackId": 1708308996,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-100",
@@ -986,7 +1083,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/45/26/a4/4526a416-a6ee-44a1-92a5-bde8369d898c/mzaf_7980441848261718723.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1713846100
+    "itunesTrackId": 1713846100,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-101",
@@ -998,7 +1096,8 @@
     "itunesTrackId": 1649434293,
     "songAliases": [
       "Anti Hero"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-102",
@@ -1007,7 +1106,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/af/81/44af8168-9609-1b85-5048-ada08dceacf3/mzaf_1341699644335558812.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1468058171
+    "itunesTrackId": 1468058171,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-103",
@@ -1016,7 +1116,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/bc/71/fa/bc71fa68-e311-5aa5-20bc-0f52cace4fcf/mzaf_9597223352300847194.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1677234365
+    "itunesTrackId": 1677234365,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-104",
@@ -1025,7 +1126,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/54/8f/a3/548fa33c-74cc-65ae-5f50-2a6858753397/mzaf_4018994675652787372.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1677234738
+    "itunesTrackId": 1677234738,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-105",
@@ -1034,7 +1136,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3b/26/64/3b26645a-2c49-f0c7-fa6d-be6ad83b0ae9/mzaf_4194244291813253017.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440934255
+    "itunesTrackId": 1440934255,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-106",
@@ -1046,7 +1149,8 @@
     "itunesTrackId": 1524801580,
     "songAliases": [
       "Cardigan"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-107",
@@ -1055,7 +1159,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/e0/db/47/e0db47b0-7f70-0631-0414-cd4777d2fb3e/mzaf_6362891154838442638.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1468058173
+    "itunesTrackId": 1468058173,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-108",
@@ -1067,7 +1172,8 @@
     "itunesTrackId": 1468058704,
     "songAliases": [
       "You Need to Calm Down"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-109",
@@ -1079,7 +1185,8 @@
     "itunesTrackId": 1468058706,
     "songAliases": [
       "Me"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-110",
@@ -1088,7 +1195,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a7/24/e8/a724e804-d5df-f7a7-24cc-09df9df57a79/mzaf_4087189896444308455.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440934254
+    "itunesTrackId": 1440934254,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-111",
@@ -1097,7 +1205,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b5/c7/76/b5c77613-f75e-1895-f9ed-a39a0907dec0/mzaf_8863959442271111939.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440934258
+    "itunesTrackId": 1440934258,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-112",
@@ -1106,7 +1215,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ff/f2/da/fff2daa7-e089-c08b-9b34-d2ba8d8ee37c/mzaf_13585740172543756019.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1690840535
+    "itunesTrackId": 1690840535,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-113",
@@ -1115,7 +1225,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/98/45/5e/98455e46-746d-c879-c610-48322068929b/mzaf_12082529185475484305.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1590368456
+    "itunesTrackId": 1590368456,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-114",
@@ -1124,7 +1235,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/55/86/02/55860256-c850-4a30-a97c-3083210f1325/mzaf_427967193683630924.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1590368457
+    "itunesTrackId": 1590368457,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-115",
@@ -1133,7 +1245,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/49/22/e5/4922e538-7172-1f13-7b98-673915553bdd/mzaf_16010520491370125418.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1440914010
+    "itunesTrackId": 1440914010,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-116",
@@ -1145,7 +1258,8 @@
     "itunesTrackId": 1440914018,
     "songAliases": [
       "Teardrops on My Guitar"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-117",
@@ -1154,7 +1268,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e8/3d/a6/e83da665-dc67-5d12-1bcb-92b2cbff0eb2/mzaf_8022777830254348609.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1649435004
+    "itunesTrackId": 1649435004,
+    "explicitness": "cleaned"
   },
   {
     "id": "music-118",
@@ -1163,7 +1278,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/e4/11/80/e41180a4-df9e-2347-c956-a12eb3259102/mzaf_16028347522538508645.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1650860026
+    "itunesTrackId": 1650860026,
+    "explicitness": "cleaned"
   },
   {
     "id": "music-119",
@@ -1172,7 +1288,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/48/ac/ea/48acea0d-8faf-34e1-b6a6-76ae2944d478/mzaf_4651792087173004763.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1708309005
+    "itunesTrackId": 1708309005,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-120",
@@ -1181,7 +1298,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/90/67/b5/9067b561-f437-d4ce-1f2f-ac3913339d72/mzaf_9669199482319820236.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1736268216
+    "itunesTrackId": 1736268216,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-121",
@@ -1190,7 +1308,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3b/b7/c6/3bb7c6f7-d06f-f91c-7801-0ed0a6257e1c/mzaf_12747815097409700369.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1468058176
+    "itunesTrackId": 1468058176,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-122",
@@ -1202,7 +1321,8 @@
     "itunesTrackId": 1690840121,
     "songAliases": [
       "Back to December"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-123",
@@ -1211,7 +1331,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/64/78/6f/64786fbc-3294-4561-d02f-87adda756293/mzaf_12118142068342740523.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1690840106
+    "itunesTrackId": 1690840106,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-124",
@@ -1220,7 +1341,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e4/16/8b/e4168ba2-b98e-90fe-4dd1-c88f301a37fc/mzaf_11151290494119624676.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440776305
+    "itunesTrackId": 1440776305,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-125",
@@ -1229,7 +1351,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/48/08/b9/4808b946-d103-ebd5-14d6-fde2fd2749ae/mzaf_4673996428338165700.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1460315064
+    "itunesTrackId": 1460315064,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-126",
@@ -1238,7 +1361,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b2/2e/19/b22e1910-2064-930e-1d2f-3a06baace9e7/mzaf_12279042806738380334.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1541088824
+    "itunesTrackId": 1541088824,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-127",
@@ -1250,7 +1374,8 @@
     "itunesTrackId": 1536976369,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "cleaned"
   },
   {
     "id": "music-128",
@@ -1259,7 +1384,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/69/bf/b9/69bfb900-f566-b4b1-2997-4c29147ba40c/mzaf_272279348269176307.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1620262550
+    "itunesTrackId": 1620262550,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-129",
@@ -1268,7 +1394,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/df/c2/17/dfc2178b-82d3-0ef2-fb3e-6a2f7b2af218/mzaf_167268233035898546.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440776576
+    "itunesTrackId": 1440776576,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-130",
@@ -1277,7 +1404,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/75/a4/4875a402-14aa-75de-b872-336843b4434c/mzaf_11960963659599919603.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440776291
+    "itunesTrackId": 1440776291,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-131",
@@ -1289,7 +1417,8 @@
     "itunesTrackId": 1440809563,
     "songAliases": [
       "Cant Be Tamed"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-132",
@@ -1298,7 +1427,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/2a/92/6e/2a926ef6-75f9-03b0-0ad5-424209b10799/mzaf_8239446193914874478.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1356070224
+    "itunesTrackId": 1356070224,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-133",
@@ -1307,7 +1437,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/97/97/cf/9797cfe6-9090-d282-57d7-626b437cf84e/mzaf_13895130239996419852.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440632846
+    "itunesTrackId": 1440632846,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-134",
@@ -1316,16 +1447,18 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4a/11/8f/4a118f84-ed33-6582-ab9f-43200a2d794f/mzaf_1165311103786961568.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440632853
+    "itunesTrackId": 1440632853,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-135",
-    "songTitle": "Dream As One",
+    "songTitle": "Dream As One (from Avatar: Fire and Ash)",
     "artist": "Miley Cyrus",
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7d/cd/0c/7dcd0cc0-ac16-1e4f-eed9-45544fcccd89/mzaf_6413770666396111354.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1850828910
+    "itunesTrackId": 1850828910,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-136",
@@ -1334,7 +1467,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/10/10/fb/1010fbd3-2465-b97a-58b5-8635fc7b1e8a/mzaf_10163401952534422237.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1460315334
+    "itunesTrackId": 1460315334,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-137",
@@ -1343,7 +1477,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/65/4c/07/654c077b-9269-a58b-8408-5b28bc065eb5/mzaf_11278435667461565326.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1804974578
+    "itunesTrackId": 1804974578,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-138",
@@ -1355,7 +1490,8 @@
     "itunesTrackId": 1541088841,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-139",
@@ -1364,7 +1500,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a1/c5/2b/a1c52bdb-5fea-9abf-038c-76c04db0900c/mzaf_9619135548827080150.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1804974563
+    "itunesTrackId": 1804974563,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-140",
@@ -1376,7 +1513,8 @@
     "itunesTrackId": 1804974882,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-141",
@@ -1385,7 +1523,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d1/86/5f/d1865f67-dfb7-f61b-597c-6919d8924dc7/mzaf_16033889873540370438.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440809567
+    "itunesTrackId": 1440809567,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-142",
@@ -1394,7 +1533,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c5/46/32/c546324e-d129-4630-45cd-78092836ce4f/mzaf_14963616412621662357.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1702906535
+    "itunesTrackId": 1702906535,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-143",
@@ -1403,7 +1543,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/dc/bd/44/dcbd44ef-0786-11d9-a5bf-ff6ee83a57d2/mzaf_7282615432138933122.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440776572
+    "itunesTrackId": 1440776572,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-144",
@@ -1412,7 +1553,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/62/10/0d/62100db4-cf54-c9bc-7969-68991a9d319e/mzaf_13707980770086249990.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1452859046
+    "itunesTrackId": 1452859046,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-145",
@@ -1421,7 +1563,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/93/b6/7c/93b67c85-dad6-433c-7dab-df9d9cbedd31/mzaf_11273385202633249870.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1541088826
+    "itunesTrackId": 1541088826,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-146",
@@ -1430,7 +1573,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c1/90/ef/c190ef12-900b-3b6c-e4a4-b3cdb1d615e1/mzaf_9374644397686043935.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440776317
+    "itunesTrackId": 1440776317,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-147",
@@ -1439,7 +1583,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3a/30/e7/3a30e73f-1c18-bc30-3988-b27d4449cca0/mzaf_3059370644354244196.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1804974872
+    "itunesTrackId": 1804974872,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-148",
@@ -1448,7 +1593,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d7/c6/3b/d7c63b67-8200-5223-013f-35f9921ec56b/mzaf_15702575252471998686.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1541088840
+    "itunesTrackId": 1541088840,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-149",
@@ -1457,7 +1603,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c0/5b/d0/c05bd089-2d90-4c0f-0d4a-4d43f6f1cf19/mzaf_10257927209208944931.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440776894
+    "itunesTrackId": 1440776894,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-150",
@@ -1466,7 +1613,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/73/3b/b9/733bb902-8ed0-de8d-9da5-8b4d347c0a13/mzaf_13465249094820634869.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1044417062
+    "itunesTrackId": 1044417062,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-151",
@@ -1475,7 +1623,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/85/f6/5c/85f65c92-dfb6-0a06-4f4e-932e3c9fe513/mzaf_15361660805408701176.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1541088834
+    "itunesTrackId": 1541088834,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-152",
@@ -1484,7 +1633,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/dc/a5/75/dca575aa-4e50-845a-a1cd-3a159b40148d/mzaf_13779601630485806064.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1620262280
+    "itunesTrackId": 1620262280,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-153",
@@ -1493,7 +1643,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/03/fd/e0/03fde047-aedd-8018-9f5f-f6dfdf924861/mzaf_521078561805694035.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1541088830
+    "itunesTrackId": 1541088830,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-154",
@@ -1502,7 +1653,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/52/33/dc/5233dc99-d1cf-dada-0f92-47e0e0c55b50/mzaf_6882862479804130262.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440632848
+    "itunesTrackId": 1440632848,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-155",
@@ -1511,7 +1663,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a4/a5/10/a4a510b4-4b1e-0b28-10a0-1295d5b2a534/mzaf_4034521003259905987.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1442890817
+    "itunesTrackId": 1442890817,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-156",
@@ -1520,7 +1673,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/50/aa/41/50aa41e1-8511-647a-085d-b9dfd2b5d638/mzaf_6682856319945197295.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1443344279
+    "itunesTrackId": 1443344279,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-157",
@@ -1529,7 +1683,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/86/a0/af/86a0af42-ce32-b819-09f2-e6b8409e96ac/mzaf_4605024561544092765.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1452859059
+    "itunesTrackId": 1452859059,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-158",
@@ -1538,7 +1693,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/24/d9/73/24d97333-efe3-6fd7-f6d0-b29e3a2bdb15/mzaf_11448432569903055797.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1462327858
+    "itunesTrackId": 1462327858,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-159",
@@ -1547,7 +1703,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f4/0e/cc/f40ecc14-8d1e-71bc-c4c7-09a36d7d7af2/mzaf_3710064506198315320.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1702907206
+    "itunesTrackId": 1702907206,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-160",
@@ -1556,7 +1713,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/55/e1/33/55e133ad-5cfc-6c85-ac49-c253448a70a2/mzaf_9321022507351540038.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1674691587
+    "itunesTrackId": 1674691587,
+    "explicitness": "cleaned"
   },
   {
     "id": "music-161",
@@ -1565,7 +1723,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/76/49/a9/7649a97a-2818-5892-8355-3cd9b9606cc3/mzaf_9503247357691357380.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1620262556
+    "itunesTrackId": 1620262556,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-162",
@@ -1574,7 +1733,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ce/8b/ed/ce8bed2d-b98e-9328-54c8-063d78a4cdb8/mzaf_4562066808486503046.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1452858895
+    "itunesTrackId": 1452858895,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-163",
@@ -1583,7 +1743,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/1f/32/c9/1f32c9ea-f1bc-dc7c-c42d-573ef15a42a8/mzaf_13891249964100171025.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440809377
+    "itunesTrackId": 1440809377,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-164",
@@ -1592,7 +1753,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d1/5c/d9/d15cd915-b57a-14b2-8c00-64ad85365bc3/mzaf_13016907363312957466.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1620262565
+    "itunesTrackId": 1620262565,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-165",
@@ -1601,7 +1763,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7a/cc/3e/7acc3e00-4203-92e2-f509-129c79d7b0f5/mzaf_11594898530513101076.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1462327577
+    "itunesTrackId": 1462327577,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-166",
@@ -1610,7 +1773,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9d/b6/a3/9db6a376-0705-e175-d81c-727e303c409e/mzaf_11818806969230942875.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1620262541
+    "itunesTrackId": 1620262541,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-167",
@@ -1619,7 +1783,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/94/5d/ac/945daccd-0e6a-35fa-8aba-3c4ae959f4e0/mzaf_13330636284777333551.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1460315521
+    "itunesTrackId": 1460315521,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-168",
@@ -1628,7 +1793,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f9/b8/93/f9b8937f-b883-2cbf-b1d7-20b3e825579c/mzaf_3074964872894268869.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1541088828
+    "itunesTrackId": 1541088828,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-169",
@@ -1637,7 +1803,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/29/f8/b4/29f8b46b-e589-4bf5-9837-bd89582b4444/mzaf_4721720822774727638.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1804974568
+    "itunesTrackId": 1804974568,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-170",
@@ -1646,7 +1813,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/5a/1e/a9/5a1ea9fb-d958-7952-361f-b7db0cb0d71d/mzaf_3701213696169261518.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440809775
+    "itunesTrackId": 1440809775,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-171",
@@ -1655,7 +1823,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b5/35/ff/b535ffdc-e0fc-24ac-ce94-9fa7dc426de6/mzaf_9841219083439621840.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1541088838
+    "itunesTrackId": 1541088838,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-172",
@@ -1667,7 +1836,8 @@
     "itunesTrackId": 1541088827,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-173",
@@ -1679,7 +1849,8 @@
     "itunesTrackId": 1620262831,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-174",
@@ -1691,7 +1862,8 @@
     "itunesTrackId": 1572050435,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-175",
@@ -1700,7 +1872,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/40/74/49/40744935-c702-0461-6b64-6458ef0ae3ee/mzaf_8521022558005862751.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1460315525
+    "itunesTrackId": 1460315525,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-176",
@@ -1709,7 +1882,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5e/6d/bd/5e6dbdc4-9e26-2950-b660-93c4529eda39/mzaf_11323926903928978640.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1541088823
+    "itunesTrackId": 1541088823,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-177",
@@ -1718,7 +1892,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8e/12/ed/8e12ed65-7da7-6438-ee84-c1d7ad0b6cfa/mzaf_9047426601763045000.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1804974243
+    "itunesTrackId": 1804974243,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-178",
@@ -1730,7 +1905,8 @@
     "itunesTrackId": 1541088825,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-179",
@@ -1739,7 +1915,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5d/d3/58/5dd35898-ed1f-aa97-964c-1b3f019e1c38/mzaf_14017894510067277623.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1739474293
+    "itunesTrackId": 1739474293,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-180",
@@ -1751,7 +1928,8 @@
     "itunesTrackId": 1462327578,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-181",
@@ -1760,7 +1938,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/75/e6/7c/75e67cb3-e403-171d-3b15-6739651a6884/mzaf_16856297667112434683.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1702907026
+    "itunesTrackId": 1702907026,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-182",
@@ -1769,7 +1948,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/6c/c5/ce/6cc5ceeb-c536-575b-249a-0e66d8dc77f6/mzaf_5802319910754527641.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1442931317
+    "itunesTrackId": 1442931317,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-183",
@@ -1778,7 +1958,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/de/b4/d7/deb4d76d-84a2-7542-52d9-b893619b6b92/mzaf_14578011718395157908.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1460315523
+    "itunesTrackId": 1460315523,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-184",
@@ -1787,7 +1968,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/70/ea/3c/70ea3c43-46fb-d5ba-ee91-4006a2e872bc/mzaf_1647185544305476422.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1702906680
+    "itunesTrackId": 1702906680,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-185",
@@ -1799,7 +1981,8 @@
     "itunesTrackId": 1839063082,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-186",
@@ -1808,7 +1991,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6f/25/af/6f25afc7-3cb2-0a1f-8332-5ed94693a9f7/mzaf_14499964565442485366.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1452858888
+    "itunesTrackId": 1452858888,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-187",
@@ -1817,7 +2001,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f3/4f/2a/f34f2adc-e682-0f2a-8066-2fa3f1414f40/mzaf_16515398818513541242.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1693744961
+    "itunesTrackId": 1693744961,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-188",
@@ -1826,7 +2011,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bb/9b/72/bb9b72a3-5833-44c4-3aba-425f3fa513bc/mzaf_447165780166969230.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1689672061
+    "itunesTrackId": 1689672061,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-189",
@@ -1835,7 +2021,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ef/3e/de/ef3ede42-dca5-4a3c-1435-9f4725e52132/mzaf_11042038414462147873.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1460315522
+    "itunesTrackId": 1460315522,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-190",
@@ -1844,7 +2031,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cc/19/88/cc198850-fa56-0345-a115-fdb9345d81fe/mzaf_10347101652109153961.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1804974560
+    "itunesTrackId": 1804974560,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-191",
@@ -1853,7 +2041,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/83/73/19/837319d7-9536-83a7-2753-e52dff26cb8b/mzaf_408334267139993430.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1452859053
+    "itunesTrackId": 1452859053,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-192",
@@ -1862,7 +2051,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ec/91/89/ec91892f-d2df-8264-9ab4-6a1c74ae5725/mzaf_6885445715944475230.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440809579
+    "itunesTrackId": 1440809579,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-193",
@@ -1871,7 +2061,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/23/75/8a/23758a7b-5be7-6700-3bb3-286e94044dba/mzaf_11655076722415881839.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1358372169
+    "itunesTrackId": 1358372169,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-194",
@@ -1880,7 +2071,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1b/0a/65/1b0a653f-979d-3855-4574-7738a3a732e3/mzaf_12193290508710453141.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1440632860
+    "itunesTrackId": 1440632860,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-195",
@@ -1889,7 +2081,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4f/06/3b/4f063b6c-2076-6335-6824-b8719e69d921/mzaf_158054205253447878.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1444113385
+    "itunesTrackId": 1444113385,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-196",
@@ -1901,7 +2094,8 @@
     "itunesTrackId": 1702906884,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-197",
@@ -1910,7 +2104,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/55/58/41/555841ed-2b21-d087-e52d-ec7123cbd8e4/mzaf_14396696043788163924.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440809571
+    "itunesTrackId": 1440809571,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-198",
@@ -1919,7 +2114,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/15/b8/ed/15b8ed9d-0186-e29e-2e25-ae11f5a12046/mzaf_8433047979576204383.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1702776420
+    "itunesTrackId": 1702776420,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-199",
@@ -1928,7 +2124,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/14/22/52/14225286-fab7-5b7d-e8cc-d62abbdc4fa0/mzaf_143365870182670439.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1702907034
+    "itunesTrackId": 1702907034,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-200",
@@ -1940,7 +2137,8 @@
     "itunesTrackId": 1804974873,
     "artistAliases": [
       "Miley Cyrus"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-201",
@@ -1952,7 +2150,8 @@
     "itunesTrackId": 1460315065,
     "songAliases": [
       "We Cant Stop"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-202",
@@ -1964,7 +2163,8 @@
     "itunesTrackId": 1620262271,
     "songAliases": [
       "We Cant Stop X Where Is My Mind? (Live)"
-    ]
+    ],
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-203",
@@ -1973,7 +2173,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c4/ae/f9/c4aef920-c81e-43ed-c894-c1842e287067/mzaf_11857061161087360660.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1444113381
+    "itunesTrackId": 1444113381,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-204",
@@ -1982,7 +2183,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/25/21/8f/25218f44-e4bd-63dd-3741-c5e324d1140c/mzaf_7826893314675404952.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1440809380
+    "itunesTrackId": 1440809380,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-205",
@@ -1991,7 +2193,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/00/d1/53/00d153c0-77a4-4dbc-c705-8177640068f0/mzaf_4673412996266561231.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1702907052
+    "itunesTrackId": 1702907052,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-206",
@@ -2000,7 +2203,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/41/17/4c/41174cb3-28dc-fc48-39a3-9f7e84395933/mzaf_9162979343097176477.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1702907211
+    "itunesTrackId": 1702907211,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-207",
@@ -2009,7 +2213,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f8/e8/a2/f8e8a23c-b85d-17dd-9625-b39ec26b171f/mzaf_1866607988873686159.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1460315319
+    "itunesTrackId": 1460315319,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-208",
@@ -2018,7 +2223,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/af/cf/a3/afcfa32c-706c-1521-3792-e5208a6880b7/mzaf_11325055515667108424.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1620262816
+    "itunesTrackId": 1620262816,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-209",
@@ -2027,7 +2233,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c2/ef/d4/c2efd438-c01a-e2f0-1ac2-707bd6a4c98e/mzaf_11524572418824536748.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1702906892
+    "itunesTrackId": 1702906892,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-210",
@@ -2036,7 +2243,8 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6a/15/bd/6a15bdbf-8a3d-ff41-f36b-eff2948fb500/mzaf_7824461984790654747.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 705656605
+    "itunesTrackId": 705656605,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-211",
@@ -2045,16 +2253,18 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ad/1a/cb/ad1acb0a-cef4-62f2-151c-e6412bf30564/mzaf_13326039334960202433.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "easy",
-    "itunesTrackId": 1462327576
+    "itunesTrackId": 1462327576,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-212",
-    "songTitle": "Younger You",
+    "songTitle": "Younger You (From the \"Hannah Montana 20th Anniversary Special\")",
     "artist": "Miley Cyrus",
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b4/ed/28/b4ed28d4-6060-5dc2-c628-6487972a5a12/mzaf_7349063977679557910.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "medium",
-    "itunesTrackId": 1887385342
+    "itunesTrackId": 1887385342,
+    "explicitness": "notExplicit"
   },
   {
     "id": "music-213",
@@ -2063,6 +2273,7 @@
     "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/61/ed/02/61ed024f-1758-319d-f2d1-7067e042ad52/mzaf_4415969295834237149.plus.aac.p.m4a",
     "genre": "pop",
     "tier": "hard",
-    "itunesTrackId": 1541088997
+    "itunesTrackId": 1541088997,
+    "explicitness": "notExplicit"
   }
 ]

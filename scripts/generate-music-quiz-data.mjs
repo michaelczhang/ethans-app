@@ -31,7 +31,11 @@ function formatTrack(track) {
       `    artistAliases: [${track.artistAliases.map((a) => `"${esc(a)}"`).join(", ")}],`,
     );
   }
-  lines.push(`    tier: "${track.tier ?? "medium"}",`, `  },`);
+  lines.push(
+    `    explicitness: "${track.explicitness ?? "notExplicit"}",`,
+    `    tier: "${track.tier ?? "medium"}",`,
+    `  },`,
+  );
   return lines.join("\n");
 }
 
@@ -45,16 +49,23 @@ import type { MusicGenre, MusicGenreFilter } from "@/lib/music-genre";
 /** Seconds of each preview clip to play (iTunes previews are ~30s; we trim to the opening). */
 export const MUSIC_CLIP_SECONDS = 15;
 
+export type TrackExplicitness = "notExplicit" | "cleaned";
+
 export type TrackSeed = {
   id: string;
   songTitle: string;
   artist: string;
   audio: string;
   genre: MusicGenre;
+  explicitness: TrackExplicitness;
   songAliases?: string[];
   artistAliases?: string[];
   tier?: "easy" | "medium" | "hard";
 };
+
+function isCleanTrack(track: TrackSeed): boolean {
+  return track.explicitness === "notExplicit" || track.explicitness === "cleaned";
+}
 
 export type MusicFilters = {
   genre: MusicGenreFilter;
@@ -105,6 +116,7 @@ export function buildMusicQuestionsFromTracks(
 
 export function filterMusicTracks(filters: MusicFilters): TrackSeed[] {
   return TRACKS.filter((track) => {
+    if (!isCleanTrack(track)) return false;
     if (filters.genre !== "all" && track.genre !== filters.genre) return false;
     if (filters.artist !== "all" && !trackMatchesArtist(track, filters.artist)) {
       return false;

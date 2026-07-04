@@ -213,6 +213,7 @@ export default function MovieQuizGame({
                   key={currentQuestion.id}
                   src={currentQuestion.image}
                   alt={currentQuestion.imageAlt ?? "Movie scene"}
+                  referrerPolicy="no-referrer"
                   className="movie-scene-image max-h-64 w-full rounded-xl border border-zinc-200 bg-zinc-900 object-cover shadow-md sm:max-h-80"
                 />
               </div>
