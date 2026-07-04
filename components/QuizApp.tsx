@@ -64,7 +64,7 @@ const CATEGORY_BACKGROUNDS: Record<QuizCategory, string[]> = {
     "/backgrounds/ocean-bg.png",
   ],
   music: ["/backgrounds/music-bg.svg"],
-  movies: ["/backgrounds/movies-bg.svg"],
+  movies: ["/backgrounds/movies-bg.png"],
 };
 
 const CATEGORIES_VIEW_BACKGROUNDS: string[] = [
@@ -72,7 +72,7 @@ const CATEGORIES_VIEW_BACKGROUNDS: string[] = [
   "/backgrounds/geography-bg.png",
   "/backgrounds/aqua-bg.png",
   "/backgrounds/music-bg.svg",
-  "/backgrounds/movies-bg.svg",
+  "/backgrounds/movies-bg.png",
   "/backgrounds/sea-animals-bg.png",
 ];
 

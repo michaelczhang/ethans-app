@@ -75,7 +75,7 @@ export const CATEGORIES: Record<
     label: "Movies",
     emoji: "🎬",
     description: "Spot the scene — PG-rated family films from your favorite studios",
-    image: "/backgrounds/movies-bg.svg",
+    image: "/backgrounds/movies-bg.png",
   },
 };
 

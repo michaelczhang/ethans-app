@@ -44,7 +44,7 @@ const MODE_IMAGES: Record<QuizMode, string> = {
   ocean: "/backgrounds/ocean-bg.png",
   "name-that-tune": "/backgrounds/music-bg.svg",
   "perfect-pitch": "/backgrounds/music-bg.svg",
-  "guess-that-movie": "/backgrounds/movies-bg.svg",
+  "guess-that-movie": "/backgrounds/movies-bg.png",
 };
 
 interface QuizHomeProps {
