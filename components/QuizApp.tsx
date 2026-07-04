@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import CategoryHome from "@/components/CategoryHome";
+import { DisplaySettingsProvider } from "@/components/DisplaySettingsProvider";
 import MovieQuizGame from "@/components/MovieQuizGame";
 import MusicQuizGame from "@/components/MusicQuizGame";
 import PerfectPitchQuizGame from "@/components/PerfectPitchQuizGame";
@@ -159,8 +160,8 @@ export default function QuizApp() {
   };
 
   return (
-    <>
-      <VisitCounter />
+    <DisplaySettingsProvider>
+      {view.name !== "categories" && <VisitCounter />}
       <QuizBackground images={backgroundsForView(view)} />
       {view.name === "categories" && (
         <CategoryHome
@@ -233,6 +234,6 @@ export default function QuizApp() {
           }
         />
       )}
-    </>
+    </DisplaySettingsProvider>
   );
 }

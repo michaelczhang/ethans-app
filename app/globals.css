@@ -87,3 +87,103 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Dark mode */
+html.dark-mode body {
+  background: #020617;
+}
+
+html.dark-mode .quiz-card,
+html.dark-mode .home-quiz-card,
+html.dark-mode .settings-panel {
+  background: rgba(15, 23, 42, 0.96);
+  border-color: rgba(148, 163, 184, 0.25);
+  color: #e2e8f0;
+}
+
+html.dark-mode .quiz-card h2,
+html.dark-mode .settings-panel h2,
+html.dark-mode .home-quiz-card h2 {
+  color: #f8fafc;
+}
+
+html.dark-mode .quiz-badge {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+html.dark-mode .home-quiz-card .text-zinc-900,
+html.dark-mode .settings-panel .text-zinc-900 {
+  color: #f1f5f9;
+}
+
+html.dark-mode .home-quiz-card .text-zinc-600,
+html.dark-mode .settings-panel .text-zinc-600,
+html.dark-mode .settings-panel .text-zinc-500 {
+  color: #cbd5e1;
+}
+
+html.dark-mode .quiz-bg-overlay {
+  background: rgba(2, 6, 23, 0.82);
+}
+
+/* Blind mode — high contrast & larger text */
+html.blind-mode {
+  font-size: 112.5%;
+}
+
+html.blind-mode .quiz-card,
+html.blind-mode .home-quiz-card,
+html.blind-mode .settings-panel {
+  background: #ffffff !important;
+  border: 3px solid #000000 !important;
+  color: #000000 !important;
+  backdrop-filter: none;
+}
+
+html.blind-mode .quiz-card h2,
+html.blind-mode .home-quiz-card h2,
+html.blind-mode .settings-panel h2,
+html.blind-mode .quiz-card button,
+html.blind-mode .settings-panel button {
+  color: #000000;
+}
+
+html.blind-mode .home-title,
+html.blind-mode .home-subtitle,
+html.blind-mode .home-label {
+  color: #ffffff !important;
+  text-shadow: 0 0 4px #000000, 0 2px 8px #000000;
+}
+
+html.blind-mode .quiz-badge {
+  background: #ffffff;
+  border: 2px solid #000000;
+  color: #000000;
+  font-weight: 700;
+}
+
+html.blind-mode .quiz-bg-overlay {
+  background: rgba(0, 0, 0, 0.88);
+}
+
+html.blind-mode button:focus-visible,
+html.blind-mode input:focus-visible {
+  outline: 4px solid #facc15;
+  outline-offset: 2px;
+}
+
+html.blind-mode.dark-mode .quiz-card,
+html.blind-mode.dark-mode .home-quiz-card,
+html.blind-mode.dark-mode .settings-panel {
+  background: #000000 !important;
+  border: 3px solid #ffffff !important;
+  color: #ffffff !important;
+}
+
+html.blind-mode.dark-mode .quiz-card h2,
+html.blind-mode.dark-mode .home-quiz-card h2,
+html.blind-mode.dark-mode .settings-panel h2 {
+  color: #ffffff;
+}

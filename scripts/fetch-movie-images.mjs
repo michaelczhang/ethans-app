@@ -1,6 +1,7 @@
 /**
- * Fetches Wikipedia poster/scene thumbnails for PG-rated movies.
+ * Fetches scene/character stills from Fandom wikis (no movie title on image).
  * Run: node scripts/fetch-movie-images.mjs
+ * To refresh existing images: node scripts/refresh-movie-scene-images.mjs
  */
 
 import fs from "fs";

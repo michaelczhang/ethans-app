@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { useDisplaySettings } from "@/components/DisplaySettingsProvider";
 import SettingsPanel from "@/components/SettingsPanel";
+import VisitCounter from "@/components/VisitCounter";
 import {
   CATEGORIES,
   getQuizCountForCategory,
@@ -30,19 +32,22 @@ export default function CategoryHome({
   onSelectCategory,
 }: CategoryHomeProps) {
   const [settingsOpen, setSettingsOpen] = useState(false);
+  const { translate } = useDisplaySettings();
   const categoryIds = Object.keys(CATEGORIES) as QuizCategory[];
   const difficultyInfo = DIFFICULTIES[difficulty];
   const answerModeInfo = ANSWER_MODES[answerMode];
 
   return (
     <div className="quiz-shell relative mx-auto flex min-h-full w-full max-w-3xl flex-col px-4 py-10 sm:px-6">
+      <VisitCounter className="visit-counter pointer-events-none absolute top-4 left-3/4 z-10 -translate-x-1/2 sm:top-6" />
+
       <button
         type="button"
         onClick={() => setSettingsOpen(true)}
         className="absolute left-4 top-4 z-10 flex items-center gap-2 rounded-xl border border-white/25 bg-white/90 px-3 py-2 text-sm font-semibold text-zinc-800 shadow-lg backdrop-blur transition hover:border-indigo-300 hover:bg-white sm:left-6 sm:top-6"
       >
         <span aria-hidden="true">⚙️</span>
-        Settings
+        {translate("settings")}
       </button>
 
       {settingsOpen && (
@@ -55,19 +60,22 @@ export default function CategoryHome({
         />
       )}
 
-      <header className="mb-10 text-center">
-        <p className="home-label text-sm font-semibold uppercase tracking-widest">
+      <header className="mb-10 pt-12 text-center sm:pt-14">
+        <h1 className="home-title text-4xl font-extrabold tracking-tight sm:text-5xl">
           Quizzy
-        </p>
-        <h1 className="home-title mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl">
-          Pick a Category
         </h1>
+        <p className="home-label mt-3 text-sm font-semibold uppercase tracking-widest">
+          {translate("pickCategory")}
+        </p>
+        <p className="home-subtitle mt-2 text-sm font-medium tracking-wide">
+          {translate("byEcz")}
+        </p>
         <p className="home-subtitle mx-auto mt-3 max-w-lg text-base">
-          Choose a group to browse quizzes inside it.
+          {translate("chooseGroup")}
         </p>
         <p className="mt-3 text-sm text-indigo-200">
-          Difficulty: {difficultyInfo.emoji} {difficultyInfo.label} · Mode:{" "}
-          {answerModeInfo.emoji} {answerModeInfo.label}
+          {translate("difficultyLabel")}: {difficultyInfo.emoji} {difficultyInfo.label} ·{" "}
+          {translate("modeLabel")}: {answerModeInfo.emoji} {answerModeInfo.label}
         </p>
       </header>
 
@@ -94,7 +102,7 @@ export default function CategoryHome({
                   {cat.label}
                 </h2>
                 <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-indigo-600">
-                  {count} {count === 1 ? "quiz" : "quizzes"} →
+                  {count} {count === 1 ? translate("quiz") : translate("quizzes")} →
                 </p>
               </div>
             </button>
