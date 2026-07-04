@@ -1,0 +1,766 @@
+import type { MovieQuizQuestion } from "@/lib/quiz-data";
+import type { MovieBroadcasterFilter } from "@/lib/movie-broadcaster";
+import type { MovieBroadcasterId } from "@/lib/movie-broadcaster";
+
+export type MovieSeed = {
+  id: string;
+  title: string;
+  broadcaster: MovieBroadcasterId;
+  rating: "PG";
+  image: string;
+  titleAliases?: string[];
+  tier?: "easy" | "medium" | "hard";
+};
+
+export type MovieFilters = {
+  broadcaster: MovieBroadcasterFilter;
+};
+
+export const MOVIES: MovieSeed[] = [
+  {
+    "id": "movie-1",
+    "title": "The Lion King",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/3d/The_Lion_King_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-2",
+    "title": "Frozen",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/05/Frozen_%282013_film%29_poster.jpg",
+    "tier": "easy",
+    "titleAliases": [
+      "Frozen 2013"
+    ]
+  },
+  {
+    "id": "movie-3",
+    "title": "Moana",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/26/Moana_Teaser_Poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-4",
+    "title": "Encanto",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/8/83/Encanto_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-5",
+    "title": "Beauty and the Beast",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/5e/Beauty_and_the_Beast_%281991_film%29_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-6",
+    "title": "Aladdin",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/bd/Aladdin_%281992_Disney_film%29_poster.jpg",
+    "tier": "easy",
+    "titleAliases": [
+      "Aladdin 1992"
+    ]
+  },
+  {
+    "id": "movie-7",
+    "title": "Mulan",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/a3/Movie_poster_mulan.JPG",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-8",
+    "title": "Tangled",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/a8/Tangled_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-9",
+    "title": "The Little Mermaid",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/c0/The_Little_Mermaid_%28Official_1989_Film_Poster%29.png",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-10",
+    "title": "Zootopia",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/96/Zootopia_%28movie_poster%29.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-11",
+    "title": "Big Hero 6",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/4b/Big_Hero_6_%28film%29_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-12",
+    "title": "Raya and the Last Dragon",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/ea/Raya_and_the_Last_Dragon.png",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-13",
+    "title": "Cinderella",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/1950_is_the_Cinderella_year.jpg/330px-1950_is_the_Cinderella_year.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-14",
+    "title": "Mary Poppins",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/78/Marypoppins.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-15",
+    "title": "Lilo & Stitch",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/c6/LiloandStitchmovieposter.jpg",
+    "tier": "easy",
+    "titleAliases": [
+      "Lilo and Stitch"
+    ]
+  },
+  {
+    "id": "movie-16",
+    "title": "The Jungle Book",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/1d/Thejunglebook_movieposter.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-17",
+    "title": "Hercules",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/65/Hercules_%281997_film%29_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-18",
+    "title": "Tarzan",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/4f/Tarzan_%281999_film%29_-_theatrical_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-19",
+    "title": "Wreck-It Ralph",
+    "broadcaster": "disney",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/15/Wreckitralphposter.jpeg",
+    "tier": "medium",
+    "titleAliases": [
+      "Wreck It Ralph"
+    ]
+  },
+  {
+    "id": "movie-20",
+    "title": "Toy Story",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-21",
+    "title": "Toy Story 2",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/c0/Toy_Story_2.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-22",
+    "title": "Toy Story 4",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/4c/Toy_Story_4_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-23",
+    "title": "Finding Nemo",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/29/Finding_Nemo.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-24",
+    "title": "Monsters University",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/2a/Monsters_University_poster_3.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-25",
+    "title": "Cars",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/34/Cars_2006.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-26",
+    "title": "Cars 2",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/7f/Cars_2_Poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-27",
+    "title": "Cars 3",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/94/Cars_3_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-28",
+    "title": "Up",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/05/Up_%282009_film%29.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-29",
+    "title": "Inside Out",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-30",
+    "title": "Inside Out 2",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/f7/Inside_Out_2_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-31",
+    "title": "Coco",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/98/Coco_%282017_film%29_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-32",
+    "title": "The Incredibles",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/27/The_Incredibles_%282004_animated_feature_film%29.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-33",
+    "title": "Incredibles 2",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/1f/Incredibles_2_%282018_animated_film%29.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-34",
+    "title": "Ratatouille",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/50/RatatouillePoster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-35",
+    "title": "WALL-E",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/4c/WALL-E_poster.jpg",
+    "tier": "medium",
+    "titleAliases": [
+      "Wall-E",
+      "WALLE"
+    ]
+  },
+  {
+    "id": "movie-36",
+    "title": "Brave",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/96/Brave_Poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-37",
+    "title": "Turning Red",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9e/Turning_Red_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-38",
+    "title": "Elemental",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/4d/Elemental_final_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-39",
+    "title": "Luca",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/33/Luca_%282021_film%29.png",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-40",
+    "title": "Soul",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/39/Soul_%282020_film%29_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-41",
+    "title": "Lightyear",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/f9/Lightyear_%28film%29_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-42",
+    "title": "A Bug's Life",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/cc/A_Bug%27s_Life.jpg",
+    "tier": "hard",
+    "titleAliases": [
+      "A Bugs Life"
+    ]
+  },
+  {
+    "id": "movie-43",
+    "title": "Onward",
+    "broadcaster": "pixar",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/03/Onward_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-44",
+    "title": "Shrek",
+    "broadcaster": "dreamworks",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/7b/Shrek_%282001_animated_feature_film%29.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-45",
+    "title": "Shrek 2",
+    "broadcaster": "dreamworks",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/b9/Shrek_2_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-46",
+    "title": "Madagascar",
+    "broadcaster": "dreamworks",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/36/Madagascar_Theatrical_Poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-47",
+    "title": "Kung Fu Panda",
+    "broadcaster": "dreamworks",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/76/Kungfupanda.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-48",
+    "title": "Rise of the Guardians",
+    "broadcaster": "dreamworks",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/92/Rise_of_the_Guardians_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-49",
+    "title": "The Bad Guys",
+    "broadcaster": "dreamworks",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/00/The_Bad_Guys_poster.jpeg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-50",
+    "title": "Megamind",
+    "broadcaster": "dreamworks",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/8/89/Megamind2010Poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-51",
+    "title": "Spirit: Stallion of the Cimarron",
+    "broadcaster": "dreamworks",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/3b/Spirit_Stallion_of_the_Cimarron_poster.jpg",
+    "tier": "hard",
+    "titleAliases": [
+      "Spirit"
+    ]
+  },
+  {
+    "id": "movie-52",
+    "title": "Minions",
+    "broadcaster": "universal",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/19/Minions_%282015_film%29.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-53",
+    "title": "Despicable Me 2",
+    "broadcaster": "universal",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/29/Despicable_Me_2_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-54",
+    "title": "Sing",
+    "broadcaster": "universal",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/bb/Sing_%282016_film%29_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-55",
+    "title": "Sing 2",
+    "broadcaster": "universal",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/8/87/Sing_2_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-56",
+    "title": "The Secret Life of Pets",
+    "broadcaster": "universal",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/64/The_Secret_Life_of_Pets_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-57",
+    "title": "The Lorax",
+    "broadcaster": "universal",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/b5/Lorax_teaser_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-58",
+    "title": "Back to the Future",
+    "broadcaster": "universal",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-59",
+    "title": "The Lego Batman Movie",
+    "broadcaster": "warner-bros",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/61/The_Lego_Batman_Movie_PromotionalPoster.jpg",
+    "tier": "easy",
+    "titleAliases": [
+      "Lego Batman Movie"
+    ]
+  },
+  {
+    "id": "movie-60",
+    "title": "Wonka",
+    "broadcaster": "warner-bros",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/90/Wonka_2023_film_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-61",
+    "title": "Paddington 2",
+    "broadcaster": "warner-bros",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/b6/Paddington_2_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-62",
+    "title": "Space Jam",
+    "broadcaster": "warner-bros",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/14/Space_jam.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-63",
+    "title": "The Iron Giant",
+    "broadcaster": "warner-bros",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/d3/The_Iron_Giant_poster.JPG",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-64",
+    "title": "Happy Feet",
+    "broadcaster": "warner-bros",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/5c/Happy_Feet_Poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-65",
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "broadcaster": "warner-bros",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg/330px-Harry_Potter_and_the_Philosopher%27s_Stone_banner.jpg",
+    "tier": "medium",
+    "titleAliases": [
+      "Harry Potter and the Philosophers Stone",
+      "Harry Potter 1"
+    ]
+  },
+  {
+    "id": "movie-66",
+    "title": "Harry Potter and the Chamber of Secrets",
+    "broadcaster": "warner-bros",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Harry_Potter_and_the_Chamber_of_Secrets_movie.jpg/330px-Harry_Potter_and_the_Chamber_of_Secrets_movie.jpg",
+    "tier": "medium",
+    "titleAliases": [
+      "Harry Potter 2"
+    ]
+  },
+  {
+    "id": "movie-67",
+    "title": "Harry Potter and the Prisoner of Azkaban",
+    "broadcaster": "warner-bros",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/18/Harry_Potter_and_the_Prisoner_of_Azkaban_film_poster.jpg",
+    "tier": "hard",
+    "titleAliases": [
+      "Harry Potter 3"
+    ]
+  },
+  {
+    "id": "movie-68",
+    "title": "Spider-Man: Into the Spider-Verse",
+    "broadcaster": "sony",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/fa/Spider-Man_Into_the_Spider-Verse_poster.png",
+    "tier": "easy",
+    "titleAliases": [
+      "Into the Spider-Verse",
+      "Spider-Verse"
+    ]
+  },
+  {
+    "id": "movie-69",
+    "title": "Hotel Transylvania",
+    "broadcaster": "sony",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/f5/HotelTransylvania.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-70",
+    "title": "Hotel Transylvania 2",
+    "broadcaster": "sony",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/5d/Hotel_Transylvania_2_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-71",
+    "title": "Cloudy with a Chance of Meatballs",
+    "broadcaster": "sony",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/d1/Cloudy_with_a_chance_of_meatballs_theataposter.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-72",
+    "title": "Arthur Christmas",
+    "broadcaster": "sony",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/ed/Arthur_Christmas_Poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-73",
+    "title": "The Mitchells vs. the Machines",
+    "broadcaster": "sony",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/41/MitchellsMachinesPoster.jpg",
+    "tier": "medium",
+    "titleAliases": [
+      "Mitchells vs the Machines"
+    ]
+  },
+  {
+    "id": "movie-74",
+    "title": "Vivo",
+    "broadcaster": "sony",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/dd/Vivo_poster.jpg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-75",
+    "title": "Peter Rabbit",
+    "broadcaster": "sony",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/3d/Peter-rabbit-teaser.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-76",
+    "title": "Klaus",
+    "broadcaster": "netflix",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/26/Klaus_poster.jpeg",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-77",
+    "title": "Nimona",
+    "broadcaster": "netflix",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/f5/Nimona_poster.png",
+    "tier": "medium"
+  },
+  {
+    "id": "movie-78",
+    "title": "Sonic the Hedgehog",
+    "broadcaster": "paramount",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/45/Sonic_the_Hedgehog_film_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-79",
+    "title": "Sonic the Hedgehog 2",
+    "broadcaster": "paramount",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/3e/Sonic_the_Hedgehog_2_film_poster.jpg",
+    "tier": "easy"
+  },
+  {
+    "id": "movie-80",
+    "title": "Dora and the Lost City of Gold",
+    "broadcaster": "paramount",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/29/Dora_and_the_Lost_City_of_Gold_poster.jpg",
+    "tier": "medium",
+    "titleAliases": [
+      "Dora"
+    ]
+  },
+  {
+    "id": "movie-81",
+    "title": "Wonder Park",
+    "broadcaster": "paramount",
+    "rating": "PG",
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9a/Wonder_Park_theatrical_poster.jpg",
+    "tier": "medium"
+  }
+];
+
+function pickDistractors(titles: string[], correct: string, seed: number): string[] {
+  const pool = titles.filter((title) => title !== correct);
+  const start = seed % Math.max(pool.length, 1);
+  const picked: string[] = [];
+  for (let i = 0; i < pool.length && picked.length < 3; i++) {
+    const title = pool[(start + i) % pool.length];
+    if (!picked.includes(title)) picked.push(title);
+  }
+  return picked;
+}
+
+export function buildMovieQuestionsFromSeeds(seeds: MovieSeed[]): MovieQuizQuestion[] {
+  const titles = seeds.map((movie) => movie.title);
+  return seeds.map((movie, index) => {
+    const distractors = pickDistractors(titles, movie.title, index);
+    const correctIndex = index % 4;
+    const options = [...distractors];
+    options.splice(correctIndex, 0, movie.title);
+    return {
+      id: movie.id,
+      question: "Which movie is this scene from?",
+      options: options.slice(0, 4),
+      correctIndex,
+      image: movie.image,
+      imageAlt: `Scene from ${movie.title}`,
+      movieTitle: movie.title,
+      titleAliases: movie.titleAliases,
+      broadcaster: movie.broadcaster,
+      rating: movie.rating,
+      tier: movie.tier,
+    };
+  });
+}
+
+export function filterMovies(filters: MovieFilters): MovieSeed[] {
+  return MOVIES.filter((movie) => {
+    if (filters.broadcaster !== "all" && movie.broadcaster !== filters.broadcaster) {
+      return false;
+    }
+    return movie.rating === "PG";
+  });
+}
+
+export function getMovieQuestionsForFilters(filters: MovieFilters): MovieQuizQuestion[] {
+  return buildMovieQuestionsFromSeeds(filterMovies(filters));
+}
+
+export function getMovieCount(filters: Partial<MovieFilters> = {}): number {
+  return filterMovies({ broadcaster: filters.broadcaster ?? "all" }).length;
+}
+
+export const MOVIE_QUESTIONS: MovieQuizQuestion[] = buildMovieQuestionsFromSeeds(MOVIES);

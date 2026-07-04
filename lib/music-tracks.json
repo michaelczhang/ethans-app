@@ -1212,5 +1212,857 @@
     "genre": "pop",
     "tier": "medium",
     "itunesTrackId": 1690840106
+  },
+  {
+    "id": "music-124",
+    "songTitle": "7 Things",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/e4/16/8b/e4168ba2-b98e-90fe-4dd1-c88f301a37fc/mzaf_11151290494119624676.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440776305
+  },
+  {
+    "id": "music-125",
+    "songTitle": "Adore You",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/48/08/b9/4808b946-d103-ebd5-14d6-fde2fd2749ae/mzaf_4673996428338165700.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1460315064
+  },
+  {
+    "id": "music-126",
+    "songTitle": "Angels Like You",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/b2/2e/19/b22e1910-2064-930e-1d2f-3a06baace9e7/mzaf_12279042806738380334.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1541088824
+  },
+  {
+    "id": "music-127",
+    "songTitle": "Bad Karma (feat. Joan Jett)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b9/cf/ab/b9cfabc1-39c8-a595-4303-8265f807e997/mzaf_635218885618591149.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1536976369,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-128",
+    "songTitle": "Bang Bang X See You Again (Live)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/69/bf/b9/69bfb900-f566-b4b1-2997-4c29147ba40c/mzaf_272279348269176307.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1620262550
+  },
+  {
+    "id": "music-129",
+    "songTitle": "Bottom of the Ocean",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/df/c2/17/dfc2178b-82d3-0ef2-fb3e-6a2f7b2af218/mzaf_167268233035898546.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440776576
+  },
+  {
+    "id": "music-130",
+    "songTitle": "Breakout",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/48/75/a4/4875a402-14aa-75de-b872-336843b4434c/mzaf_11960963659599919603.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440776291
+  },
+  {
+    "id": "music-131",
+    "songTitle": "Can't Be Tamed",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/2b/af/93/2baf9305-5db8-b801-cce6-a8510f61072d/mzaf_15714150095709817537.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440809563,
+    "songAliases": [
+      "Cant Be Tamed"
+    ]
+  },
+  {
+    "id": "music-132",
+    "songTitle": "Don't Let the Sun Go Down On Me",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/2a/92/6e/2a926ef6-75f9-03b0-0ad5-424209b10799/mzaf_8239446193914874478.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1356070224
+  },
+  {
+    "id": "music-133",
+    "songTitle": "Don't Walk Away",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/97/97/cf/9797cfe6-9090-d282-57d7-626b437cf84e/mzaf_13895130239996419852.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440632846
+  },
+  {
+    "id": "music-134",
+    "songTitle": "Dream",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/4a/11/8f/4a118f84-ed33-6582-ab9f-43200a2d794f/mzaf_1165311103786961568.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440632853
+  },
+  {
+    "id": "music-135",
+    "songTitle": "Dream As One",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7d/cd/0c/7dcd0cc0-ac16-1e4f-eed9-45544fcccd89/mzaf_6413770666396111354.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1850828910
+  },
+  {
+    "id": "music-136",
+    "songTitle": "Drive",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/10/10/fb/1010fbd3-2465-b97a-58b5-8635fc7b1e8a/mzaf_10163401952534422237.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1460315334
+  },
+  {
+    "id": "music-137",
+    "songTitle": "Easy Lover",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/65/4c/07/654c077b-9269-a58b-8408-5b28bc065eb5/mzaf_11278435667461565326.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1804974578
+  },
+  {
+    "id": "music-138",
+    "songTitle": "Edge of Midnight (Midnight Sky Remix) [feat. Stevie Nicks]",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4e/85/73/4e8573ad-74ed-8b12-81d8-8f9f68c73ce1/mzaf_16837175578096902170.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "hard",
+    "itunesTrackId": 1541088841,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-139",
+    "songTitle": "End of the World",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/a1/c5/2b/a1c52bdb-5fea-9abf-038c-76c04db0900c/mzaf_9619135548827080150.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1804974563
+  },
+  {
+    "id": "music-140",
+    "songTitle": "Every Girl You've Ever Loved (feat. Naomi Campbell)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ee/97/2f/ee972f38-81f3-c0f0-9507-5002d21245fe/mzaf_11260365910406074765.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1804974882,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-141",
+    "songTitle": "Every Rose Has Its Thorn",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/d1/86/5f/d1865f67-dfb7-f61b-597c-6919d8924dc7/mzaf_16033889873540370438.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440809567
+  },
+  {
+    "id": "music-142",
+    "songTitle": "Flowers",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c5/46/32/c546324e-d129-4630-45cd-78092836ce4f/mzaf_14963616412621662357.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1702906535
+  },
+  {
+    "id": "music-143",
+    "songTitle": "Fly On the Wall",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/dc/bd/44/dcbd44ef-0786-11d9-a5bf-ff6ee83a57d2/mzaf_7282615432138933122.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440776572
+  },
+  {
+    "id": "music-144",
+    "songTitle": "G.N.O. - Girl's Night Out",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/62/10/0d/62100db4-cf54-c9bc-7969-68991a9d319e/mzaf_13707980770086249990.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1452859046
+  },
+  {
+    "id": "music-145",
+    "songTitle": "Gimme What I Want",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/93/b6/7c/93b67c85-dad6-433c-7dab-df9d9cbedd31/mzaf_11273385202633249870.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1541088826
+  },
+  {
+    "id": "music-146",
+    "songTitle": "Girls Just Wanna Have Fun",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c1/90/ef/c190ef12-900b-3b6c-e4a4-b3cdb1d615e1/mzaf_9374644397686043935.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440776317
+  },
+  {
+    "id": "music-147",
+    "songTitle": "Golden Burning Sun",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/3a/30/e7/3a30e73f-1c18-bc30-3988-b27d4449cca0/mzaf_3059370644354244196.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1804974872
+  },
+  {
+    "id": "music-148",
+    "songTitle": "Golden G String",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d7/c6/3b/d7c63b67-8200-5223-013f-35f9921ec56b/mzaf_15702575252471998686.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1541088840
+  },
+  {
+    "id": "music-149",
+    "songTitle": "Goodbye",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/c0/5b/d0/c05bd089-2d90-4c0f-0d4a-4d43f6f1cf19/mzaf_10257927209208944931.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440776894
+  },
+  {
+    "id": "music-150",
+    "songTitle": "Hands of Love",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/73/3b/b9/733bb902-8ed0-de8d-9da5-8b4d347c0a13/mzaf_13465249094820634869.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1044417062
+  },
+  {
+    "id": "music-151",
+    "songTitle": "Hate Me",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/85/f6/5c/85f65c92-dfb6-0a06-4f4e-932e3c9fe513/mzaf_15361660805408701176.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1541088834
+  },
+  {
+    "id": "music-152",
+    "songTitle": "Heart of Glass (Live)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/dc/a5/75/dca575aa-4e50-845a-a1cd-3a159b40148d/mzaf_13779601630485806064.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "hard",
+    "itunesTrackId": 1620262280
+  },
+  {
+    "id": "music-153",
+    "songTitle": "High",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/03/fd/e0/03fde047-aedd-8018-9f5f-f6dfdf924861/mzaf_521078561805694035.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1541088830
+  },
+  {
+    "id": "music-154",
+    "songTitle": "Hoedown Throwdown",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/52/33/dc/5233dc99-d1cf-dada-0f92-47e0e0c55b50/mzaf_6882862479804130262.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440632848
+  },
+  {
+    "id": "music-155",
+    "songTitle": "I Hope You Find It",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a4/a5/10/a4a510b4-4b1e-0b28-10a0-1295d5b2a534/mzaf_4034521003259905987.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1442890817
+  },
+  {
+    "id": "music-156",
+    "songTitle": "I Learned from You",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/50/aa/41/50aa41e1-8511-647a-085d-b9dfd2b5d638/mzaf_6682856319945197295.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1443344279
+  },
+  {
+    "id": "music-157",
+    "songTitle": "I Miss You",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/86/a0/af/86a0af42-ce32-b819-09f2-e6b8409e96ac/mzaf_4605024561544092765.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1452859059
+  },
+  {
+    "id": "music-158",
+    "songTitle": "I Would Die For You",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/24/d9/73/24d97333-efe3-6fd7-f6d0-b29e3a2bdb15/mzaf_11448432569903055797.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1462327858
+  },
+  {
+    "id": "music-159",
+    "songTitle": "Island",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f4/0e/cc/f40ecc14-8d1e-71bc-c4c7-09a36d7d7af2/mzaf_3710064506198315320.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1702907206
+  },
+  {
+    "id": "music-160",
+    "songTitle": "Jaded",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/55/e1/33/55e133ad-5cfc-6c85-ac49-c253448a70a2/mzaf_9321022507351540038.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1674691587
+  },
+  {
+    "id": "music-161",
+    "songTitle": "Jolene (Live)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/76/49/a9/7649a97a-2818-5892-8355-3cd9b9606cc3/mzaf_9503247357691357380.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "hard",
+    "itunesTrackId": 1620262556
+  },
+  {
+    "id": "music-162",
+    "songTitle": "Let's Dance",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ce/8b/ed/ce8bed2d-b98e-9328-54c8-063d78a4cdb8/mzaf_4562066808486503046.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1452858895
+  },
+  {
+    "id": "music-163",
+    "songTitle": "Liberty Walk",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/1f/32/c9/1f32c9ea-f1bc-dc7c-c42d-573ef15a42a8/mzaf_13891249964100171025.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440809377
+  },
+  {
+    "id": "music-164",
+    "songTitle": "Like a Prayer (Live)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/d1/5c/d9/d15cd915-b57a-14b2-8c00-64ad85365bc3/mzaf_13016907363312957466.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "hard",
+    "itunesTrackId": 1620262565
+  },
+  {
+    "id": "music-165",
+    "songTitle": "Malibu",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/7a/cc/3e/7acc3e00-4203-92e2-f509-129c79d7b0f5/mzaf_11594898530513101076.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1462327577
+  },
+  {
+    "id": "music-166",
+    "songTitle": "Maybe (Live)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/9d/b6/a3/9db6a376-0705-e175-d81c-727e303c409e/mzaf_11818806969230942875.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "hard",
+    "itunesTrackId": 1620262541
+  },
+  {
+    "id": "music-167",
+    "songTitle": "Maybe You're Right",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/94/5d/ac/945daccd-0e6a-35fa-8aba-3c4ae959f4e0/mzaf_13330636284777333551.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1460315521
+  },
+  {
+    "id": "music-168",
+    "songTitle": "Midnight Sky",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f9/b8/93/f9b8937f-b883-2cbf-b1d7-20b3e825579c/mzaf_3074964872894268869.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1541088828
+  },
+  {
+    "id": "music-169",
+    "songTitle": "More to Lose",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/29/f8/b4/29f8b46b-e589-4bf5-9837-bd89582b4444/mzaf_4721720822774727638.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1804974568
+  },
+  {
+    "id": "music-170",
+    "songTitle": "My Heart Beats for Love",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/5a/1e/a9/5a1ea9fb-d958-7952-361f-b7db0cb0d71d/mzaf_3701213696169261518.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440809775
+  },
+  {
+    "id": "music-171",
+    "songTitle": "Never Be Me",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b5/35/ff/b535ffdc-e0fc-24ac-ce94-9fa7dc426de6/mzaf_9841219083439621840.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1541088838
+  },
+  {
+    "id": "music-172",
+    "songTitle": "Night Crawling (feat. Billy Idol)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/94/3d/66/943d66bc-c42a-8344-2432-d4efcd0c9485/mzaf_7251494166854593637.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1541088827,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-173",
+    "songTitle": "Nothing Breaks Like a Heart (Live)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/44/83/0f/44830fff-2e35-71cd-429a-c779df8a5f05/mzaf_15156174896416747562.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "hard",
+    "itunesTrackId": 1620262831,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-174",
+    "songTitle": "Nothing Else Matters (feat. WATT, Elton John, Yo-Yo Ma, Robert Trujillo & Chad Smith)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/20/11/bb/2011bba6-fa85-fa00-5660-159cf8b15aed/mzaf_6773370406571064093.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1572050435,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-175",
+    "songTitle": "On My Own",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/40/74/49/40744935-c702-0461-6b64-6458ef0ae3ee/mzaf_8521022558005862751.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1460315525
+  },
+  {
+    "id": "music-176",
+    "songTitle": "Plastic Hearts",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5e/6d/bd/5e6dbdc4-9e26-2950-b660-93c4529eda39/mzaf_11323926903928978640.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1541088823
+  },
+  {
+    "id": "music-177",
+    "songTitle": "Prelude",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/8e/12/ed/8e12ed65-7da7-6438-ee84-c1d7ad0b6cfa/mzaf_9047426601763045000.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1804974243
+  },
+  {
+    "id": "music-178",
+    "songTitle": "Prisoner (feat. Dua Lipa)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/a5/3c/58/a53c5842-1824-39fb-2091-1603d34c3963/mzaf_11014767299660630962.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1541088825,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-179",
+    "songTitle": "Psycho Killer",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/5d/d3/58/5dd35898-ed1f-aa97-964c-1b3f019e1c38/mzaf_14017894510067277623.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1739474293
+  },
+  {
+    "id": "music-180",
+    "songTitle": "Rainbowland (feat. Dolly Parton)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c8/23/cf/c823cffa-5ce1-52ef-009c-990c17f6e858/mzaf_6132260505767519000.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1462327578,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-181",
+    "songTitle": "River",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/75/e6/7c/75e67cb3-e403-171d-3b15-6739651a6884/mzaf_16856297667112434683.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1702907026
+  },
+  {
+    "id": "music-182",
+    "songTitle": "Rockin' Around the Christmas Tree",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/6c/c5/ce/6cc5ceeb-c536-575b-249a-0e66d8dc77f6/mzaf_5802319910754527641.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1442931317
+  },
+  {
+    "id": "music-183",
+    "songTitle": "Rooting for My Baby",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/de/b4/d7/deb4d76d-84a2-7542-52d9-b893619b6b92/mzaf_14578011718395157908.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1460315523
+  },
+  {
+    "id": "music-184",
+    "songTitle": "Rose Colored Lenses",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/70/ea/3c/70ea3c43-46fb-d5ba-ee91-4006a2e872bc/mzaf_1647185544305476422.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1702906680
+  },
+  {
+    "id": "music-185",
+    "songTitle": "Secrets (feat. Lindsey Buckingham & Mick Fleetwood)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b0/e0/52/b0e0528c-7a4c-f8fb-a6a5-61171efc8216/mzaf_11612403593911279073.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1839063082,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-186",
+    "songTitle": "See You Again",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/6f/25/af/6f25afc7-3cb2-0a1f-8332-5ed94693a9f7/mzaf_14499964565442485366.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1452858888
+  },
+  {
+    "id": "music-187",
+    "songTitle": "Sleigh Ride",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/f3/4f/2a/f34f2adc-e682-0f2a-8066-2fa3f1414f40/mzaf_16515398818513541242.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1693744961
+  },
+  {
+    "id": "music-188",
+    "songTitle": "Slide Away",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/bb/9b/72/bb9b72a3-5833-44c4-3aba-425f3fa513bc/mzaf_447165780166969230.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1689672061
+  },
+  {
+    "id": "music-189",
+    "songTitle": "Someone Else",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ef/3e/de/ef3ede42-dca5-4a3c-1435-9f4725e52132/mzaf_11042038414462147873.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1460315522
+  },
+  {
+    "id": "music-190",
+    "songTitle": "Something Beautiful",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/cc/19/88/cc198850-fa56-0345-a115-fdb9345d81fe/mzaf_10347101652109153961.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1804974560
+  },
+  {
+    "id": "music-191",
+    "songTitle": "Start All Over",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/83/73/19/837319d7-9536-83a7-2753-e52dff26cb8b/mzaf_408334267139993430.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1452859053
+  },
+  {
+    "id": "music-192",
+    "songTitle": "Stay",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ec/91/89/ec91892f-d2df-8264-9ab4-6a1c74ae5725/mzaf_6885445715944475230.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440809579
+  },
+  {
+    "id": "music-193",
+    "songTitle": "The Bitch Is Back",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/23/75/8a/23758a7b-5be7-6700-3bb3-286e94044dba/mzaf_11655076722415881839.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1358372169
+  },
+  {
+    "id": "music-194",
+    "songTitle": "The Climb",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/1b/0a/65/1b0a653f-979d-3855-4574-7738a3a732e3/mzaf_12193290508710453141.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1440632860
+  },
+  {
+    "id": "music-195",
+    "songTitle": "The Time of Our Lives",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/4f/06/3b/4f063b6c-2076-6335-6824-b8719e69d921/mzaf_158054205253447878.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "hard",
+    "itunesTrackId": 1444113385
+  },
+  {
+    "id": "music-196",
+    "songTitle": "Thousand Miles (feat. Brandi Carlile)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/63/28/c7/6328c7c8-6ec1-e46f-9653-0e89a555d96f/mzaf_18343411460668799628.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1702906884,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-197",
+    "songTitle": "Two More Lonely People",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/55/58/41/555841ed-2b21-d087-e52d-ec7123cbd8e4/mzaf_14396696043788163924.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440809571
+  },
+  {
+    "id": "music-198",
+    "songTitle": "Used To Be Young",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/15/b8/ed/15b8ed9d-0186-e29e-2e25-ae11f5a12046/mzaf_8433047979576204383.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1702776420
+  },
+  {
+    "id": "music-199",
+    "songTitle": "Violet Chemistry",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/14/22/52/14225286-fab7-5b7d-e8cc-d62abbdc4fa0/mzaf_143365870182670439.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1702907034
+  },
+  {
+    "id": "music-200",
+    "songTitle": "Walk of Fame (feat. Brittany Howard)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/c1/bd/6d/c1bd6d7e-a518-344a-257c-3160da69f048/mzaf_4553368778020030357.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1804974873,
+    "artistAliases": [
+      "Miley Cyrus"
+    ]
+  },
+  {
+    "id": "music-201",
+    "songTitle": "We Can't Stop",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/fe/50/86/fe5086f7-e8ff-cce6-0820-c17ac814c49d/mzaf_7121731585584531913.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1460315065,
+    "songAliases": [
+      "We Cant Stop"
+    ]
+  },
+  {
+    "id": "music-202",
+    "songTitle": "We Can't Stop X Where Is My Mind? (Live)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/81/7b/2f/817b2f36-8bd6-9345-a730-5f325740f7b6/mzaf_11140842102322091034.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1620262271,
+    "songAliases": [
+      "We Cant Stop X Where Is My Mind? (Live)"
+    ]
+  },
+  {
+    "id": "music-203",
+    "songTitle": "When I Look At You",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c4/ae/f9/c4aef920-c81e-43ed-c894-c1842e287067/mzaf_11857061161087360660.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1444113381
+  },
+  {
+    "id": "music-204",
+    "songTitle": "Who Owns My Heart",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/25/21/8f/25218f44-e4bd-63dd-3741-c5e324d1140c/mzaf_7826893314675404952.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1440809380
+  },
+  {
+    "id": "music-205",
+    "songTitle": "Wildcard",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/00/d1/53/00d153c0-77a4-4dbc-c705-8177640068f0/mzaf_4673412996266561231.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1702907052
+  },
+  {
+    "id": "music-206",
+    "songTitle": "Wonder Woman",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/41/17/4c/41174cb3-28dc-fc48-39a3-9f7e84395933/mzaf_9162979343097176477.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1702907211
+  },
+  {
+    "id": "music-207",
+    "songTitle": "Wrecking Ball",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/f8/e8/a2/f8e8a23c-b85d-17dd-9625-b39ec26b171f/mzaf_1866607988873686159.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1460315319
+  },
+  {
+    "id": "music-208",
+    "songTitle": "Wrecking Ball X Nothing Compares 2 U (Live)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/af/cf/a3/afcfa32c-706c-1521-3792-e5208a6880b7/mzaf_11325055515667108424.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1620262816
+  },
+  {
+    "id": "music-209",
+    "songTitle": "You",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/c2/ef/d4/c2efd438-c01a-e2f0-1ac2-707bd6a4c98e/mzaf_11524572418824536748.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1702906892
+  },
+  {
+    "id": "music-210",
+    "songTitle": "You're Gonna Make Me Lonesome When You Go",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/6a/15/bd/6a15bdbf-8a3d-ff41-f36b-eff2948fb500/mzaf_7824461984790654747.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 705656605
+  },
+  {
+    "id": "music-211",
+    "songTitle": "Younger Now",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/ad/1a/cb/ad1acb0a-cef4-62f2-151c-e6412bf30564/mzaf_13326039334960202433.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "easy",
+    "itunesTrackId": 1462327576
+  },
+  {
+    "id": "music-212",
+    "songTitle": "Younger You",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview211/v4/b4/ed/28/b4ed28d4-6060-5dc2-c628-6487972a5a12/mzaf_7349063977679557910.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "medium",
+    "itunesTrackId": 1887385342
+  },
+  {
+    "id": "music-213",
+    "songTitle": "Zombie (Live from the NIVA Save Our Stages Festival)",
+    "artist": "Miley Cyrus",
+    "audio": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/61/ed/02/61ed024f-1758-319d-f2d1-7067e042ad52/mzaf_4415969295834237149.plus.aac.p.m4a",
+    "genre": "pop",
+    "tier": "hard",
+    "itunesTrackId": 1541088997
   }
 ]

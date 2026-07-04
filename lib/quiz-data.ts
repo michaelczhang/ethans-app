@@ -1,6 +1,8 @@
 import { MUSIC_QUESTIONS } from "@/lib/music-quiz-data";
+import { getMovieCount } from "@/lib/movie-quiz-data";
+import type { MovieBroadcasterId } from "@/lib/movie-broadcaster";
 
-export type QuizCategory = "games" | "geography" | "aqua" | "music";
+export type QuizCategory = "games" | "geography" | "aqua" | "music" | "movies";
 
 export type QuizMode =
   | "starcraft"
@@ -12,7 +14,8 @@ export type QuizMode =
   | "sea-animals"
   | "ocean"
   | "name-that-tune"
-  | "perfect-pitch";
+  | "perfect-pitch"
+  | "guess-that-movie";
 
 export interface QuizQuestion {
   id: string;
@@ -31,6 +34,13 @@ export interface MusicQuizQuestion extends QuizQuestion {
   genre: import("@/lib/music-genre").MusicGenre;
   songAliases?: string[];
   artistAliases?: string[];
+}
+
+export interface MovieQuizQuestion extends QuizQuestion {
+  movieTitle: string;
+  titleAliases?: string[];
+  broadcaster: MovieBroadcasterId;
+  rating: "PG";
 }
 
 export const CATEGORIES: Record<
@@ -60,6 +70,12 @@ export const CATEGORIES: Record<
     emoji: "🎵",
     description: "Listen to a clip and name the song — bonus for the artist",
     image: "/backgrounds/music-bg.svg",
+  },
+  movies: {
+    label: "Movies",
+    emoji: "🎬",
+    description: "Spot the scene — PG-rated family films from your favorite studios",
+    image: "/backgrounds/movies-bg.svg",
   },
 };
 
@@ -131,6 +147,12 @@ export const QUIZ_MODES: Record<
     emoji: "🎼",
     description: "Hear a single note and identify it — test your ear.",
     category: "music",
+  },
+  "guess-that-movie": {
+    label: "Guess That Movie!",
+    emoji: "🍿",
+    description: "See a movie picture or scene and name the PG-rated film.",
+    category: "movies",
   },
 };
 
@@ -1436,11 +1458,14 @@ export function getQuestionsForMode(mode: QuizMode): QuizQuestion[] {
       return MUSIC_QUESTIONS;
     case "perfect-pitch":
       return [];
+    case "guess-that-movie":
+      return [];
   }
 }
 
 export function getQuestionCount(mode: QuizMode): number {
   if (mode === "perfect-pitch") return 24;
+  if (mode === "guess-that-movie") return getMovieCount();
   return getQuestionsForMode(mode).length;
 }
 

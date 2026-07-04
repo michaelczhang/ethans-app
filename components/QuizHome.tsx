@@ -24,6 +24,13 @@ import {
   type MusicArtistFilter,
 } from "@/lib/music-artist";
 import { getMusicTrackCount } from "@/lib/music-quiz-data";
+import {
+  getAvailableBroadcasterIds,
+  MOVIE_BROADCASTER_FILTER_KEYS,
+  MOVIE_BROADCASTER_FILTERS,
+  type MovieBroadcasterFilter,
+} from "@/lib/movie-broadcaster";
+import { getMovieCount } from "@/lib/movie-quiz-data";
 import { ANSWER_MODES, DIFFICULTIES, type AnswerMode, type QuizDifficulty } from "@/lib/quiz-difficulty";
 
 const MODE_IMAGES: Record<QuizMode, string> = {
@@ -37,6 +44,7 @@ const MODE_IMAGES: Record<QuizMode, string> = {
   ocean: "/backgrounds/ocean-bg.png",
   "name-that-tune": "/backgrounds/music-bg.svg",
   "perfect-pitch": "/backgrounds/music-bg.svg",
+  "guess-that-movie": "/backgrounds/movies-bg.svg",
 };
 
 interface QuizHomeProps {
@@ -46,9 +54,11 @@ interface QuizHomeProps {
   instrument: MusicInstrument;
   genre: MusicGenreFilter;
   artist: MusicArtistFilter;
+  broadcaster: MovieBroadcasterFilter;
   onInstrumentChange: (instrument: MusicInstrument) => void;
   onGenreChange: (genre: MusicGenreFilter) => void;
   onArtistChange: (artist: MusicArtistFilter) => void;
+  onBroadcasterChange: (broadcaster: MovieBroadcasterFilter) => void;
   onSelectMode: (mode: QuizMode) => void;
   onBack: () => void;
 }
@@ -60,9 +70,11 @@ export default function QuizHome({
   instrument,
   genre,
   artist,
+  broadcaster,
   onInstrumentChange,
   onGenreChange,
   onArtistChange,
+  onBroadcasterChange,
   onSelectMode,
   onBack,
 }: QuizHomeProps) {
@@ -74,6 +86,10 @@ export default function QuizHome({
     getMusicTrackCount({ genre, artist: artistId }),
   );
   const nameThatTuneCount = getMusicTrackCount({ genre, artist });
+  const guessMovieCount = getMovieCount({ broadcaster });
+  const availableBroadcasters = getAvailableBroadcasterIds((id) =>
+    getMovieCount({ broadcaster: id }),
+  );
 
   return (
     <div className="quiz-shell mx-auto flex min-h-full w-full max-w-3xl flex-col px-4 py-10 sm:px-6">
@@ -238,13 +254,62 @@ export default function QuizHome({
         </div>
       )}
 
+      {category === "movies" && (
+        <div className="mb-8">
+          <section className="rounded-2xl border border-white/20 bg-white/90 p-4 shadow-lg backdrop-blur sm:p-5">
+            <p className="text-center text-xs font-semibold uppercase tracking-widest text-indigo-600">
+              Studio / Broadcaster
+            </p>
+            <p className="mt-1 text-center text-sm text-zinc-500">
+              Used for Guess That Movie! — pick which studio&apos;s PG films to quiz
+            </p>
+            <div
+              className="mt-4 flex flex-wrap justify-center gap-2"
+              role="tablist"
+              aria-label="Movie broadcaster"
+            >
+              {MOVIE_BROADCASTER_FILTER_KEYS.map((key) => {
+                const info = MOVIE_BROADCASTER_FILTERS[key];
+                const isActive = broadcaster === key;
+                const count = getMovieCount({ broadcaster: key });
+                if (key !== "all" && !availableBroadcasters.includes(key)) {
+                  return null;
+                }
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    onClick={() => onBroadcasterChange(key)}
+                    className={`rounded-xl border px-3 py-2 text-sm font-semibold transition sm:px-4 ${
+                      isActive
+                        ? "border-rose-500 bg-rose-600 text-white shadow-md"
+                        : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-rose-300 hover:bg-rose-50"
+                    }`}
+                  >
+                    <span className="mr-1.5" aria-hidden="true">
+                      {info.emoji}
+                    </span>
+                    {info.label}
+                    <span className="ml-1.5 text-xs opacity-80">({count})</span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        </div>
+      )}
+
       <div className="grid gap-4 sm:grid-cols-2">
         {modes.map((key) => {
           const info = QUIZ_MODES[key];
           const count =
             key === "name-that-tune"
               ? nameThatTuneCount
-              : getQuestionCount(key);
+              : key === "guess-that-movie"
+                ? guessMovieCount
+                : getQuestionCount(key);
 
           return (
             <button
@@ -285,12 +350,20 @@ export default function QuizHome({
                     {INSTRUMENTS[instrument].emoji} {INSTRUMENTS[instrument].label}
                   </p>
                 )}
+                {key === "guess-that-movie" && (
+                  <p className="mt-2 text-xs font-medium text-rose-600">
+                    {MOVIE_BROADCASTER_FILTERS[broadcaster].emoji}{" "}
+                    {MOVIE_BROADCASTER_FILTERS[broadcaster].label} · PG only
+                  </p>
+                )}
                 <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-indigo-600">
                   {key === "perfect-pitch"
                     ? `Up to ${count} notes`
                     : key === "name-that-tune"
                       ? `${count} songs`
-                      : `${count} questions`}{" "}
+                      : key === "guess-that-movie"
+                        ? `${count} scenes`
+                        : `${count} questions`}{" "}
                   →
                 </p>
               </div>
