@@ -250,6 +250,18 @@ export function prepareQuestionsForDifficulty(
   difficulty: QuizDifficulty,
   mode: QuizMode,
 ): QuizQuestion[] {
+  // Multiplication factor ranges come from math grade; difficulty only
+  // controls question count and how many answer choices are shown.
+  if (mode === "multiplication") {
+    const limit = questionLimit(difficulty);
+    const shuffled = shuffle(questions);
+    const selected =
+      limit === null
+        ? shuffled
+        : shuffled.slice(0, Math.min(limit, shuffled.length));
+    return selected.map((question) => trimOptions(question, difficulty));
+  }
+
   const allowedTiers = tiersForDifficulty(difficulty);
   const tagged = questions.map((question, index) => ({
     ...question,

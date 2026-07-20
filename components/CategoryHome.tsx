@@ -64,10 +64,7 @@ export default function CategoryHome({
         <h1 className="home-title text-4xl font-extrabold tracking-tight sm:text-5xl">
           Quizzy
         </h1>
-        <p className="home-label mt-3 text-sm font-semibold uppercase tracking-widest">
-          {translate("pickCategory")}
-        </p>
-        <p className="home-subtitle mt-2 text-sm font-medium tracking-wide">
+        <p className="home-subtitle mt-3 text-sm font-medium tracking-wide">
           {translate("byEcz")}
         </p>
         <p className="home-subtitle mx-auto mt-3 max-w-lg text-base">

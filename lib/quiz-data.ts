@@ -1,8 +1,23 @@
+import { getAnimalCount } from "@/lib/animal-quiz-data";
 import { MUSIC_QUESTIONS } from "@/lib/music-quiz-data";
 import { getMovieCount } from "@/lib/movie-quiz-data";
+import {
+  DEFAULT_MATH_GRADE,
+  type MathGrade,
+} from "@/lib/math-grade";
+import {
+  MULTIPLICATION_POOL_SIZE,
+  generateMultiplicationQuestions,
+} from "@/lib/multiplication-quiz";
 import type { MovieBroadcasterId } from "@/lib/movie-broadcaster";
 
-export type QuizCategory = "games" | "geography" | "aqua" | "music" | "movies";
+export type QuizCategory =
+  | "games"
+  | "geography"
+  | "animals"
+  | "music"
+  | "movies"
+  | "math";
 
 export type QuizMode =
   | "starcraft"
@@ -12,10 +27,11 @@ export type QuizMode =
   | "states-capitals"
   | "countries"
   | "sea-animals"
-  | "ocean"
+  | "guess-that-animal"
   | "name-that-tune"
   | "perfect-pitch"
-  | "guess-that-movie";
+  | "guess-that-movie"
+  | "multiplication";
 
 export interface QuizQuestion {
   id: string;
@@ -43,6 +59,12 @@ export interface MovieQuizQuestion extends QuizQuestion {
   rating: "PG";
 }
 
+export interface AnimalQuizQuestion extends QuizQuestion {
+  audio: string;
+  animalName: string;
+  aliases?: string[];
+}
+
 export const CATEGORIES: Record<
   QuizCategory,
   { label: string; emoji: string; description: string; image: string }
@@ -59,11 +81,11 @@ export const CATEGORIES: Record<
     description: "U.S. state capitals and world country flags",
     image: "/backgrounds/geography-bg.png",
   },
-  aqua: {
-    label: "Aqua",
-    emoji: "🌊",
-    description: "Sea creatures, coral reefs, and ocean science",
-    image: "/backgrounds/aqua-bg.png",
+  animals: {
+    label: "Animals",
+    emoji: "🐾",
+    description: "Land and sea creatures — trivia and animal sound puzzles",
+    image: "/backgrounds/animals-bg.svg",
   },
   music: {
     label: "Music",
@@ -76,6 +98,12 @@ export const CATEGORIES: Record<
     emoji: "🎬",
     description: "Spot the scene — PG-rated family films from your favorite studios",
     image: "/backgrounds/movies-bg.png",
+  },
+  math: {
+    label: "Math",
+    emoji: "🔢",
+    description: "Practice multiplication with random problems every round",
+    image: "/backgrounds/math-bg.svg",
   },
 };
 
@@ -128,13 +156,13 @@ export const QUIZ_MODES: Record<
     label: "Sea Animals",
     emoji: "🐠",
     description: "Dolphins, sharks, whales, and life beneath the waves.",
-    category: "aqua",
+    category: "animals",
   },
-  ocean: {
-    label: "The Ocean",
-    emoji: "🌊",
-    description: "Tides, trenches, currents, and ocean facts.",
-    category: "aqua",
+  "guess-that-animal": {
+    label: "Guess That Animal!",
+    emoji: "🔊",
+    description: "Listen to an animal sound and name the creature.",
+    category: "animals",
   },
   "name-that-tune": {
     label: "Name That Tune",
@@ -153,6 +181,12 @@ export const QUIZ_MODES: Record<
     emoji: "🍿",
     description: "See a movie picture or scene and name the PG-rated film.",
     category: "movies",
+  },
+  multiplication: {
+    label: "Multiplication",
+    emoji: "✖️",
+    description: "Random times-table problems — pick the product or type your answer.",
+    category: "math",
   },
 };
 
@@ -1076,219 +1110,6 @@ export const SEA_ANIMALS_QUESTIONS: QuizQuestion[] = [
   },
 ];
 
-export const OCEAN_QUESTIONS: QuizQuestion[] = [
-  {
-    id: "oc-1",
-    question: "Which ocean is the largest on Earth?",
-    options: ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
-    correctIndex: 2,
-  },
-  {
-    id: "oc-2",
-    question: "What is the deepest known point in the ocean?",
-    options: [
-      "Puerto Rico Trench",
-      "Mariana Trench",
-      "Java Trench",
-      "Tonga Trench",
-    ],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-3",
-    question: "What primarily causes ocean tides?",
-    options: [
-      "Ocean currents",
-      "Wind",
-      "Gravitational pull of the Moon and Sun",
-      "Underwater earthquakes",
-    ],
-    correctIndex: 2,
-  },
-  {
-    id: "oc-4",
-    question: "What percentage of Earth's surface is covered by oceans (approximately)?",
-    options: ["51%", "61%", "71%", "81%"],
-    correctIndex: 2,
-  },
-  {
-    id: "oc-5",
-    question: "Which layer of the ocean receives the most sunlight?",
-    options: ["Abyssal zone", "Sunlight (epipelagic) zone", "Hadal zone", "Midnight zone"],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-6",
-    question: "What is the name for a warm ocean current that flows from the Gulf of Mexico toward Europe?",
-    options: ["Humboldt Current", "Gulf Stream", "California Current", "Labrador Current"],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-7",
-    question: "What gas do oceans absorb large amounts of from the atmosphere?",
-    options: ["Nitrogen", "Oxygen", "Carbon dioxide", "Helium"],
-    correctIndex: 2,
-  },
-  {
-    id: "oc-8",
-    question: "Which underwater mountain range runs down the middle of the Atlantic Ocean?",
-    options: [
-      "Himalayas",
-      "Mid-Atlantic Ridge",
-      "Mariana Ridge",
-      "Andes Undersea Chain",
-    ],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-9",
-    question: "What is an estuary?",
-    options: [
-      "A deep ocean trench",
-      "Where a river meets the sea",
-      "A type of coral reef",
-      "An underwater volcano",
-    ],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-10",
-    question: "What phenomenon raises sea surface temperatures in the eastern Pacific and can affect global weather?",
-    options: ["La Niña", "El Niño", "Monsoon", "Gulf Stream reversal"],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-11",
-    question: "What is the average salinity of ocean water (in parts per thousand)?",
-    options: ["About 5", "About 15", "About 35", "About 55"],
-    correctIndex: 2,
-  },
-  {
-    id: "oc-12",
-    question: "Which type of wave is caused by underwater earthquakes or landslides?",
-    options: ["Tidal wave (tsunami)", "Wind wave", "Rogue wave only", "Kelvin wave"],
-    correctIndex: 0,
-  },
-  {
-    id: "oc-13",
-    question: "What are hydrothermal vents on the ocean floor often called?",
-    options: ["Blue holes", "Black smokers", "White cliffs", "Salt domes"],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-14",
-    question: "Which ocean zone lies between the surface and about 200 meters deep?",
-    options: ["Hadal", "Epipelagic (sunlight zone)", "Bathypelagic", "Abyssopelagic"],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-15",
-    question: "What is the continental shelf?",
-    options: [
-      "The deepest part of the ocean",
-      "The shallow, gently sloping edge of a continent under the sea",
-      "A coral atoll",
-      "An oceanic trench",
-    ],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-16",
-    question: "Which tiny ocean organisms form the base of many marine food webs?",
-    options: ["Krill only", "Phytoplankton", "Jellyfish", "Coral polyps only"],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-17",
-    question: "What is the Great Pacific Garbage Patch mainly made of?",
-    options: [
-      "Sunken ships",
-      "Floating plastic debris",
-      "Volcanic ash",
-      "Oil spills only",
-    ],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-18",
-    question: "Why does the ocean appear blue to our eyes?",
-    options: [
-      "Because of fish pigments",
-      "Water absorbs red light and scatters blue light",
-      "Because of salt crystals",
-      "Because of algae only",
-    ],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-19",
-    question: "What is bioluminescence in the deep ocean?",
-    options: [
-      "Light from underwater volcanoes",
-      "Living organisms producing their own light",
-      "Reflection of moonlight only",
-      "Light from sonar equipment",
-    ],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-20",
-    question: "Which ocean is the smallest by area?",
-    options: ["Indian Ocean", "Southern Ocean", "Arctic Ocean", "Atlantic Ocean"],
-    correctIndex: 2,
-  },
-  {
-    id: "oc-21",
-    question: "What is a gyre in oceanography?",
-    options: [
-      "A type of fish migration",
-      "A large system of rotating ocean currents",
-      "An underwater cave",
-      "A tidal bore",
-    ],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-22",
-    question: "Kelp forests are found mainly in which type of water?",
-    options: [
-      "Tropical shallow seas",
-      "Cold, nutrient-rich coastal waters",
-      "Deep abyssal plains",
-      "Freshwater lakes only",
-    ],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-23",
-    question: "What is ocean acidification caused by?",
-    options: [
-      "Too much oxygen in water",
-      "Increased absorption of CO₂ lowering pH",
-      "Melting ice adding fresh water only",
-      "Underwater mining",
-    ],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-24",
-    question: "Which instrument is used to measure ocean depth from a ship?",
-    options: ["Thermometer", "Sonar / echo sounder", "Barometer", "Anemometer"],
-    correctIndex: 1,
-  },
-  {
-    id: "oc-25",
-    question: "What is the Coriolis effect's role in oceans?",
-    options: [
-      "It creates tides",
-      "It deflects moving water and helps form currents",
-      "It causes tsunamis",
-      "It makes water more salty",
-    ],
-    correctIndex: 1,
-  },
-];
-
 const STATE_CAPITAL_ENTRIES: readonly [string, string, string][] = [
   ["Alabama", "Montgomery", "al"],
   ["Alaska", "Juneau", "ak"],
@@ -1436,7 +1257,10 @@ export const STATES_CAPITALS_QUESTIONS: QuizQuestion[] =
 
 export const COUNTRIES_QUESTIONS: QuizQuestion[] = buildCountriesQuestions();
 
-export function getQuestionsForMode(mode: QuizMode): QuizQuestion[] {
+export function getQuestionsForMode(
+  mode: QuizMode,
+  options?: { mathGrade?: MathGrade },
+): QuizQuestion[] {
   switch (mode) {
     case "starcraft":
       return STARCRAFT_QUESTIONS;
@@ -1452,20 +1276,26 @@ export function getQuestionsForMode(mode: QuizMode): QuizQuestion[] {
       return COUNTRIES_QUESTIONS;
     case "sea-animals":
       return SEA_ANIMALS_QUESTIONS;
-    case "ocean":
-      return OCEAN_QUESTIONS;
+    case "guess-that-animal":
+      return [];
     case "name-that-tune":
       return MUSIC_QUESTIONS;
     case "perfect-pitch":
       return [];
     case "guess-that-movie":
       return [];
+    case "multiplication":
+      return generateMultiplicationQuestions(
+        options?.mathGrade ?? DEFAULT_MATH_GRADE,
+      );
   }
 }
 
 export function getQuestionCount(mode: QuizMode): number {
   if (mode === "perfect-pitch") return 24;
+  if (mode === "guess-that-animal") return getAnimalCount();
   if (mode === "guess-that-movie") return getMovieCount();
+  if (mode === "multiplication") return MULTIPLICATION_POOL_SIZE;
   return getQuestionsForMode(mode).length;
 }
 

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "animal-1",
+    "name": "Dog",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/5/58/Barking_of_a_dog_2.ogg",
+    "tier": "easy",
+    "aliases": ["Puppy"]
+  },
+  {
+    "id": "animal-2",
+    "name": "Cat",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/6/62/Meow.ogg",
+    "tier": "easy",
+    "aliases": ["Kitten"]
+  },
+  {
+    "id": "animal-3",
+    "name": "Cow",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Mudchute%20cow%201.ogg",
+    "tier": "easy"
+  },
+  {
+    "id": "animal-4",
+    "name": "Sheep",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/6/60/Sheep%20bleating.ogg",
+    "tier": "easy"
+  },
+  {
+    "id": "animal-5",
+    "name": "Rooster",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Rooster%20crowing.oga",
+    "tier": "easy",
+    "aliases": ["Chicken"]
+  },
+  {
+    "id": "animal-6",
+    "name": "Pig",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Pig%20grunt.ogg",
+    "tier": "easy"
+  },
+  {
+    "id": "animal-7",
+    "name": "Horse",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Horse%20neigh.ogg",
+    "tier": "medium"
+  },
+  {
+    "id": "animal-8",
+    "name": "Lion",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Lion%20roar.ogg",
+    "tier": "medium"
+  },
+  {
+    "id": "animal-9",
+    "name": "Frog",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Frog%20croak.ogg",
+    "tier": "easy"
+  },
+  {
+    "id": "animal-10",
+    "name": "Owl",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Owl%20hoot.ogg",
+    "tier": "medium"
+  },
+  {
+    "id": "animal-11",
+    "name": "Duck",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Duck%20quack.ogg",
+    "tier": "easy"
+  },
+  {
+    "id": "animal-12",
+    "name": "Turkey",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Turkey%20gobble.ogg",
+    "tier": "medium"
+  },
+  {
+    "id": "animal-13",
+    "name": "Goat",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Goat%20bleat.ogg",
+    "tier": "medium"
+  },
+  {
+    "id": "animal-14",
+    "name": "Donkey",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Donkey%20bray.ogg",
+    "tier": "medium"
+  },
+  {
+    "id": "animal-15",
+    "name": "Crow",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Crow%20call.ogg",
+    "tier": "medium"
+  },
+  {
+    "id": "animal-16",
+    "name": "Monkey",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/5/55/Monkey%20call.ogg",
+    "tier": "medium"
+  },
+  {
+    "id": "animal-17",
+    "name": "Wolf",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/9/94/Wolf%20howl.ogg",
+    "tier": "hard"
+  },
+  {
+    "id": "animal-18",
+    "name": "Bee",
+    "audio": "https://upload.wikimedia.org/wikipedia/commons/5/50/Bee%20buzzing%20sound%20(animal%20noises).opus",
+    "tier": "medium"
+  }
+]

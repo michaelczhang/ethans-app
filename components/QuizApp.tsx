@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import AnimalQuizGame from "@/components/AnimalQuizGame";
 import CategoryHome from "@/components/CategoryHome";
 import { DisplaySettingsProvider } from "@/components/DisplaySettingsProvider";
 import MovieQuizGame from "@/components/MovieQuizGame";
@@ -34,6 +35,12 @@ import {
 } from "@/lib/movie-broadcaster";
 import { getMovieCount } from "@/lib/movie-quiz-data";
 import {
+  DEFAULT_MATH_GRADE,
+  loadMathGrade,
+  saveMathGrade,
+  type MathGrade,
+} from "@/lib/math-grade";
+import {
   loadAnswerMode,
   loadDifficulty,
   saveAnswerMode,
@@ -59,21 +66,22 @@ const CATEGORY_BACKGROUNDS: Record<QuizCategory, string[]> = {
     "/backgrounds/states-bg.png",
     "/backgrounds/countries-bg.png",
   ],
-  aqua: [
-    "/backgrounds/aqua-bg.png",
+  animals: [
+    "/backgrounds/animals-bg.svg",
     "/backgrounds/sea-animals-bg.png",
-    "/backgrounds/ocean-bg.png",
   ],
   music: ["/backgrounds/music-bg.svg"],
   movies: ["/backgrounds/movies-bg.png"],
+  math: ["/backgrounds/math-bg.svg"],
 };
 
 const CATEGORIES_VIEW_BACKGROUNDS: string[] = [
   "/backgrounds/starcraft-bg.png",
   "/backgrounds/geography-bg.png",
-  "/backgrounds/aqua-bg.png",
+  "/backgrounds/animals-bg.svg",
   "/backgrounds/music-bg.svg",
   "/backgrounds/movies-bg.png",
+  "/backgrounds/math-bg.svg",
   "/backgrounds/sea-animals-bg.png",
 ];
 
@@ -81,6 +89,10 @@ function backgroundsForView(view: View): string[] {
   if (view.name === "categories") return CATEGORIES_VIEW_BACKGROUNDS;
   if (view.name === "quizzes-list") return CATEGORY_BACKGROUNDS[view.category];
   return CATEGORY_BACKGROUNDS[QUIZ_MODES[view.mode].category];
+}
+
+function isSpecialAnimalQuiz(mode: QuizMode): boolean {
+  return mode === "guess-that-animal";
 }
 
 function isSpecialMusicQuiz(mode: QuizMode): boolean {
@@ -99,6 +111,7 @@ export default function QuizApp() {
   const [genre, setGenre] = useState<MusicGenreFilter>("all");
   const [artist, setArtist] = useState<MusicArtistFilter>("all");
   const [broadcaster, setBroadcaster] = useState<MovieBroadcasterFilter>("all");
+  const [mathGrade, setMathGrade] = useState<MathGrade>(DEFAULT_MATH_GRADE);
 
   useEffect(() => {
     setDifficulty(loadDifficulty());
@@ -107,6 +120,7 @@ export default function QuizApp() {
     setGenre(loadMusicGenre());
     setArtist(loadMusicArtist());
     setBroadcaster(loadMovieBroadcaster());
+    setMathGrade(loadMathGrade());
   }, []);
 
   useEffect(() => {
@@ -159,6 +173,11 @@ export default function QuizApp() {
     saveMusicArtist(next);
   };
 
+  const handleMathGradeChange = (next: MathGrade) => {
+    setMathGrade(next);
+    saveMathGrade(next);
+  };
+
   return (
     <DisplaySettingsProvider>
       {view.name !== "categories" && <VisitCounter />}
@@ -183,14 +202,25 @@ export default function QuizApp() {
           genre={genre}
           artist={artist}
           broadcaster={broadcaster}
+          mathGrade={mathGrade}
           onInstrumentChange={handleInstrumentChange}
           onGenreChange={handleGenreChange}
           onArtistChange={handleArtistChange}
           onBroadcasterChange={handleBroadcasterChange}
+          onMathGradeChange={handleMathGradeChange}
           onSelectMode={(mode) =>
             setView({ name: "quiz", mode, category: view.category })
           }
           onBack={() => setView({ name: "categories" })}
+        />
+      )}
+      {view.name === "quiz" && view.mode === "guess-that-animal" && (
+        <AnimalQuizGame
+          difficulty={difficulty}
+          answerMode={answerMode}
+          onBackToHome={() =>
+            setView({ name: "quizzes-list", category: view.category })
+          }
         />
       )}
       {view.name === "quiz" && view.mode === "name-that-tune" && (
@@ -224,11 +254,15 @@ export default function QuizApp() {
           }
         />
       )}
-      {view.name === "quiz" && !isSpecialMusicQuiz(view.mode) && !isSpecialMovieQuiz(view.mode) && (
+      {view.name === "quiz" &&
+        !isSpecialAnimalQuiz(view.mode) &&
+        !isSpecialMusicQuiz(view.mode) &&
+        !isSpecialMovieQuiz(view.mode) && (
         <QuizGame
           mode={view.mode}
           difficulty={difficulty}
           answerMode={answerMode}
+          mathGrade={mathGrade}
           onBackToHome={() =>
             setView({ name: "quizzes-list", category: view.category })
           }

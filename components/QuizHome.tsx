@@ -31,6 +31,11 @@ import {
   type MovieBroadcasterFilter,
 } from "@/lib/movie-broadcaster";
 import { getMovieCount } from "@/lib/movie-quiz-data";
+import {
+  MATH_GRADE_KEYS,
+  MATH_GRADES,
+  type MathGrade,
+} from "@/lib/math-grade";
 import { ANSWER_MODES, DIFFICULTIES, type AnswerMode, type QuizDifficulty } from "@/lib/quiz-difficulty";
 
 const MODE_IMAGES: Record<QuizMode, string> = {
@@ -41,10 +46,11 @@ const MODE_IMAGES: Record<QuizMode, string> = {
   "states-capitals": "/backgrounds/states-bg.png",
   countries: "/backgrounds/countries-bg.png",
   "sea-animals": "/backgrounds/sea-animals-bg.png",
-  ocean: "/backgrounds/ocean-bg.png",
+  "guess-that-animal": "/backgrounds/animals-bg.svg",
   "name-that-tune": "/backgrounds/music-bg.svg",
   "perfect-pitch": "/backgrounds/music-bg.svg",
   "guess-that-movie": "/backgrounds/movies-bg.png",
+  multiplication: "/backgrounds/math-bg.svg",
 };
 
 interface QuizHomeProps {
@@ -55,10 +61,12 @@ interface QuizHomeProps {
   genre: MusicGenreFilter;
   artist: MusicArtistFilter;
   broadcaster: MovieBroadcasterFilter;
+  mathGrade: MathGrade;
   onInstrumentChange: (instrument: MusicInstrument) => void;
   onGenreChange: (genre: MusicGenreFilter) => void;
   onArtistChange: (artist: MusicArtistFilter) => void;
   onBroadcasterChange: (broadcaster: MovieBroadcasterFilter) => void;
+  onMathGradeChange: (grade: MathGrade) => void;
   onSelectMode: (mode: QuizMode) => void;
   onBack: () => void;
 }
@@ -71,10 +79,12 @@ export default function QuizHome({
   genre,
   artist,
   broadcaster,
+  mathGrade,
   onInstrumentChange,
   onGenreChange,
   onArtistChange,
   onBroadcasterChange,
+  onMathGradeChange,
   onSelectMode,
   onBack,
 }: QuizHomeProps) {
@@ -301,6 +311,52 @@ export default function QuizHome({
         </div>
       )}
 
+      {category === "math" && (
+        <div className="mb-8">
+          <section className="rounded-2xl border border-white/20 bg-white/90 p-4 shadow-lg backdrop-blur sm:p-5">
+            <p className="text-center text-xs font-semibold uppercase tracking-widest text-indigo-600">
+              Grade Level
+            </p>
+            <p className="mt-1 text-center text-sm text-zinc-500">
+              Used for Multiplication — pick which grade&apos;s factor range to practice
+            </p>
+            <div
+              className="mt-4 flex flex-wrap justify-center gap-2"
+              role="tablist"
+              aria-label="Math grade"
+            >
+              {MATH_GRADE_KEYS.map((key) => {
+                const info = MATH_GRADES[key];
+                const isActive = mathGrade === key;
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    title={info.description}
+                    onClick={() => onMathGradeChange(key)}
+                    className={`rounded-xl border px-3 py-2 text-sm font-semibold transition sm:px-4 ${
+                      isActive
+                        ? "border-emerald-500 bg-emerald-600 text-white shadow-md"
+                        : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:border-emerald-300 hover:bg-emerald-50"
+                    }`}
+                  >
+                    <span className="mr-1.5" aria-hidden="true">
+                      {info.emoji}
+                    </span>
+                    {info.label}
+                    <span className="ml-1.5 text-xs opacity-80">
+                      ({info.minFactor}–{info.maxFactor})
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </section>
+        </div>
+      )}
+
       <div className="grid gap-4 sm:grid-cols-2">
         {modes.map((key) => {
           const info = QUIZ_MODES[key];
@@ -356,6 +412,13 @@ export default function QuizHome({
                     {MOVIE_BROADCASTER_FILTERS[broadcaster].label} · PG only
                   </p>
                 )}
+                {key === "multiplication" && (
+                  <p className="mt-2 text-xs font-medium text-emerald-600">
+                    {MATH_GRADES[mathGrade].emoji} {MATH_GRADES[mathGrade].label}{" "}
+                    · factors {MATH_GRADES[mathGrade].minFactor}–
+                    {MATH_GRADES[mathGrade].maxFactor}
+                  </p>
+                )}
                 <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-indigo-600">
                   {key === "perfect-pitch"
                     ? `Up to ${count} notes`
@@ -363,7 +426,11 @@ export default function QuizHome({
                       ? `${count} songs`
                       : key === "guess-that-movie"
                         ? `${count} scenes`
-                        : `${count} questions`}{" "}
+                        : key === "guess-that-animal"
+                          ? `${count} sounds`
+                          : key === "multiplication"
+                          ? "Random problems"
+                          : `${count} questions`}{" "}
                   →
                 </p>
               </div>

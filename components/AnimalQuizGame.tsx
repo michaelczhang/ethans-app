@@ -1,56 +1,42 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { QUIZ_MODES, type AnimalQuizQuestion } from "@/lib/quiz-data";
+import { checkAnimalAnswer, getAnimalName } from "@/lib/animal-quiz";
 import {
-  getQuestionsForMode,
-  QUIZ_MODES,
-  type QuizMode,
-  type QuizQuestion,
-} from "@/lib/quiz-data";
-import {
-  DEFAULT_MATH_GRADE,
-  MATH_GRADES,
-  type MathGrade,
-} from "@/lib/math-grade";
+  ANIMAL_CLIP_SECONDS,
+  getAnimalQuestions,
+} from "@/lib/animal-quiz-data";
 import {
   ANSWER_MODES,
-  checkTypedAnswer,
   DIFFICULTIES,
-  getCorrectAnswer,
   prepareQuestionsForDifficulty,
   type AnswerMode,
   type QuizDifficulty,
 } from "@/lib/quiz-difficulty";
 
-interface QuizGameProps {
-  mode: QuizMode;
+interface AnimalQuizGameProps {
   difficulty: QuizDifficulty;
   answerMode: AnswerMode;
-  mathGrade?: MathGrade;
   onBackToHome: () => void;
 }
 
-function buildQuestionSet(
-  mode: QuizMode,
-  difficulty: QuizDifficulty,
-  mathGrade: MathGrade,
-): QuizQuestion[] {
+function buildQuestionSet(difficulty: QuizDifficulty): AnimalQuizQuestion[] {
   return prepareQuestionsForDifficulty(
-    getQuestionsForMode(mode, { mathGrade }),
+    getAnimalQuestions(),
     difficulty,
-    mode,
-  );
+    "guess-that-animal",
+  ) as AnimalQuizQuestion[];
 }
 
-export default function QuizGame({
-  mode,
+export default function AnimalQuizGame({
   difficulty,
   answerMode,
-  mathGrade = DEFAULT_MATH_GRADE,
   onBackToHome,
-}: QuizGameProps) {
-  const [questions, setQuestions] = useState<QuizQuestion[]>(() =>
-    buildQuestionSet(mode, difficulty, mathGrade),
+}: AnimalQuizGameProps) {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [questions, setQuestions] = useState<AnimalQuizQuestion[]>(() =>
+    buildQuestionSet(difficulty),
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -58,21 +44,19 @@ export default function QuizGame({
   const [typedAnswer, setTypedAnswer] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const currentQuestion = questions[currentIndex];
   const totalQuestions = questions.length;
-  const modeInfo = QUIZ_MODES[mode];
+  const modeInfo = QUIZ_MODES["guess-that-animal"];
   const difficultyInfo = DIFFICULTIES[difficulty];
   const answerModeInfo = ANSWER_MODES[answerMode];
-  const gradeInfo = MATH_GRADES[mathGrade];
-  const correctAnswer = currentQuestion
-    ? getCorrectAnswer(currentQuestion)
-    : "";
+  const correctAnswer = currentQuestion ? getAnimalName(currentQuestion) : "";
 
   const isCorrect = useMemo(() => {
     if (!hasSubmitted || !currentQuestion) return false;
     if (answerMode === "typed") {
-      return checkTypedAnswer(typedAnswer, currentQuestion, difficulty);
+      return checkAnimalAnswer(typedAnswer, currentQuestion, difficulty);
     }
     return selectedIndex === currentQuestion.correctIndex;
   }, [
@@ -90,14 +74,63 @@ export default function QuizGame({
   }, [currentIndex, totalQuestions, isFinished]);
 
   const resetQuiz = useCallback(() => {
-    setQuestions(buildQuestionSet(mode, difficulty, mathGrade));
+    setQuestions(buildQuestionSet(difficulty));
     setCurrentIndex(0);
     setScore(0);
     setSelectedIndex(null);
     setTypedAnswer("");
     setHasSubmitted(false);
     setIsFinished(false);
-  }, [mode, difficulty, mathGrade]);
+    setIsPlaying(false);
+  }, [difficulty]);
+
+  const playClip = useCallback(async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.currentTime = 0;
+    try {
+      await audio.play();
+      setIsPlaying(true);
+    } catch {
+      setIsPlaying(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleTimeUpdate = () => {
+      if (audio.currentTime >= ANIMAL_CLIP_SECONDS) {
+        audio.pause();
+        audio.currentTime = 0;
+        setIsPlaying(false);
+      }
+    };
+
+    const handleEnded = () => setIsPlaying(false);
+    const handlePause = () => setIsPlaying(false);
+    const handlePlay = () => setIsPlaying(true);
+
+    audio.addEventListener("timeupdate", handleTimeUpdate);
+    audio.addEventListener("ended", handleEnded);
+    audio.addEventListener("pause", handlePause);
+    audio.addEventListener("play", handlePlay);
+    return () => {
+      audio.removeEventListener("timeupdate", handleTimeUpdate);
+      audio.removeEventListener("ended", handleEnded);
+      audio.removeEventListener("pause", handlePause);
+      audio.removeEventListener("play", handlePlay);
+    };
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.pause();
+    audio.load();
+    setIsPlaying(false);
+  }, [currentQuestion?.id, currentQuestion?.audio]);
 
   const handleSelectAnswer = (index: number) => {
     if (hasSubmitted || isFinished || answerMode === "typed") return;
@@ -117,7 +150,7 @@ export default function QuizGame({
 
     const correct =
       answerMode === "typed"
-        ? checkTypedAnswer(typedAnswer, currentQuestion, difficulty)
+        ? checkAnimalAnswer(typedAnswer, currentQuestion, difficulty)
         : selectedIndex === currentQuestion.correctIndex;
 
     if (correct) {
@@ -138,17 +171,36 @@ export default function QuizGame({
 
   const scoreMessage = useMemo(() => {
     const ratio = score / totalQuestions;
-    if (ratio === 1) return "Perfect run! Absolute champion.";
-    if (ratio >= 0.8) return "Excellent! You really know your stuff.";
-    if (ratio >= 0.6) return "Solid effort — keep practicing!";
-    if (ratio >= 0.4) return "Not bad! Review and try again.";
-    return "Tough round — play again to improve!";
+    if (ratio === 1) return "Perfect ears! You know every critter.";
+    if (ratio >= 0.8) return "Excellent! The animal kingdom bows to you.";
+    if (ratio >= 0.6) return "Solid effort — keep listening!";
+    if (ratio >= 0.4) return "Not bad! Replay the sounds and try again.";
+    return "Tough round — give it another go!";
   }, [score, totalQuestions]);
 
   const canSubmit =
     answerMode === "typed"
       ? typedAnswer.trim().length > 0
       : selectedIndex !== null;
+
+  if (totalQuestions === 0) {
+    return (
+      <div className="quiz-shell relative mx-auto flex min-h-full w-full max-w-2xl flex-col px-4 py-8 sm:px-6">
+        <button
+          type="button"
+          onClick={onBackToHome}
+          className="mb-6 text-sm font-medium text-indigo-300 transition hover:text-white"
+        >
+          ← Back to Home
+        </button>
+        <div className="quiz-card rounded-2xl border border-white/20 p-8 text-center shadow-lg">
+          <p className="text-lg font-semibold text-zinc-900">
+            No animal sounds are available yet.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="quiz-shell relative mx-auto flex min-h-full w-full max-w-2xl flex-col px-4 py-8 sm:px-6">
@@ -162,8 +214,11 @@ export default function QuizGame({
             ← Back to Home
           </button>
           <h1 className="home-title text-2xl font-bold tracking-tight sm:text-3xl">
-            {modeInfo.emoji} {modeInfo.label} Quiz
+            {modeInfo.emoji} {modeInfo.label}
           </h1>
+          <p className="mt-1 text-sm text-indigo-200">
+            Listen closely and name the animal
+          </p>
         </div>
       </header>
 
@@ -173,16 +228,11 @@ export default function QuizGame({
             <div className="flex flex-wrap gap-2">
               <span className="quiz-badge">Score: {score}</span>
               <span className="quiz-badge">
-                Question {currentIndex + 1} / {totalQuestions}
+                Sound {currentIndex + 1} / {totalQuestions}
               </span>
               <span className="quiz-badge">
                 {difficultyInfo.emoji} {difficultyInfo.label}
               </span>
-              {mode === "multiplication" && (
-                <span className="quiz-badge">
-                  {gradeInfo.emoji} {gradeInfo.label}
-                </span>
-              )}
               <span className="quiz-badge">
                 {answerModeInfo.emoji} {answerModeInfo.label}
               </span>
@@ -191,36 +241,51 @@ export default function QuizGame({
 
           <div className="mb-6 h-2 overflow-hidden rounded-full bg-zinc-200">
             <div
-              className="h-full rounded-full bg-indigo-500 transition-all duration-300"
+              className="h-full rounded-full bg-emerald-500 transition-all duration-300"
               style={{ width: `${progressPercent}%` }}
             />
           </div>
 
           <div className="quiz-card flex flex-1 flex-col rounded-2xl border border-white/20 p-6 shadow-lg sm:p-8">
-            {currentQuestion.image && (
-              <div className="mb-5 flex justify-center">
-                <img
-                  key={currentQuestion.id}
-                  src={currentQuestion.image}
-                  alt={currentQuestion.imageAlt ?? ""}
-                  className="quiz-question-image h-40 w-auto rounded-lg border border-zinc-200 bg-white object-contain shadow-sm sm:h-48"
-                />
+            <div className="mb-6 rounded-2xl border border-emerald-100 bg-gradient-to-br from-emerald-50 to-teal-50 p-5">
+              <p className="text-sm font-medium text-emerald-800">
+                {currentQuestion.question}
+              </p>
+              <audio
+                ref={audioRef}
+                src={currentQuestion.audio}
+                preload="auto"
+                className="hidden"
+              />
+              <div className="mt-4 flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  onClick={playClip}
+                  className="rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+                >
+                  {isPlaying ? "▶ Playing..." : "▶ Play Sound"}
+                </button>
+                <button
+                  type="button"
+                  onClick={playClip}
+                  disabled={isPlaying}
+                  className="rounded-xl border border-emerald-200 bg-white px-5 py-3 text-sm font-semibold text-emerald-800 transition hover:bg-emerald-50 disabled:opacity-60"
+                >
+                  Replay
+                </button>
               </div>
-            )}
-            <h2 className="text-lg font-semibold leading-snug text-zinc-900 sm:text-xl">
-              {currentQuestion.question}
-            </h2>
+            </div>
 
             {answerMode === "typed" ? (
-              <div className="mt-6">
+              <div className="mt-2">
                 <label
-                  htmlFor="typed-answer"
+                  htmlFor="typed-animal-answer"
                   className="mb-2 block text-sm font-medium text-zinc-600"
                 >
-                  Type your answer
+                  Type the animal name
                 </label>
                 <input
-                  id="typed-answer"
+                  id="typed-animal-answer"
                   type="text"
                   value={typedAnswer}
                   disabled={hasSubmitted}
@@ -230,17 +295,17 @@ export default function QuizGame({
                       handleSubmit();
                     }
                   }}
-                  placeholder="Enter your answer..."
-                  className="w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-indigo-400 focus:bg-white focus:ring-2 focus:ring-indigo-200 disabled:opacity-70"
+                  placeholder="Enter the animal..."
+                  className="w-full rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-base text-zinc-900 outline-none transition focus:border-emerald-400 focus:bg-white focus:ring-2 focus:ring-emerald-200 disabled:opacity-70"
                   autoComplete="off"
                   spellCheck={false}
                 />
               </div>
             ) : (
-              <ul className="mt-6 space-y-3">
+              <ul className="mt-2 space-y-3">
                 {currentQuestion.options.map((option, index) => {
                   let optionClass =
-                    "border-zinc-200 bg-zinc-50 text-zinc-800 hover:border-indigo-300 hover:bg-indigo-50";
+                    "border-zinc-200 bg-zinc-50 text-zinc-800 hover:border-emerald-300 hover:bg-emerald-50";
 
                   if (hasSubmitted) {
                     if (index === currentQuestion.correctIndex) {
@@ -255,7 +320,7 @@ export default function QuizGame({
                     }
                   } else if (index === selectedIndex) {
                     optionClass =
-                      "border-indigo-400 bg-indigo-50 text-indigo-900 ring-1 ring-indigo-300";
+                      "border-emerald-400 bg-emerald-50 text-emerald-900 ring-1 ring-emerald-300";
                   }
 
                   return (
@@ -286,7 +351,7 @@ export default function QuizGame({
                 }`}
               >
                 {isCorrect ? (
-                  <span>Correct! Nice one.</span>
+                  <span>Correct! That&apos;s a {correctAnswer}.</span>
                 ) : (
                   <span>
                     Not quite — the answer is <strong>{correctAnswer}</strong>.
@@ -301,7 +366,7 @@ export default function QuizGame({
                   type="button"
                   onClick={handleSubmit}
                   disabled={!canSubmit}
-                  className="w-full rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-zinc-300 disabled:text-zinc-500 sm:text-base"
+                  className="w-full rounded-xl bg-emerald-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:bg-zinc-300 disabled:text-zinc-500 sm:text-base"
                 >
                   Submit
                 </button>
@@ -310,11 +375,11 @@ export default function QuizGame({
                 type="button"
                 onClick={handleNext}
                 disabled={!hasSubmitted}
-                className="w-full rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:bg-zinc-300 disabled:text-zinc-500 sm:text-base"
+                className="w-full rounded-xl bg-emerald-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 disabled:cursor-not-allowed disabled:bg-zinc-300 disabled:text-zinc-500 sm:text-base"
               >
                 {currentIndex + 1 >= totalQuestions
                   ? "See Results"
-                  : "Next Question"}
+                  : "Next Sound"}
               </button>
             </div>
           </div>
@@ -329,18 +394,18 @@ export default function QuizGame({
           </h2>
           <p className="mt-2 text-zinc-500">{modeInfo.label}</p>
 
-          <div className="mt-6 rounded-2xl bg-indigo-50 px-8 py-5">
-            <p className="text-4xl font-bold text-indigo-700">
+          <div className="mt-6 rounded-2xl bg-emerald-50 px-8 py-5">
+            <p className="text-4xl font-bold text-emerald-700">
               {score} / {totalQuestions}
             </p>
-            <p className="mt-2 text-sm text-indigo-600">{scoreMessage}</p>
+            <p className="mt-2 text-sm text-emerald-600">{scoreMessage}</p>
           </div>
 
           <div className="mt-8 flex w-full max-w-xs flex-col gap-3">
             <button
               type="button"
               onClick={resetQuiz}
-              className="rounded-xl bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-indigo-700 sm:text-base"
+              className="rounded-xl bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700 sm:text-base"
             >
               Play Again
             </button>
